@@ -1,4 +1,3 @@
-```python
 def calculate_love_score(name1, name2):
     """
     Calculates and prints a detailed love score based on the letters
@@ -65,43 +64,3 @@ name1 = input("Enter first name: ")
 name2 = input("Enter second name: ")
 
 calculate_love_score(name1, name2)
-```
-
-### Example run
-
-**Input**
-
-```
-Enter first name: Jack
-Enter second name: Rose
-```
-
-**Output**
-
-```
-T occurs 1 time
-R occurs 1 time
-U occurs 0 times
-E occurs 2 times
-Total = 4
-
-L occurs 0 times
-O occurs 0 times
-V occurs 0 times
-E occurs 2 times
-Total = 2
-
-Love Score = 42
-```
-
-### Key points (implementation logic)
-
-| Concept              | Explanation                          |
-| -------------------- | ------------------------------------ |
-| `.upper()`           | Ensures case-insensitive counting    |
-| `dict.get(key, 0)`   | Safely handles missing letters       |
-| Two totals           | TRUE and LOVE are counted separately |
-| String concatenation | `str(total1) + str(total2)`          |
-| Printing             | Required for strict test matching    |
-
-This version is simple, readable, fully documented, input-driven, and matches strict output-based test systems exactly.
