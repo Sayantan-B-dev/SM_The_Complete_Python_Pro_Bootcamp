@@ -4,7 +4,7 @@ import tkinter as tk
 
 from password_generator import generate_strong_password
 from dialogs import custom_popup
-from storage import save_credentials
+from storage import save_credentials, find_password
 
 def build_ui(window):
     """
@@ -40,7 +40,7 @@ def build_ui(window):
 
     # Entry fields
     website_entry = tk.Entry(window)
-    website_entry.grid(row=1, column=1, columnspan=2, sticky="ew")
+    website_entry.grid(row=1, column=1, columnspan=1, sticky="ew")
     website_entry.focus()
 
     username_entry = tk.Entry(window)
@@ -94,6 +94,27 @@ Is it ok to save?"""
             website_entry.delete(0, tk.END)
             username_entry.delete(0, tk.END)
             password_entry.delete(0, tk.END)
+
+    def on_find():
+        """
+        Finds password for the given website.
+        """
+        website = website_entry.get()
+        if not website:
+            custom_popup(window, "Error", "Please enter a website")
+            return
+
+        email, password = find_password(website)
+        if email is None and password is None:
+            custom_popup(window, "Error", "Password not found")
+            return
+        else:
+            password_entry.delete(0, tk.END)
+            password_entry.insert(0, password)
+            username_entry.delete(0, tk.END)
+            username_entry.insert(0, email)
+            custom_popup(window, "Success", "Your credentials are :\n\n"
+            f"Email: {email}\nPassword: {password}")
     # ---------------------------
 
     # Buttons
@@ -102,6 +123,12 @@ Is it ok to save?"""
         text="Generate Password",
         command=on_generate
     ).grid(row=3, column=2, padx=5, sticky="ew")
+
+    tk.Button(
+        window,
+        text="Find Password",
+        command=on_find
+    ).grid(row=1, column=2, columnspan=1, padx=5, sticky="ew")
 
     tk.Button(
         window,
