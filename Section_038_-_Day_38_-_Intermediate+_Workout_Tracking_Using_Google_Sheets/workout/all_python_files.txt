@@ -1,0 +1,235 @@
+==================================================
+FILE: ./engine.py
+==================================================
+"""
+Business logic:
+- Nutrition API
+- Sheet logging
+"""
+
+from dataclasses import dataclass
+from typing import List, Optional
+from datetime import datetime
+import requests
+
+from sheet import WorkoutSheet
+
+
+API_BASE_URL = "https://app.100daysofpython.dev"
+EXERCISE_ENDPOINT = f"{API_BASE_URL}/v1/nutrition/natural/exercise"
+HEALTH_ENDPOINT = f"{API_BASE_URL}/healthz"
+
+
+@dataclass
+class ExerciseResult:
+    exercise: str
+    duration: int
+    calories: float
+
+
+class NutritionEngine:
+    def __init__(self, app_id: str, api_key: str, sheet: WorkoutSheet):
+        self.sheet = sheet
+        self.headers = {
+            "Content-Type": "application/json",
+            "x-app-id": app_id,
+            "x-app-key": api_key,
+        }
+
+    def health_check(self) -> None:
+        response = requests.get(HEALTH_ENDPOINT, timeout=5)
+        response.raise_for_status()
+
+    def calculate_exercise(
+        self,
+        query: str,
+        weight_kg: Optional[int] = None,
+        height_cm: Optional[int] = None,
+        age: Optional[int] = None,
+        gender: Optional[str] = None,
+    ) -> List[ExerciseResult]:
+
+        payload = {"query": query}
+        if weight_kg:
+            payload["weight_kg"] = weight_kg
+        if height_cm:
+            payload["height_cm"] = height_cm
+        if age:
+            payload["age"] = age
+        if gender:
+            payload["gender"] = gender
+
+        response = requests.post(
+            EXERCISE_ENDPOINT,
+            headers=self.headers,
+            json=payload,
+            timeout=10,
+        )
+        response.raise_for_status()
+
+        results = []
+        for item in response.json()["exercises"]:
+            results.append(
+                ExerciseResult(
+                    exercise=item["name"].title(),
+                    duration=item["duration_min"],
+                    calories=item["nf_calories"],
+                )
+            )
+
+        return results
+
+    def log_to_sheet(self, result: ExerciseResult) -> dict:
+        now = datetime.now()
+
+        workout_row = {
+            "date": now.strftime("%d/%m/%Y"),
+            "time": now.strftime("%H:%M:%S"),
+            "exercise": result.exercise,
+            "duration": result.duration,
+            "calories": round(result.calories),
+        }
+
+        return self.sheet.add(workout_row)
+
+==================================================
+FILE: ./main.py
+==================================================
+import os
+from dotenv import load_dotenv
+
+from engine import NutritionEngine
+from sheet import WorkoutSheet
+from ui import TerminalUI
+
+
+def main():
+    load_dotenv()
+    ui = TerminalUI()
+
+    try:
+        sheet = WorkoutSheet(
+            os.getenv("SHEETY_BASE_URL"),
+            os.getenv("SHEETY_BEARER_TOKEN"),
+        )
+
+        engine = NutritionEngine(
+            os.getenv("NUTRITION_APP_ID"),
+            os.getenv("NUTRITION_API_KEY"),
+            sheet,
+        )
+
+        ui.info("Checking API health...")
+        engine.health_check()
+        ui.success("API online")
+
+        user_data = ui.get_user_input()
+
+        ui.info("Calculating workout...")
+        results = engine.calculate_exercise(**user_data)
+        ui.render_results(results)
+
+        for r in results:
+            ui.info(f"Saving {r.exercise} to sheet...")
+            engine.log_to_sheet(r)
+            ui.success("Saved")
+
+    except Exception as e:
+        ui.error(str(e))
+
+
+if __name__ == "__main__":
+    main()
+
+==================================================
+FILE: ./sheet.py
+==================================================
+"""
+Sheety persistence layer
+Schema:
+Date | Time | Exercise | Duration | Calories
+"""
+
+from typing import Dict, List
+import requests
+
+
+class WorkoutSheet:
+    def __init__(self, base_url: str, bearer_token: str):
+        self.endpoint = (
+            f"{base_url}/myWorkouts(sayantan)/workouts"
+        )
+        self.headers = {
+            "Authorization": f"Bearer {bearer_token}",
+            "Content-Type": "application/json",
+        }
+
+    def add(self, workout: Dict) -> Dict:
+        payload = {"workout": workout}
+        response = requests.post(
+            self.endpoint,
+            headers=self.headers,
+            json=payload,
+            timeout=10,
+        )
+        response.raise_for_status()
+        return response.json()["workout"]
+
+    def get_all(self) -> List[Dict]:
+        response = requests.get(
+            self.endpoint,
+            headers=self.headers,
+            timeout=10,
+        )
+        response.raise_for_status()
+        return response.json()["workouts"]
+
+==================================================
+FILE: ./ui.py
+==================================================
+"""
+Terminal UI
+Easily replaceable with Tkinter
+"""
+
+from typing import List
+from engine import ExerciseResult
+
+
+class TerminalUI:
+    def info(self, msg: str):
+        print(f"\nℹ {msg}")
+
+    def success(self, msg: str):
+        print(f"✅ {msg}")
+
+    def error(self, msg: str):
+        print(f"\n❌ {msg}")
+
+    def get_user_input(self) -> dict:
+        print("\n" + "═" * 70)
+        print("🏃 Workout Logger")
+        print("═" * 70)
+
+        return {
+            "query": input("Exercise description: ").strip(),
+            "weight_kg": self._opt_int("Weight (kg)"),
+            "height_cm": self._opt_int("Height (cm)"),
+            "age": self._opt_int("Age"),
+            "gender": input("Gender (optional): ").strip() or None,
+        }
+
+    def render_results(self, results: List[ExerciseResult]):
+        print("\n" + "─" * 70)
+        for r in results:
+            print(
+                f"Exercise : {r.exercise}\n"
+                f"Duration : {r.duration} min\n"
+                f"Calories : {round(r.calories)} kcal"
+            )
+            print("─" * 70)
+
+    def _opt_int(self, label: str):
+        value = input(f"{label} (optional): ").strip()
+        return int(value) if value else None
+
