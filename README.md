@@ -9,4 +9,5 @@
 - > copy html into `input.txt`.
 - > ignore `output.txt`, its the output of `extract_data.py`.
 - > ignore `tree.py`, its used for get the entire project tree.
+- > use `filecount.py` to count the number of files in the project.
 
