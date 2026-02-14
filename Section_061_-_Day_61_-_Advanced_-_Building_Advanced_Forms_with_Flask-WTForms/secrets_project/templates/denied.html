@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+<!-- Inherits all structure from base.html -->
+
+{% block title %}Access Denied{% endblock %} 
+<!-- Overrides the title block -->
+
+{% block styling %} 
+<!-- Overrides the styling block inside base.html -->
+
+{{ super() }} 
+<!-- Calls parent block content first (keeps purple background) -->
+
+h1 {
+    color: red;
+}
+
+{% endblock %} 
+<!-- Ends styling override -->
+
+{% block content %} 
+<!-- Overrides main content block -->
+
+<div class="container">
+    <h1>Access Denied</h1>
+    <p>You are not authorized to view this page.</p>
+</div>
+
+{% endblock %} 
+<!-- Ends content block -->

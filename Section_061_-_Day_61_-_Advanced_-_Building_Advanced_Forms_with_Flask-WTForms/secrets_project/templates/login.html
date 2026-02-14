@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+<!-- Template inheritance -->
+
+{% from 'bootstrap5/form.html' import render_form %} 
+<!-- Imports render_form macro from Flask-Bootstrap template -->
+
+{% block title %}Login{% endblock %} 
+<!-- Sets page title -->
+
+{% block content %} 
+<!-- Overrides content block -->
+
+<div class="container">
+    <h1>Login</h1>
+
+    {{ render_form(form) }} 
+    <!-- Calls imported macro to automatically render WTForms form with Bootstrap styling -->
+
+</div>
+
+{% endblock %} 
+<!-- Ends content block -->

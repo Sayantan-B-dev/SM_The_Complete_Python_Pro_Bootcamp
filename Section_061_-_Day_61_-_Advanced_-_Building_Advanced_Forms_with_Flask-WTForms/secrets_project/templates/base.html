@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    {% block head %} <!-- Defines a reusable "head" block that child templates can override -->
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    {% block styles %} <!-- Nested block for CSS-related content, overrideable in child templates -->
+    
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }} <!-- Calls Flask-Bootstrap helper to inject Bootstrap CSS link tags -->
+    
+    <!-- Custom global CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <style>
+        {% block styling %} <!-- Block dedicated for custom CSS styling inside <style> tag -->
+        body {
+            background: purple;
+        }
+        {% endblock %} <!-- Ends the "styling" block definition -->
+    </style>
+    
+    {% endblock %} <!-- Ends the "styles" block definition -->
+    
+    <title>{% block title %}{% endblock %}</title> 
+    <!-- "title" block allows child templates to inject page-specific title -->
+
+    {% endblock %} <!-- Ends the "head" block definition -->
+
+</head>
+<body>
+
+{% block content %}{% endblock %} 
+<!-- Main content placeholder that child templates must override -->
+
+{% block scripts %} <!-- Script block for JS additions -->
+    
+    {{ bootstrap.load_js() }} 
+    <!-- Injects Bootstrap JavaScript bundle automatically -->
+
+{% endblock %} <!-- Ends the "scripts" block -->
+
+</body>
+</html>

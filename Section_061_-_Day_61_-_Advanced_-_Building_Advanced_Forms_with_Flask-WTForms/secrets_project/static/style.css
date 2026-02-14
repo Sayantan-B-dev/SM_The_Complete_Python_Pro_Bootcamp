@@ -1,0 +1,42 @@
+/* Global styles for the Secrets app */
+
+body {
+    background: purple;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #4a4a4a;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Form styling (Bootstrap already does most, but you can add tweaks) */
+form {
+    margin-top: 20px;
+}
+
+/* Error messages */
+.alert-danger {
+    margin-top: 5px;
+}

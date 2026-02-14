@@ -1,0 +1,20 @@
+{% extends "base.html" %} 
+<!-- Inherits layout from base template -->
+
+{% block title %}Home{% endblock %} 
+<!-- Sets page title -->
+
+{% block content %} 
+<!-- Overrides content section -->
+
+<div class="container">
+    <h1>Welcome to the Secrets App</h1>
+    <p>
+        <a href="{{ url_for('login') }}">Login</a>
+        <!-- url_for generates dynamic URL for the Flask route named "login" -->
+        to see the secret.
+    </p>
+</div>
+
+{% endblock %} 
+<!-- Ends content block -->
