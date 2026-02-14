@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Predictor</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"],
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2c7be5;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #1a5edb;
+        }
+
+        .info-box {
+            background-color: #eef3ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .product-card {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            background-color: #fafafa;
+        }
+
+        .product-card strong {
+            font-size: 16px;
+        }
+
+        .rating {
+            color: green;
+            font-weight: bold;
+        }
+        #blogbutton{
+            margin-bottom: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+            border: 1px solid #2c7be5;
+            padding: 10px 18px;
+            background-color: #2c7be5;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #blogbutton:hover{
+            background-color: #1a5edb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <button id="blogbutton" onclick="window.location.href='/blogs'">View Blogs</button>
+
+    <form action="/" method="GET">
+        <input type="text" name="name" id="name" placeholder="Enter name" value="{{ name }}">
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if name %}
+        <div class="info-box">
+            <p><strong>Hello {{ name.title() }}</strong></p>
+            {% if gender %}
+                <p>You might be a {{ gender }}</p>
+            {% endif %}
+            {% if age %}
+                <p>Your age could be: {{ age }}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <form action="/" method="POST">
+        <button type="submit">Get Top Rated Products</button>
+    </form>
+
+    {% if fakeapi_data and fakeapi_data.products %}
+
+        <h2>Top Rated Products (Rating ≥ 4)</h2>
+
+        {% for product in fakeapi_data.products %}
+            {% if product.rating >= 4 %}
+                <div class="product-card">
+                    <strong>{{ product.title }}</strong><br>
+                    Brand: {{ product.brand }}<br>
+                    Price: ${{ product.price }}<br>
+                    Rating: <span class="rating">{{ product.rating }}</span>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
