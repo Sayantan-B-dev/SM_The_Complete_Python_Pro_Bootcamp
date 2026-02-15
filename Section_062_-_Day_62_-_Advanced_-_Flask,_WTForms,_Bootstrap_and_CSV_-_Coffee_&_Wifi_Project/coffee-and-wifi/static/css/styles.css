@@ -1,0 +1,75 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+a {
+  color: #0ff; /* cyan, Tron-like */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 0; /* sharp edges */
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Table styles */
+.table {
+  border-color: #fff;
+}
+
+.table-dark {
+  --bs-table-bg: #000;
+  --bs-table-border-color: #fff;
+  color: #fff;
+}
+
+.table-dark th,
+.table-dark td {
+  border-color: #fff;
+}
+
+/* Form controls */
+.form-control,
+.form-select {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 0;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #000;
+  color: #fff;
+  border-color: #0ff; /* subtle cyan on focus, but no glow */
+  box-shadow: none;
+}
+
+/* Jumbotron (homepage hero) */
+.jumbotron {
+  background-color: #000;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+/* Utility class for spacing */
+.space-above {
+  margin-top: 20px;
+  padding-top: 20px;
+}
