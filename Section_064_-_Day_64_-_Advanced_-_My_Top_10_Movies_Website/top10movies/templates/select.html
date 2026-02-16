@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Select Movie{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Search form -->
+    <div class="search-form">
+        <h3>Search Again</h3>
+        <form method="POST" action="{{ url_for('add') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="input-group">
+                <input type="text" class="form-control" name="title" placeholder="Enter movie title..." required>
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <h1 class="heading">Select a Movie</h1>
+    <p class="description">Multiple movies matched your search. Click on a card to see details and add to your list.</p>
+
+    <div class="row g-3">
+        {% for movie in options %}
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <!-- Front: poster -->
+                    <div class="flip-card-front">
+                        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" 
+                             alt="{{ movie.title }}"
+                             onerror="this.src='https://via.placeholder.com/500x750?text=No+Poster'"
+                             loading="lazy">
+                    </div>
+                    <!-- Back: entire area is a clickable link to add the movie -->
+                    <a href="{{ url_for('find_movie', id=movie.id) }}" class="flip-card-back-link">
+                        <div class="flip-card-back">
+                            <div>
+                                <h5>{{ movie.title }} ({{ movie.release_date[:4] if movie.release_date else "N/A" }})</h5>
+                                <p>{{ movie.overview[:150] }}...</p>
+                                <p>⭐ {{ movie.vote_average }}</p>
+                            </div>
+                            <span class="add-hint">Click to add</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if not options %}
+    <div class="alert alert-warning">
+        No movies found. Please try a different title.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

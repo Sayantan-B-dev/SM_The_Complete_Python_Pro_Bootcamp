@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}My Top 10 Movies{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Personal Top Movies Section -->
+    <h1 class="heading">My Top Movies</h1>
+    <p class="description">These are my all-time favourite movies.</p>
+    <div class="row">
+        {% for movie in movies %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="movie-card card">
+                <div class="card-front" style="background-image: url('{{ movie.img_url }}');">
+                    <p class="large">{{ movie.ranking if movie.ranking else "—" }}</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <h6 class="card-subtitle mb-2">{{ movie.year }}</h6>
+                    <p class="card-text">{{ movie.description[:150] }}...</p>
+                    <div class="movie-rating">
+                        <strong>Rating:</strong>
+                        <span class="rating-value">{{ movie.rating if movie.rating else "Not rated" }}</span>
+                    </div>
+                    <div class="movie-review">
+                        <strong>Review:</strong>
+                        <span class="review-text">{{ movie.review if movie.review else "No review yet" }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <a href="{{ url_for('edit', movie_id=movie.id) }}" class="btn btn-edit">Edit</a>
+                        <form action="{{ url_for('delete', movie_id=movie.id) }}" method="POST" style="display: inline;">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this movie?');">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Popular Movies Section -->
+    <hr class="my-5">
+    <h2 class="heading">Popular Movies <small class="text-muted">(click to flip)</small></h2>
+    <div id="popular-movies-row" class="row g-3">
+        <!-- Popular movies will be loaded here via JavaScript -->
+    </div>
+    <div class="text-center mt-4">
+        <button id="load-more" class="btn" data-page="1">Load More</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let currentPage = 1;
+    const loadMoreBtn = document.getElementById('load-more');
+    const popularRow = document.getElementById('popular-movies-row');
+
+    function loadPopularMovies(page) {
+        fetch(`/api/popular?page=${page}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert('Error loading movies: ' + data.error);
+                    return;
+                }
+                data.movies.forEach(movie => {
+                    const col = document.createElement('div');
+                    col.className = 'col-6 col-md-4 col-lg-3';
+                    col.innerHTML = `
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="${movie.poster}" alt="${movie.title}" loading="lazy">
+                                </div>
+                                <a href="/find?id=${movie.id}" class="flip-card-back-link">
+                                    <div class="flip-card-back">
+                                        <div>
+                                            <h5>${movie.title} (${movie.year})</h5>
+                                            <p>${movie.overview}</p>
+                                            <p>⭐ ${movie.vote_average}</p>
+                                        </div>
+                                        <span class="add-hint">Click anywhere to add</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    popularRow.appendChild(col);
+                });
+                currentPage = data.page;
+                if (currentPage >= data.total_pages) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    loadMoreBtn.dataset.page = currentPage + 1;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    loadPopularMovies(1);
+    loadMoreBtn.addEventListener('click', function() {
+        const nextPage = this.dataset.page;
+        loadPopularMovies(nextPage);
+    });
+</script>
+{% endblock %}
