@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe & Wifi – Remote Work Friendly Cafes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cafe & Wifi – Remote Work Friendly Cafes</h1>
+        
+        <!-- Filter Section -->
+        <div class="filter-panel">
+            <div class="filter-row">
+                <label for="locationFilter">Location:</label>
+                <select id="locationFilter">
+                    <option value="">All Locations</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+            <div class="filter-row">
+                <span>Amenities:</span>
+                <label><input type="checkbox" id="filterSockets"> Sockets</label>
+                <label><input type="checkbox" id="filterToilet"> Toilet</label>
+                <label><input type="checkbox" id="filterWifi"> Wi-Fi</label>
+                <label><input type="checkbox" id="filterCalls"> Calls allowed</label>
+            </div>
+            <div class="filter-row">
+                <button id="applyFilters">Apply Filters</button>
+                <button id="resetFilters">Reset</button>
+            </div>
+        </div>
+
+        <button id="randomBtn">Show Random Cafe</button>
+        <div id="cafeContainer" class="cafe-grid">
+            <!-- Cafes will be injected here -->
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('cafeContainer');
+        const randomBtn = document.getElementById('randomBtn');
+        const locationSelect = document.getElementById('locationFilter');
+        const filterSockets = document.getElementById('filterSockets');
+        const filterToilet = document.getElementById('filterToilet');
+        const filterWifi = document.getElementById('filterWifi');
+        const filterCalls = document.getElementById('filterCalls');
+        const applyBtn = document.getElementById('applyFilters');
+        const resetBtn = document.getElementById('resetFilters');
+
+        let allCafes = []; // Store all cafes for filtering
+
+        // Fetch all cafes and display
+        async function loadAllCafes() {
+            try {
+                const response = await fetch('/all');
+                allCafes = await response.json();
+                renderCafes(allCafes);
+                populateLocationDropdown(allCafes);
+            } catch (error) {
+                container.innerHTML = '<p style="color:red">Error loading cafes.</p>';
+            }
+        }
+
+        // Populate location dropdown with unique locations
+        function populateLocationDropdown(cafes) {
+            const locations = [...new Set(cafes.map(cafe => cafe.location))].sort();
+            locationSelect.innerHTML = '<option value="">All Locations</option>';
+            locations.forEach(loc => {
+                const option = document.createElement('option');
+                option.value = loc;
+                option.textContent = loc;
+                locationSelect.appendChild(option);
+            });
+        }
+
+        // Apply filters and render
+        function applyFilters() {
+            const selectedLocation = locationSelect.value;
+            const needsSockets = filterSockets.checked;
+            const needsToilet = filterToilet.checked;
+            const needsWifi = filterWifi.checked;
+            const needsCalls = filterCalls.checked;
+
+            let filtered = allCafes;
+
+            // Filter by location (exact match, case-insensitive)
+            if (selectedLocation) {
+                filtered = filtered.filter(cafe => cafe.location.toLowerCase() === selectedLocation.toLowerCase());
+            }
+
+            // Filter by amenities (if checkbox checked, require true)
+            if (needsSockets) {
+                filtered = filtered.filter(cafe => cafe.has_sockets);
+            }
+            if (needsToilet) {
+                filtered = filtered.filter(cafe => cafe.has_toilet);
+            }
+            if (needsWifi) {
+                filtered = filtered.filter(cafe => cafe.has_wifi);
+            }
+            if (needsCalls) {
+                filtered = filtered.filter(cafe => cafe.can_take_calls);
+            }
+
+            renderCafes(filtered);
+        }
+
+        // Reset all filters and show all cafes
+        function resetFilters() {
+            locationSelect.value = '';
+            filterSockets.checked = false;
+            filterToilet.checked = false;
+            filterWifi.checked = false;
+            filterCalls.checked = false;
+            renderCafes(allCafes);
+        }
+
+        // Fetch random cafe and display (overrides filters)
+        async function loadRandomCafe() {
+            try {
+                const response = await fetch('/random');
+                const cafe = await response.json();
+                renderCafes([cafe]);
+            } catch (error) {
+                container.innerHTML = '<p style="color:red">Error loading random cafe.</p>';
+            }
+        }
+
+        // Render list of cafes (same as before)
+        function renderCafes(cafes) {
+            if (!cafes || cafes.length === 0) {
+                container.innerHTML = '<p>No cafes found.</p>';
+                return;
+            }
+            let html = '';
+            cafes.forEach(cafe => {
+                html += `
+                    <div class="cafe-card">
+                        <h3>${cafe.name}</h3>
+                        <img src="${cafe.img_url}" alt="${cafe.name}" onerror="this.src='https://via.placeholder.com/300x180?text=No+Image'">
+                        <p><strong>Location:</strong> ${cafe.location}</p>
+                        <p><strong>Price:</strong> ${cafe.coffee_price || 'Not available'}</p>
+                        <p><strong>Seats:</strong> ${cafe.seats}</p>
+                        <div class="amenities">
+                            ${cafe.has_sockets ? '<span>Sockets</span>' : ''}
+                            ${cafe.has_toilet ? '<span>Toilet</span>' : ''}
+                            ${cafe.has_wifi ? '<span>Wi-Fi</span>' : ''}
+                            ${cafe.can_take_calls ? '<span>Calls allowed</span>' : ''}
+                        </div>
+                        <div class="map-link">
+                            <a href="${cafe.map_url}" target="_blank">View on Google Maps</a>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Event listeners
+        randomBtn.addEventListener('click', loadRandomCafe);
+        applyBtn.addEventListener('click', applyFilters);
+        resetBtn.addEventListener('click', resetFilters);
+
+        // Initial load
+        loadAllCafes();
+    </script>
+</body>
+</html>

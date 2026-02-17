@@ -1,0 +1,159 @@
+/* static/style.css */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: white;
+    text-align: center;
+}
+
+/* Filter Panel */
+.filter-panel {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: black;
+}
+
+.filter-row {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.filter-row label {
+    margin-right: 5px;
+}
+
+.filter-row select, .filter-row input[type="checkbox"] {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.filter-row select {
+    padding: 5px 10px;
+}
+
+.filter-row button {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-row button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Cafe Grid */
+.cafe-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cafe-card {
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.cafe-card h3 {
+    margin-top: 0;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.cafe-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+}
+
+.cafe-card p {
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.cafe-card .amenities {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.cafe-card .amenities span {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.cafe-card a {
+    color: lightblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cafe-card a:hover {
+    text-decoration: underline;
+}
+
+.cafe-card .map-link {
+    margin-top: 10px;
+    text-align: center;
+    background-color: #333;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.cafe-card .map-link a {
+    color: white;
+    display: block;
+}
+
+button#randomBtn {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+}
+
+button#randomBtn:hover {
+    background-color: white;
+    color: black;
+}
