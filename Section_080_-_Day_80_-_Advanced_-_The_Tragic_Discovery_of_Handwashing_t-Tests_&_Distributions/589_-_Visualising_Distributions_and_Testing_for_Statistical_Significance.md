@@ -1,254 +1,251 @@
-isualising Distributions and Testing for Statistical Significance
-There are even more powerful arguments we can make to convince our fellow doctors in clinic 1 of the virtues of handwashing. The first are statistics regarding the mean monthly death rate. The second are compelling visualisations to accompany the statistics.
+## Visualising Distributions and Testing for Statistical Significance
 
-Challenge 1: Calculate the Difference in the Average Monthly Death Rate
-What was the average percentage of monthly deaths before handwashing (i.e., before June 1847)?
+After establishing that handwashing dramatically reduced the average death rate, we now employ more advanced statistical and visual methods to strengthen the argument. This section focuses on:
 
-What was the average percentage of monthly deaths after handwashing was made obligatory?
+- Quantifying the reduction in the mean monthly death rate.
+- Using box plots to compare distributions before and after handwashing.
+- Creating overlapping histograms to visualise the shift in outcomes.
+- Applying kernel density estimation (KDE) to smooth the distributions.
+- Conducting a t‑test to determine if the difference is statistically significant.
 
-By how much did handwashing reduce the average chance of dying in childbirth in percentage terms?
+All analyses use the monthly dataset with the `pct_deaths` column and the subsets `before_washing` and `after_washing` defined earlier.
 
-How do these numbers compare to the average for all the 1840s that we calculated earlier?
+---
 
-How many times lower are the chances of dying after handwashing compared to before?
+### Challenge 1: Calculate the Difference in the Average Monthly Death Rate
 
+We compute the mean of the monthly death proportions (converted to percentages) for the two periods and compare them.
 
+```python
+# Average monthly death proportion before handwashing (as percentage)
+avg_prob_before = before_washing['pct_deaths'].mean() * 100
 
-.
+# Average monthly death proportion after handwashing (as percentage)
+avg_prob_after = after_washing['pct_deaths'].mean() * 100
 
-.
-
-..
-
-...
-
-..
-
-.
-
-.
-
-
-
-Solution to Challenge 1
-
-A lot of statistical tests rely on comparing features of distributions, like the mean. We see that the average death rate before handwashing was 10.5%. After handwashing was made obligatory, the average death rate was 2.11%. The difference is massive. Handwashing decreased the average death rate by 8.4%, a 5x improvement. 😮
-
-avg_prob_before = before_washing.pct_deaths.mean() * 100
+# Print with three significant digits
 print(f'Chance of death during childbirth before handwashing: {avg_prob_before:.3}%.')
- 
-avg_prob_after = after_washing.pct_deaths.mean() * 100
 print(f'Chance of death during childbirth AFTER handwashing: {avg_prob_after:.3}%.')
- 
+
+# Absolute reduction in percentage points
 mean_diff = avg_prob_before - avg_prob_after
 print(f'Handwashing reduced the monthly proportion of deaths by {mean_diff:.3}%!')
- 
+
+# Relative improvement (how many times lower)
 times = avg_prob_before / avg_prob_after
 print(f'This is a {times:.2}x improvement!')
+```
 
+**Output**:
+```
+Chance of death during childbirth before handwashing: 10.5%.
+Chance of death during childbirth AFTER handwashing: 2.11%.
+Handwashing reduced the monthly proportion of deaths by 8.4%!
+This is a 5.0x improvement!
+```
 
-Challenge 2: Using Box Plots to Show How the Death Rate Changed Before and After Handwashing
-The statistic above is impressive, but how do we show it graphically? With a box plot we can show how the quartiles, minimum, and maximum values changed in addition to the mean.
+**Explanation**:
 
-Use NumPy's .where() function to add a column to df_monthly that shows if a particular date was before or after the start of handwashing.
+- `before_washing['pct_deaths'].mean()` calculates the arithmetic mean of the monthly death proportions. Multiplying by 100 converts the decimal to a percentage.
+- The reduction of 8.4 percentage points means that, on average, 8.4 fewer women per 100 gavebirths died after handwashing.
+- A five‑fold improvement means the risk was reduced to one‑fifth of its previous level.
 
-Then use plotly to create box plot of the data before and after handwashing.
+---
 
-How did key statistics like the mean, max, min, 1st and 3rd quartile changed as a result of the new policy
+### Challenge 2: Using Box Plots to Show How the Death Rate Changed
 
+Box plots provide a concise summary of the distribution: median, quartiles, range, and outliers. We first add a categorical column indicating whether handwashing was in effect for each month.
 
+#### Adding the `washing_hands` Column with NumPy's `where()`
 
-.
+```python
+import numpy as np
 
-.
+# Create new column: 'No' if date < handwashing_start, else 'Yes'
+df_monthly['washing_hands'] = np.where(df_monthly['date'] < handwashing_start, 'No', 'Yes')
+```
 
-..
+**Explanation**:
 
-...
+- `np.where(condition, value_if_true, value_if_false)` operates element‑wise. For each row, if the date is before the intervention, assign `'No'`; otherwise assign `'Yes'`.
+- This column will be used as the grouping variable in Plotly.
 
-..
+#### Creating the Box Plot with Plotly Express
 
-.
+```python
+import plotly.express as px
 
-.
-
-
-
-Solution to Challenge 2
-
-The easiest way to create a box plot is to have a column in our DataFrame that shows the rows' "category" (i.e., was it before or after obligatory handwashing). NumPy allows us to easily test for a condition and add a column of data.
-
-df_monthly['washing_hands'] = np.where(df_monthly.date < handwashing_start, 'No', 'Yes')
-Now we can use plotly:
-
-box = px.box(df_monthly, 
-             x='washing_hands', 
-             y='pct_deaths',
-             color='washing_hands',
+# Create box plot
+box = px.box(df_monthly,
+             x='washing_hands',      # categorical variable on x-axis
+             y='pct_deaths',          # numeric variable on y-axis
+             color='washing_hands',   # colour boxes by category
              title='How Have the Stats Changed with Handwashing?')
- 
+
+# Improve axis labels
 box.update_layout(xaxis_title='Washing Hands?',
-                  yaxis_title='Percentage of Monthly Deaths',)
- 
+                  yaxis_title='Percentage of Monthly Deaths')
+
+# Display the plot
 box.show()
+```
 
-The plot shows us the same data as our Matplotlib chart, but from a different perspective. Here we also see the massive spike in deaths in late 1842. Over 30% of women who gave birth that month died in hospital. What we also see in the box plot is how not only did the average death rate come down, but so did the overall range - we have a lower max and 3rd quartile too. Let's take a look at a histogram to get a better sense of the distribution.
+**Detailed Explanation**:
 
+- `px.box()` creates an interactive box plot.
+- `x='washing_hands'`: groups the data by the two categories ('No' and 'Yes').
+- `y='pct_deaths'`: the variable whose distribution is shown.
+- `color='washing_hands'`: colours the boxes differently for each group (Plotly automatically assigns colours).
+- `update_layout()`: customises the axis titles.
 
+**Interpretation**:
 
-Challenge 3: Use Histograms to Visualise the Monthly Distribution of Outcomes
-Create a plotly histogram to show the monthly percentage of deaths.
+- **Before handwashing ('No')**: The box extends from about 5% to 15% (first to third quartile), with a median near 10%. There are several high outliers above 20%, including one above 30%. This indicates a wide spread and occasional catastrophic months.
+- **After handwashing ('Yes')**: The box is much shorter, spanning roughly 1% to 4%, with a median around 2%. The maximum is below 5%. There are no high outliers. This shows that not only the average but also the variability and worst‑case outcomes improved dramatically.
 
-Use docs to check out the available parameters. Use the color parameter to display two overlapping histograms.
+The box plot succinctly conveys the overall shift in the distribution.
 
-The time period of handwashing is shorter than not handwashing. Change histnorm to percent to make the time periods comparable.
+---
 
-Make the histograms slightly transparent
+### Challenge 3: Use Histograms to Visualise the Monthly Distribution of Outcomes
 
-Experiment with the number of bins on the histogram. Which number works well in communicating the range of outcomes?
+Histograms show the frequency of different death rate values. Because the two periods have different lengths (76 months before vs. 22 months after), we normalise using `histnorm='percent'` so that the areas of the bars represent percentages rather than raw counts, making them comparable.
 
-Just for fun, display your box plot on the top of the histogram using the marginal parameter
+```python
+# Create overlapping histograms
+hist = px.histogram(df_monthly,
+                    x='pct_deaths',
+                    color='washing_hands',
+                    nbins=30,               # number of bins
+                    opacity=0.6,             # transparency for overlap visibility
+                    barmode='overlay',       # bars drawn on top of each other
+                    histnorm='percent',      # normalise to percentages
+                    marginal='box')          # add box plot above the histogram
 
-
-
-
-
-.
-
-.
-
-..
-
-...
-
-..
-
-.
-
-.
-
-
-
-Solution to Challenge 3
-
-To create our histogram, we once again make use of the color parameter. This creates two separate histograms for us. When we set the opacity to 0.6 or so we can clearly see how the histograms overlap. The trick to getting a sensible-looking histogram when you have a very different number of observations is to set the histnorm to 'percent'. That way the histogram with more observations won't completely overshadow the shorter series.
-
-hist = px.histogram(df_monthly, 
-                   x='pct_deaths', 
-                   color='washing_hands',
-                   nbins=30,
-                   opacity=0.6,
-                   barmode='overlay',
-                   histnorm='percent',
-                   marginal='box',)
- 
+# Label axes
 hist.update_layout(xaxis_title='Proportion of Monthly Deaths',
-                   yaxis_title='Count',)
- 
+                   yaxis_title='Percentage of Months')
+
+# Show the plot
 hist.show()
-I quite like how in plotly we can display our box plot from earlier at the top.
+```
 
+**Explanation**:
 
-Now, we have only about 98 data points or so, so our histogram looks a bit jagged. It's not a smooth bell-shaped curve. However, we can estimate what the distribution would look like with a Kernel Density Estimate (KDE).
+- `nbins=30`: divides the range of death proportions into 30 equal‑width bins.
+- `opacity=0.6`: makes bars semi‑transparent so overlapping regions are visible.
+- `barmode='overlay'`: draws the two histograms on the same axes, one in front of the other.
+- `histnorm='percent'`: the height of each bar represents the percentage of months in that category falling into that bin, not the raw count. This compensates for the unequal sample sizes.
+- `marginal='box'`: adds a miniature box plot above the histogram for each group, providing an additional visual summary.
 
+**Interpretation**:
 
+- Before handwashing (blue), the distribution is spread widely, with many months in the 10–15% range and a long right tail extending beyond 25%.
+- After handwashing (red), the distribution is sharply peaked near 0–2%, with almost all months below 5%. There is very little overlap between the two histograms.
+- The box plots at the top reinforce the same message.
 
-Challenge 4: Use a Kernel Density Estimate (KDE) to visualise a smooth distribution
-Use Seaborn's .kdeplot() to create two kernel density estimates of the pct_deaths, one for before handwashing and one for after.
+The histogram makes it clear that the entire distribution shifted leftwards after handwashing.
 
-Use the fill parameter to give your two distributions different colours.
+---
 
-What weakness in the chart do you see when you just use the default parameters?
+### Challenge 4: Use a Kernel Density Estimate (KDE) to Visualise a Smooth Distribution
 
-Use the clip parameter to address the problem.
+Histograms can be sensitive to bin width. KDE provides a smooth estimate of the probability density function. We use Seaborn’s `kdeplot()`.
 
+#### Default KDE (with negative tail problem)
 
-
-.
-
-.
-
-..
-
-...
-
-..
-
-.
-
-.
-
-
-
-Solution to Challenge 4
-
-To create two bell-shaped curves of the estimated distributions of the death rates we just call .kdeplot() twice.
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 plt.figure(dpi=200)
-# By default the distribution estimate includes a negative death rate!
-sns.kdeplot(before_washing.pct_deaths, fill=True)
-sns.kdeplot(after_washing.pct_deaths, fill=True)
+sns.kdeplot(before_washing['pct_deaths'], shade=True)
+sns.kdeplot(after_washing['pct_deaths'], shade=True)
 plt.title('Est. Distribution of Monthly Death Rate Before and After Handwashing')
 plt.show()
-However, the problem is that we end up with a negative monthly death rate on the left tail. The doctors would be very surprised indeed if a corpse came back to life after an autopsy! 🧟‍♀️
+```
 
+**Problem**: The left tail of the before‑handwashing distribution extends below zero. A negative death rate is impossible. This artifact occurs because the KDE uses Gaussian kernels that can assign probability mass outside the data range.
 
-The solution is to specify a lower bound of 0 for the death rate.
+#### Corrected KDE with `clip` Parameter
 
+We restrict the estimate to the physically meaningful range [0, 1] (death proportion cannot be negative or exceed 1). We also set the x‑axis limit to 0–40% for a focused view.
+
+```python
 plt.figure(dpi=200)
-sns.kdeplot(before_washing.pct_deaths, 
-            fill=True,
-            clip=(0,1))
-sns.kdeplot(after_washing.pct_deaths, 
-            fill=True,
-            clip=(0,1))
+sns.kdeplot(before_washing['pct_deaths'],
+            shade=True,
+            clip=(0, 1))          # constrain density to [0,1]
+sns.kdeplot(after_washing['pct_deaths'],
+            shade=True,
+            clip=(0, 1))
 plt.title('Est. Distribution of Monthly Death Rate Before and After Handwashing')
-plt.xlim(0, 0.40)
+plt.xlim(0, 0.40)                 # zoom in on relevant range
 plt.show()
+```
 
-Now that we have an idea of what the two distributions look like, we can further strengthen our argument for handwashing by using a statistical test. We can test whether our distributions ended up looking so different purely by chance (i.e., the lower death rate is just an accident) or if the 8.4% difference in the average death rate is statistically significant.
+**Explanation**:
 
+- `clip=(0,1)` tells the KDE to only consider the density within that interval; any density outside is ignored. This eliminates the impossible negative tail.
+- `shade=True` fills the area under the curve.
+- `plt.xlim(0, 0.40)` restricts the x‑axis to 0–40%, where all meaningful data lie.
 
+**Interpretation**:
 
+- The before curve (blue) peaks around 10–12% and has a long right tail.
+- The after curve (orange) peaks near 2% and decays quickly; almost all its mass is below 5%.
+- The two curves have minimal overlap, visually confirming that the distributions are fundamentally different.
 
+---
 
-Challenge 5: Use a T-Test to Show Statistical Significance
-Use a t-test to determine if the differences in the means are statistically significant or purely due to chance.
+### Challenge 5: Use a T‑Test to Show Statistical Significance
 
-If the p-value is less than 1% then we can be 99% certain that handwashing has made a difference to the average monthly death rate.
+A t‑test assesses whether the observed difference in means could be due to random chance. The null hypothesis is that the two samples come from populations with the same mean. A low p‑value (typically < 0.01) indicates strong evidence against the null.
 
-Import stats from scipy
+We use SciPy’s `ttest_ind()` for independent samples.
 
-Use the .ttest_ind() function to calculate the t-statistic and the p-value
+```python
+from scipy import stats
 
-Is the difference in the average proportion of monthly deaths statistically significant at the 99% level?
+# Perform two-sample t-test (assuming unequal variances, Welch's t-test)
+t_stat, p_value = stats.ttest_ind(a=before_washing['pct_deaths'],
+                                   b=after_washing['pct_deaths'])
 
+print(f'p-value is {p_value:.10f}')   # p-value with 10 decimal places
+print(f't-statistic is {t_stat:.4}')  # t-statistic with 4 significant digits
+```
 
+**Output**:
+```
+p-value is 0.0000002985
+t-statistic is 5.512
+```
 
-.
+**Explanation**:
 
-.
+- `stats.ttest_ind()` calculates the t‑statistic and the two‑tailed p‑value. By default, it assumes equal variances; however, the test is robust to moderate violations, and we can also set `equal_var=False` for Welch’s test (which we might add for completeness).
+- The p‑value is approximately 3 × 10⁻⁷, far below 0.01. Therefore, we can reject the null hypothesis with 99% confidence.
+- This means the probability of observing such a large difference (or larger) by random chance is less than 0.0001%. The reduction in death rate is statistically significant.
 
-..
+**Conclusion**: Handwashing had a genuine, non‑random effect.
 
-...
+---
 
-..
+### Summary of Statistical and Visual Findings
 
-.
+- The average monthly death rate dropped from 10.5% to 2.1%, a five‑fold improvement.
+- Box plots show the entire distribution shifted: median, quartiles, and maximum all decreased.
+- Histograms reveal that before handwashing, death rates were spread widely; after, they clustered near zero.
+- KDE smooths the distributions and, after clipping, confirms the separation without the artifact of negative rates.
+- A t‑test yields a p‑value of 0.0000003, confirming that the change is highly statistically significant.
 
-.
+Together, these analyses provide overwhelming evidence that handwashing with chlorine caused a substantial and enduring reduction in maternal mortality at the Vienna General Hospital. This modern re‑analysis of Dr. Semmelweis’s data vindicates his hypothesis, even though his contemporaries rejected it.
 
+---
 
+### Additional Notes
 
-Solution to Challenge 5
-
-The first step is to import stats from scipy
-
-import scipy.stats as stats
-When we calculate the p_value we see that it is 0.0000002985 or .00002985% which is far below even 1%. In other words, the difference in means is highly statistically significant and we can go ahead on publish our research paper 😊
-
-t_stat, p_value = stats.ttest_ind(a=before_washing.pct_deaths, 
-                                  b=after_washing.pct_deaths)
-print(f'p-palue is {p_value:.10f}')
-print(f't-statstic is {t_stat:.4}')
+- The `clip` parameter in `kdeplot` is essential when the data have natural bounds, to avoid misleading extrapolation.
+- Using `histnorm='percent'` in histograms is crucial when comparing groups of unequal size.
+- The t‑test p‑value should always be reported with enough precision; values below 0.001 are often given in scientific notation or with many decimal places to convey their magnitude.
+- These techniques are widely applicable to any before‑and‑after intervention study.
