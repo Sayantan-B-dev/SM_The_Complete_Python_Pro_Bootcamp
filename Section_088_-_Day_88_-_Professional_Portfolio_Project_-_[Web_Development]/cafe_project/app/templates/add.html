@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8 animate-slide-right">
+    <h1 class="text-3xl font-bold text-gray-800 mb-2 animate-fade-in">Add a New Cafe</h1>
+    <p class="text-gray-600 mb-6 animate-fade-in" style="animation-delay: 0.1s;">Share your favourite work-friendly spot in London</p>
+
+    <form method="POST" action="{{ url_for('main.add_cafe') }}" class="space-y-5">
+        {{ form.csrf_token }}
+
+        <div class="group">
+            {{ form.name.label(class="block text-sm font-medium text-gray-700 mb-1 transition-colors group-focus-within:text-amber-600") }}
+            {{ form.name(class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300 group-focus-within:shadow-lg") }}
+            {% for error in form.name.errors %}<p class="text-red-500 text-sm mt-1 animate-pulse">{{ error }}</p>{% endfor %}
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="group">
+                {{ form.map_url.label(class="block text-sm font-medium text-gray-700 mb-1 transition-colors group-focus-within:text-amber-600") }}
+                {{ form.map_url(class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 transition-all duration-300 group-focus-within:shadow-lg") }}
+            </div>
+            <div class="group">
+                {{ form.img_url.label(class="block text-sm font-medium text-gray-700 mb-1 transition-colors group-focus-within:text-amber-600") }}
+                {{ form.img_url(class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 transition-all duration-300 group-focus-within:shadow-lg") }}
+            </div>
+        </div>
+
+        <div class="group">
+            {{ form.location.label(class="block text-sm font-medium text-gray-700 mb-1 transition-colors group-focus-within:text-amber-600") }}
+            {{ form.location(class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 transition-all duration-300 group-focus-within:shadow-lg") }}
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-amber-50/70 p-4 rounded-lg backdrop-blur-sm">
+            <label class="flex items-center space-x-2 text-sm transition-all duration-300 hover:scale-105 cursor-pointer">
+                {{ form.has_sockets(class="rounded text-amber-600 focus:ring-amber-500 transition-transform duration-300 hover:scale-110") }}
+                <span>🔌 Sockets</span>
+            </label>
+            <label class="flex items-center space-x-2 text-sm transition-all duration-300 hover:scale-105 cursor-pointer">
+                {{ form.has_toilet(class="rounded text-amber-600 focus:ring-amber-500 transition-transform duration-300 hover:scale-110") }}
+                <span>🚻 Toilet</span>
+            </label>
+            <label class="flex items-center space-x-2 text-sm transition-all duration-300 hover:scale-105 cursor-pointer">
+                {{ form.has_wifi(class="rounded text-amber-600 focus:ring-amber-500 transition-transform duration-300 hover:scale-110") }}
+                <span>📶 WiFi</span>
+            </label>
+            <label class="flex items-center space-x-2 text-sm transition-all duration-300 hover:scale-105 cursor-pointer">
+                {{ form.can_take_calls(class="rounded text-amber-600 focus:ring-amber-500 transition-transform duration-300 hover:scale-110") }}
+                <span>📞 Calls OK</span>
+            </label>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="group">
+                {{ form.seats.label(class="block text-sm font-medium text-gray-700 mb-1 transition-colors group-focus-within:text-amber-600") }}
+                {{ form.seats(class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 transition-all duration-300 group-focus-within:shadow-lg") }}
+            </div>
+            <div class="group">
+                {{ form.coffee_price.label(class="block text-sm font-medium text-gray-700 mb-1 transition-colors group-focus-within:text-amber-600") }}
+                {{ form.coffee_price(class="w-full px-4 py-2 border border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 transition-all duration-300 group-focus-within:shadow-lg", step="0.01") }}
+                {% for error in form.coffee_price.errors %}<p class="text-red-500 text-sm mt-1 animate-pulse">{{ error }}</p>{% endfor %}
+            </div>
+        </div>
+
+        <div class="flex justify-end pt-4">
+            <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-medium px-6 py-3 rounded-lg shadow-md transition-all duration-300 flex items-center gap-2 transform hover:scale-105 hover:shadow-xl active:scale-95 pulse-on-hover">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:rotate-90" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+                </svg>
+                Add Cafe
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
