@@ -282,12 +282,12 @@ This ensures that all game logic runs on the server, preventing cheating and kee
 
 ## 8. Diagrams
 
-### 8.1 System Architecture Diagram (Component View)
+- **Corrected System Architecture Diagram**
 
 ```mermaid
 graph TD
     subgraph Client [Browser]
-        A[HTML Templates (base.html / index.html)]
+        A["HTML Templates (base.html / index.html)"]
         B[Canvas Rendering Layer]
         C[game.js - Socket.IO Client]
     end
@@ -299,20 +299,18 @@ graph TD
         G[Background Game Loop per Session]
     end
 
-    C -- WebSocket (input/reset) --> E
-    E -- handle_input() --> F
-    E -- reset() --> F
-    G -- update() tick (~60 FPS) --> F
-    F -- to_dict() --> G
-    G -- emit('game_state') --> C
-    C -- update local state --> B
-    B -- render frame --> A
-    A -- user interaction --> C
+    C -- "WebSocket (input/reset)" --> E
+    E -- "handle_input()" --> F
+    E -- "reset()" --> F
+    G -- "update() tick (~60 FPS)" --> F
+    F -- "to_dict()" --> G
+    G -- "emit('game_state')" --> C
+    C -- "update local state" --> B
+    B -- "render frame" --> A
+    A -- "user interaction" --> C
 ```
 
-### 8.2 Data Flow Sequence Diagram
-
-This diagram illustrates the flow of data during a typical gameplay interaction (e.g., player presses left arrow).
+- **Corrected Data Flow Sequence Diagram**
 
 ```mermaid
 sequenceDiagram
@@ -320,7 +318,7 @@ sequenceDiagram
     participant Browser as Client (game.js)
     participant Server as Flask-SocketIO (routes.py)
     participant GameLogic as SpaceInvadersGame (game_logic.py)
-    participant Loop as Background Game Loop
+    participant GameLoop as Background Game Loop
 
     User->>Browser: Press left arrow key
     Browser->>Server: emit("input", { left: true })
@@ -328,16 +326,15 @@ sequenceDiagram
 
     Note right of GameLogic: Sets left_pressed flag
 
-    Loop->>GameLogic: update()
+    GameLoop->>GameLogic: update()
     GameLogic->>GameLogic: Apply movement using left_pressed
-    GameLogic-->>Loop: Updated state via to_dict()
+    GameLogic-->>GameLoop: Updated state via to_dict()
 
-    Loop->>Server: emit("game_state", state, room=sid)
+    GameLoop->>Server: emit("game_state", state, room=sid)
     Server->>Browser: game_state event
     Browser->>Browser: Replace gameState and draw()
     Browser->>User: Visual feedback rendered on canvas
 ```
-
 ---
 
 ## 9. Setup and Running Instructions
