@@ -1,5 +1,7 @@
 # Art Search Flask Application Documentation
 
+![](./art_search/sample.png)
+
 ## Table of Contents
 
 - [Art Search Flask Application Documentation](#art-search-flask-application-documentation)
