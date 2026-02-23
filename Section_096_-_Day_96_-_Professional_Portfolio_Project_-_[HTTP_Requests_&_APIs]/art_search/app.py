@@ -10,7 +10,7 @@ app = Flask(__name__)
 def exclude_dict(d, *keys):
     return {k: v for k, v in d.items() if k not in keys}
 
-API_KEY = os.environ.get('ARTSEARCH_API_KEY', 'b84d8eee51814217a150f851ceec88a0')
+API_KEY = os.environ.get('ARTSEARCH_API_KEY')
 BASE_URL = 'https://api.artsearch.io/artworks'
 
 TYPES = [

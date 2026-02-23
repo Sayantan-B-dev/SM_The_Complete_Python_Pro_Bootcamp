@@ -65,7 +65,7 @@
 
 ## 1. Project Overview
 
-The **Art Search** application is a Flask-based web interface that allows users to explore artworks from the [artsearch.io](https://artsearch.io/) API. Users can search for artworks by keywords, filter by type, material, technique, origin, date ranges, and aspect ratio, and view detailed information about individual pieces. The interface features a modern glassmorphism design, AJAX-powered search and pagination, and comprehensive error handling.
+The **Art Search** application is a Flask-based web interface that allows users to explore artworks from the [artsearch.io](https://artsearch.io/) API. Users can search for artworks by keywords, filter by type, material, technique, origin, date ranges, and aspect ratio, and view detailed information about individual pieces. The interface features a modern glassmorphism design, AJAX-powered search and pagination, and comprehensive error handling. This api has 50 req per daily on free tier.
 
 The application is built with:
 - **Flask** (Python web framework)
