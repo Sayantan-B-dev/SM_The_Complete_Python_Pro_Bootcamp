@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Search</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+    <!-- NProgress for loading bar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --accent: #ffffff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            background-image:
+                radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1.5px solid var(--glass-border);
+        }
+
+        .thin-border {
+            border: 1.5px solid var(--glass-border);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loading spinner */
+        .spinner {
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-left-color: #ffffff;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #nprogress .bar {
+            background: #ffffff !important;
+            height: 3px !important;
+        }
+
+        #nprogress .spinner-icon {
+            border-top-color: #ffffff !important;
+            border-left-color: #ffffff !important;
+        }
+
+        select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-position: right 1rem center;
+            background-repeat: no-repeat;
+            background-size: 1em;
+        }
+
+        .artwork-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .artwork-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="py-10">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+            <a href="{{ url_for('index') }}" class="flex items-center space-x-4 group">
+                <div
+                    class="w-12 h-12 glass-card rounded-xl flex items-center justify-center group-hover:bg-white/10 transition-colors border-2 border-white/20">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4L12 20M4 12H20" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2" stroke-dasharray="2 4" />
+                    </svg>
+                </div>
+                <span class="text-2xl font-extralight tracking-[0.2em] uppercase">Art Search</span>
+            </a>
+            <div
+                class="hidden md:flex items-center space-x-10 text-[10px] uppercase tracking-[0.3em] font-bold text-white/40">
+                <a href="https://artsearch.io/pricing/" target="_blank"
+                    class="hover:text-white transition-colors">Pricing</a>
+                <a href="https://artsearch.io/docs/" target="_blank"
+                    class="hover:text-white transition-colors">Documentation</a>
+                <a href="https://artsearch.io/console/#Dashboard" target="_blank"
+                    class="px-5 py-2 glass-card rounded-full border-2 border-white/20 hover:bg-white/5 transition-all text-white/70">Console</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="max-w-7xl mx-auto px-8 pb-24">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="max-w-7xl mx-auto px-8 py-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-[10px] uppercase tracking-widest text-white/20 font-bold">© 2026 Art Search Global • Curator
+            Edition</p>
+        <div class="flex items-center gap-8 text-[10px] uppercase tracking-widest text-white/20 font-bold">
+            <span class="flex items-center"><span
+                    class="w-2 h-2 bg-green-500 rounded-full mr-2 shadow-[0_0_8px_rgba(34,197,94,0.5)]"></span> API
+                Operational</span>
+            <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- NProgress AJAX handling -->
+    <script>
+        // Show NProgress on any AJAX request (fetch)
+        (function () {
+            let pendingRequests = 0;
+            const originalFetch = window.fetch;
+            window.fetch = function () {
+                if (pendingRequests === 0) NProgress.start();
+                pendingRequests++;
+                return originalFetch.apply(this, arguments).finally(() => {
+                    pendingRequests--;
+                    if (pendingRequests === 0) NProgress.done();
+                });
+            };
+        })();
+
+        // Handle form submissions and pagination clicks via AJAX (see index.html)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+    <!-- Two-column grid: form (col-span-1) and results (col-span-2) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Search Form Column -->
+        <div class="lg:col-span-4 transition-all duration-500 ease-in-out" id="form-column">
+            <div class="sticky top-8">
+                <h1 class="text-5xl font-extralight tracking-tight mb-3">Discover Art</h1>
+                <p class="text-white/50 mb-10 text-lg leading-relaxed font-light">Explore a curated database of
+                    masterpieces by style, material, and era.</p>
+
+                <form id="search-form" class="glass-card rounded-3xl p-8 border-2 border-white/20 shadow-2xl">
+                    <div class="space-y-6">
+                        <div>
+                            <label
+                                class="block text-xs uppercase tracking-widest text-white/40 font-semibold mb-2">Query</label>
+                            <input type="text" name="query" placeholder="e.g., Starry Night"
+                                class="w-full bg-white/5 border-2 border-white/20 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all placeholder:text-white/20">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label
+                                    class="block text-xs uppercase tracking-widest text-white/40 font-semibold mb-2">Limit</label>
+                                <input type="number" name="number" min="1" max="50" value="10"
+                                    class="w-full bg-white/5 border-2 border-white/20 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs uppercase tracking-widest text-white/40 font-semibold mb-2">Type</label>
+                                <select name="type"
+                                    class="w-full bg-white/5 border-2 border-white/20 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all appearance-none cursor-pointer">
+                                    <option value="" class="bg-[#0a0a0a]">Any Type</option>
+                                    {% for t in types %}
+                                    <option value="{{ t }}" class="bg-[#0a0a0a]">{{ t|title }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-xs uppercase tracking-widest text-white/40 font-semibold mb-2">Material</label>
+                            <select name="material"
+                                class="w-full bg-white/5 border-2 border-white/20 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all appearance-none cursor-pointer">
+                                <option value="" class="bg-[#0a0a0a]">Any Material</option>
+                                {% for m in materials %}
+                                <option value="{{ m }}" class="bg-[#0a0a0a]">{{ m|title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="flex gap-4 pt-4"  title="Lucky Search">
+                            <button type="submit"
+                                class="flex-1 bg-white text-black font-semibold py-4 rounded-xl hover:bg-white/90 transition-all active:scale-95 shadow-xl">
+                                Search Gallery
+                            </button>
+                            <a href="{{ url_for('random_artwork') }}"
+                                class="px-6 py-4 glass-card border-2 border-white/20 rounded-xl hover:bg-white/10 hover:border-white/40 transition-all flex items-center justify-center group"
+                               >
+                                <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Results Column -->
+        <div class="lg:col-span-8 min-h-[600px] transition-all duration-700 ease-in-out" id="results-column">
+            <div id="results-container" class="h-full">
+                <!-- Initial State / Placeholder -->
+                <div id="initial-state"
+                    class="flex flex-col items-center justify-center h-full text-center p-12 glass-card rounded-3xl border-2 border-white/20 border-dashed">
+                    <div class="w-24 h-24 mb-8 bg-white/5 rounded-full flex items-center justify-center animate-pulse">
+                        <svg class="w-12 h-12 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-light text-white/60 mb-4">Start Your Collection</h3>
+                    <p class="text-white/30 max-w-sm mx-auto font-light">Enter a query on the left to explore classical
+                        and contemporary artworks from around the globe.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('search-form');
+    const resultsContainer = document.getElementById('results-container');
+
+    async function loadResults(url) {
+        // Show loading state
+        resultsContainer.innerHTML = `
+            <div class="flex flex-col items-center justify-center h-full py-24">
+                <div class="spinner mb-6"></div>
+                <p class="text-white/40 animate-pulse font-light tracking-widest text-sm uppercase">Curating Gallery...</p>
+            </div>
+        `;
+
+        try {
+            const response = await fetch(url, {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            });
+
+            if (!response.ok) {
+                // Try to get error from body if it's our JSON error
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.indexOf("application/json") !== -1) {
+                    const data = await response.json();
+                    throw new Error(data.error || 'Connection failed');
+                }
+                throw new Error('Failed to fetch artworks. Please try again.');
+            }
+
+            const html = await response.text();
+            resultsContainer.innerHTML = html;
+
+            // Fade-in effect for new cards
+            requestAnimationFrame(() => {
+                document.querySelectorAll('#results-container .grid > div, #results-container .artwork-card').forEach((el, i) => {
+                    el.style.animationDelay = `${i * 50}ms`;
+                    el.classList.add('fade-in');
+                });
+            });
+
+            window.history.pushState({}, '', url);
+        } catch (error) {
+            resultsContainer.innerHTML = `
+                <div class="flex flex-col items-center justify-center h-full p-12 text-center glass-card rounded-3xl border-2 border-red-500/30">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-red-500/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-white/80 mb-2">Search Interrupted</h3>
+                    <p class="text-white/40 max-w-sm mx-auto font-light mb-6">${error.message}</p>
+                    <button onclick="window.location.reload()" class="px-6 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all text-sm">
+                        Try Again
+                    </button>
+                </div>
+            `;
+        }
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const params = new URLSearchParams();
+        for (let [key, value] of formData.entries()) {
+            if (value) params.append(key, value);
+        }
+        const url = `{{ url_for('search') }}?${params.toString()}`;
+        loadResults(url);
+    });
+
+    // Handle pagination clicks (delegation)
+    resultsContainer.addEventListener('click', (e) => {
+        const link = e.target.closest('.pagination-link');
+        if (!link) return;
+        e.preventDefault();
+        const url = link.getAttribute('href');
+        if (url) loadResults(url);
+    });
+
+    // Handle browser back/forward
+    window.addEventListener('popstate', () => {
+        if (window.location.search.includes('query=')) {
+            loadResults(window.location.href);
+        } else {
+            window.location.reload(); // Reset to initial state
+        }
+    });
+
+    // If page loads with a query (e.g., after refresh), show results
+    window.addEventListener('load', () => {
+        if (window.location.search.includes('query=')) {
+            loadResults(window.location.href);
+        }
+    });
+</script>
+{% endblock %}

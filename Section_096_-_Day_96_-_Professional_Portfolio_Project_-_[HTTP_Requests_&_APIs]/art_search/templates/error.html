@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-xl mx-auto py-24 text-center">
+    <div class="glass-card rounded-[2.5rem] p-12 border-2 border-red-500/30 relative overflow-hidden">
+        <!-- Glow effect -->
+        <div class="absolute -top-24 -left-24 w-48 h-48 bg-red-500/10 rounded-full blur-3xl"></div>
+
+        <div
+            class="w-20 h-20 bg-red-500/15 rounded-full flex items-center justify-center mx-auto mb-8 animate-pulse border-2 border-red-500/30">
+            <svg class="w-10 h-10 text-red-500/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                </path>
+            </svg>
+        </div>
+
+        <h2 class="text-4xl font-light tracking-tight mb-4">Gallery Interrupted</h2>
+        <p class="text-white/40 text-lg font-light mb-10 max-w-sm mx-auto leading-relaxed">
+            {{ error }}
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ url_for('index') }}"
+                class="px-8 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-white/90 transition-all active:scale-95 shadow-xl">
+                Return to Gallery
+            </a>
+            <button onclick="window.location.reload()"
+                class="px-8 py-4 glass-card rounded-2xl hover:bg-white/5 border border-white/10 transition-all font-light">
+                Retry Connection
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
