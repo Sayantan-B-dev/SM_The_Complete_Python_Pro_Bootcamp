@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Space Invaders - Play{% endblock %}
+
+{% block head %}
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <style>
+        canvas {
+            border: 2px solid #4ade80;
+            background-color: #111;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+        }
+        #game-info {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 1rem auto;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            color: #4ade80;
+            text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+        }
+        kbd {
+            background-color: #1f2937;
+            border: 1px solid #4b5563;
+            border-radius: 0.25rem;
+            padding: 0.2rem 0.5rem;
+            font-family: monospace;
+            color: #fbbf24;
+        }
+        .tagline {
+            font-family: 'Courier New', monospace;
+            color: #9ca3af;
+            letter-spacing: 2px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-4xl font-bold text-center text-green-400 mb-2">SPACE INVADERS</h1>
+    <p class="text-center tagline mb-6">Hold the line against a relentless alien invasion in this arcade classic!</p>
+    
+    <div id="game-info">
+        <span>SCORE: <span id="score" class="text-yellow-400">0</span></span>
+        <span>LEVEL: <span id="level" class="text-yellow-400">1</span></span>
+        <span>LIVES: <span id="lives" class="text-yellow-400">3</span></span>
+    </div>
+
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <div class="text-center mt-8 text-gray-400 space-y-2">
+        <p class="text-green-300">⬆️ Move with <kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd> | 🔫 Fire with <kbd>Space</kbd> or click | 🔄 Restart with <kbd>R</kbd></p>
+        <p class="text-sm">Destroy all aliens to advance. Don't let them reach you!</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+{% endblock %}
