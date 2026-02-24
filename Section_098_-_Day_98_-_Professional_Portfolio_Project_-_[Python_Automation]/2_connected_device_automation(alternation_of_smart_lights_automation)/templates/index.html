@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi Device Monitor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📡 Wi-Fi Device Monitor</h1>
+            <div class="stats" id="stats">
+                <div class="stat-card">
+                    <span class="stat-label">Total Devices</span>
+                    <span class="stat-value" id="total-devices">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Connected</span>
+                    <span class="stat-value" id="connected-devices">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Disconnected</span>
+                    <span class="stat-value" id="disconnected-devices">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Last Scan</span>
+                    <span class="stat-value" id="last-scan">Never</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Devices</button>
+            <button class="filter-btn" data-filter="connected">Connected Only</button>
+            <button class="filter-btn" data-filter="disconnected">Disconnected Only</button>
+        </div>
+
+        <div class="device-grid" id="device-grid">
+            <!-- Devices will be populated here -->
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

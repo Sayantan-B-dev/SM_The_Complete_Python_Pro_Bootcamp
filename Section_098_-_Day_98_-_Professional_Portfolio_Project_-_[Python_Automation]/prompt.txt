@@ -1,0 +1,18 @@
+ok go for <number> project...
+
+
+<request>
+
+
+...
+give all files content ignore the advance version for now...give me that as a new file as next_plan.md
+...
+
+requerement is:
+
+<requirement>
+
+
+plan is 
+
+<plan>
