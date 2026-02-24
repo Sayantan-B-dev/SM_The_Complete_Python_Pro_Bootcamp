@@ -1,0 +1,1 @@
+selenium\nwebdriver-manager\nschedule\npython-dotenv\ndatetime\nrequests

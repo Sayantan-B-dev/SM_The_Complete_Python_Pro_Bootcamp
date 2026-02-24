@@ -1,0 +1,1 @@
+selenium\nwebdriver-manager\nbeautifulsoup4\ndatetime\nschedule\npython-dotenv

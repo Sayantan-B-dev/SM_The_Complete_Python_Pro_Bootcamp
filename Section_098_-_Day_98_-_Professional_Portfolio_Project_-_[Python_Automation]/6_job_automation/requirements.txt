@@ -1,0 +1,1 @@
+selenium\npandas\nopenpyxl\nrequests\nbeautifulsoup4\npyautogui\nschedule\npython-dotenv\npyyaml

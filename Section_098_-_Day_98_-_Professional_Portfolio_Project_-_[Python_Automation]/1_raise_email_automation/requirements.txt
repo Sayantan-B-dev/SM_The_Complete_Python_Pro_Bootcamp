@@ -1,0 +1,1 @@
+smtplib\nemail\nschedule\npython-dotenv\napscheduler
