@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Art Ecom{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto glass-card p-8 fade-in">
+    <h1 class="text-4xl font-light mb-6">Register</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="space-y-4">
+            <div>
+                {{ form.email.label(class="metadata block mb-2") }}
+                {{ form.email(class="w-full") }}
+            </div>
+            <div>
+                {{ form.password.label(class="metadata block mb-2") }}
+                {{ form.password(class="w-full") }}
+            </div>
+            <div>
+                {{ form.confirm_password.label(class="metadata block mb-2") }}
+                {{ form.confirm_password(class="w-full") }}
+            </div>
+            <div>
+                {{ form.submit(class="btn-primary") }}
+            </div>
+        </div>
+    </form>
+    <p class="mt-4 text-white/40">Already have an account? <a href="{{ url_for('auth.login') }}" class="link-hover">Login</a></p>
+</div>
+{% endblock %}

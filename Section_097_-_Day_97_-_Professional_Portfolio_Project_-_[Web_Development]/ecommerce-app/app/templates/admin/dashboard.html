@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - Art Ecom{% endblock %}
+
+{% block content %}
+<h1 class="text-5xl font-light mb-8">Admin Dashboard</h1>
+<div class="glass-card p-8 fade-in">
+    <h2 class="text-2xl mb-4">Products</h2>
+    <div class="space-y-2">
+        {% for product in products %}
+        <div class="flex justify-between items-center border-b border-white/10 py-2">
+            <span>{{ product.name }} - ${{ product.price }}</span>
+            <div class="flex gap-2">
+                <a href="{{ url_for('product.admin_edit', product_id=product.id) }}" class="text-sm link-hover">Edit</a>
+                <form action="{{ url_for('product.admin_delete', product_id=product.id) }}" method="post" class="inline" onsubmit="return confirm('Delete this product?');">
+                    <button type="submit" class="text-sm link-hover text-red-400">Delete</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

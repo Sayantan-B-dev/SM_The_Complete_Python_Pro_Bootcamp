@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Forbidden - Art Ecom{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto glass-card p-12 text-center fade-in" style="border-color: rgba(255,0,0,0.3);">
+    <h1 class="text-6xl font-light mb-4">403</h1>
+    <p class="text-2xl text-white/70">You don't have permission to access this page.</p>
+    <a href="{{ url_for('main.index') }}" class="btn-primary mt-8 inline-block">Go Home</a>
+</div>
+{% endblock %}

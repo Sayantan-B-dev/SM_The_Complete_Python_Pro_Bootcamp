@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Product - Art Ecom{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto glass-card p-8 fade-in">
+    <h1 class="text-4xl font-light mb-6">Edit Product: {{ product.name }}</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="space-y-4">
+            <div>
+                {{ form.name.label(class="metadata block mb-2") }}
+                {{ form.name(class="w-full") }}
+                {% if form.name.errors %}<p class="text-red-400 text-sm">{{ form.name.errors[0] }}</p>{% endif %}
+            </div>
+            <div>
+                {{ form.description.label(class="metadata block mb-2") }}
+                {{ form.description(class="w-full", rows=5) }}
+            </div>
+            <div>
+                {{ form.price.label(class="metadata block mb-2") }}
+                {{ form.price(class="w-full") }}
+            </div>
+            <div>
+                {{ form.stock.label(class="metadata block mb-2") }}
+                {{ form.stock(class="w-full") }}
+            </div>
+            <div>
+                {{ form.image_url.label(class="metadata block mb-2") }}
+                {{ form.image_url(class="w-full") }}
+            </div>
+            <div class="flex gap-4">
+                {{ form.submit(class="btn-primary", value="Update Product") }}
+                <a href="{{ url_for('product.detail', product_id=product.id) }}" class="btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

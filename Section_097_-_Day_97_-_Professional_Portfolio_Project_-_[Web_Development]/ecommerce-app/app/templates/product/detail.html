@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} - Art Ecom{% endblock %}
+
+{% block content %}
+<div class="glass-card p-8 max-w-4xl mx-auto fade-in">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <img src="{{ product.image_url }}" alt="{{ product.name }}" class="w-full rounded-3xl">
+        <div>
+            <h1 class="text-4xl font-light">{{ product.name }}</h1>
+            <p class="text-white/70 mt-4">{{ product.description }}</p>
+            <div class="mt-6">
+                <span class="text-3xl font-light">${{ product.price }}</span>
+                <span class="ml-4 text-white/40 metadata">Stock: {{ product.stock }}</span>
+            </div>
+            {% if product.stock > 0 %}
+            <form action="{{ url_for('cart.add_to_cart', product_id=product.id) }}" method="post" class="mt-8">
+                <div class="flex gap-4 items-center">
+                    <input type="number" name="quantity" value="1" min="1" max="{{ product.stock }}" class="w-24">
+                    <button type="submit" class="btn-primary">Add to Cart</button>
+                </div>
+            </form>
+            {% else %}
+            <p class="text-red-400 mt-8">Out of stock</p>
+            {% endif %}
+
+            {% if current_user.is_authenticated and current_user.is_admin %}
+            <div class="mt-8 flex gap-4">
+                <a href="{{ url_for('product.admin_edit', product_id=product.id) }}" class="btn-secondary">Edit</a>
+                <form action="{{ url_for('product.admin_delete', product_id=product.id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this product?');">
+                    <button type="submit" class="btn-secondary" style="border-color: rgba(255,0,0,0.3);">Delete</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
