@@ -1,6 +1,0 @@
-selenium
-webdriver-manager
-beautifulsoup4
-datetime
-schedule
-python-dotenv
