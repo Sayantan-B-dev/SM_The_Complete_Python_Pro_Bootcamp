@@ -1,1 +1,39 @@
-# Automate Your Job Tasks\n\n## Project Overview\nAutomates repetitive work tasks such as data entry, report generation, web form filling, and email processing.\n\n## How It Works\n- Identifies repetitive workflow patterns in your job\n- Uses Selenium for web automation\n- Processes data with pandas for spreadsheets\n- Generates reports and sends emails automatically\n- Handles file operations and data transformations\n\n## Files\n- automate_task.py: Main automation script\n- config.yaml: Configuration settings\n- input_data/: Directory for input files\n- output_reports/: Directory for generated reports\n- requirements.txt: Python dependencies\n- README.md: Setup and usage guide\n\n## Setup Instructions\n1. Install requirements: pip install -r requirements.txt\n2. Configure task parameters in config.yaml\n3. Place input data in input_data folder\n4. Run script manually or schedule with cron\n\n## Features\n- Web form automation with Selenium\n- Excel/CSV data processing\n- Report generation\n- Email automation\n- Error handling and logging\n- Configurable workflows\n\n## Challenges Addressed\n- Company IT policies\n- Anti-bot measures\n- Changing data formats\n- Secure credential storage
+# Automate Your Job Tasks
+
+## Project Overview
+Automates repetitive work tasks such as data entry, report generation, web form filling, and email processing.
+
+## How It Works
+- Identifies repetitive workflow patterns in your job
+- Uses Selenium for web automation
+- Processes data with pandas for spreadsheets
+- Generates reports and sends emails automatically
+- Handles file operations and data transformations
+
+## Files
+- automate_task.py: Main automation script
+- config.yaml: Configuration settings
+- input_data/: Directory for input files
+- output_reports/: Directory for generated reports
+- requirements.txt: Python dependencies
+- README.md: Setup and usage guide
+
+## Setup Instructions
+1. Install requirements: pip install -r requirements.txt
+2. Configure task parameters in config.yaml
+3. Place input data in input_data folder
+4. Run script manually or schedule with cron
+
+## Features
+- Web form automation with Selenium
+- Excel/CSV data processing
+- Report generation
+- Email automation
+- Error handling and logging
+- Configurable workflows
+
+## Challenges Addressed
+- Company IT policies
+- Anti-bot measures
+- Changing data formats
+- Secure credential storage

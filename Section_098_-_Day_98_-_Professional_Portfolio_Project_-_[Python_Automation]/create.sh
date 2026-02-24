@@ -1,4 +1,278 @@
-# This will create 7 project folder with their plan.md and requirement.txt filled rest you need to fill mannually
+mkdir -p raise_email_automation smart_lights_automation downloads_organizer gym_booking library_renewals job_automation home_chores_automation && cd raise_email_automation && echo "smtplib
+email
+schedule
+python-dotenv
+apscheduler" > requirements.txt && echo "# Automate an Email to Your Boss for a Raise Every 3 Months
 
+## Project Overview
+This automation script sends a polite reminder/request for a raise to your boss every three months automatically.
 
-mkdir -p 1_raise_email_automation 2_smart_lights_automation 3_downloads_organizer 4_gym_booking 5_library_renewals 6_job_automation 7_home_chores_automation && cd 1_raise_email_automation && echo "smtplib\nemail\nschedule\npython-dotenv\napscheduler" > requirements.txt && echo "# Automate an Email to Your Boss for a Raise Every 3 Months\n\n## Project Overview\nThis automation script sends a polite reminder/request for a raise to your boss every three months automatically.\n\n## How It Works\n- Reads email credentials and recipient address from environment variables\n- Loads an email template with placeholders for personalization\n- Connects to SMTP server (Gmail, Outlook, etc.) to send the email\n- Uses scheduling library to run every 90 days\n\n## Files\n- main.py: Main script that sends the email\n- config.py: Configuration settings and credentials\n- email_template.txt: Template file for email content\n- scheduler.log: Log file for tracking executions\n\n## Setup Instructions\n1. Install required packages: pip install -r requirements.txt\n2. Configure email credentials in config.py or .env file\n3. Customize email_template.txt with your message\n4. Run the script manually or set up as a cron job\n\n## Features\n- Secure credential handling\n- Email templating with personalization\n- Scheduled execution every 3 months\n- Logging for tracking\n\n## Challenges Addressed\n- Secure email authentication\n- SMTP server restrictions\n- Continuous execution management\n- Spam filter avoidance" > plan.md && touch main.py config.py email_template.txt scheduler.log && cd ../2_smart_lights_automation && echo "ping3\nscapy\nrequests\nschedule\npython-dotenv" > requirements.txt && echo "# Automate Your Lights When Phone Is Within Home Radius\n\n## Project Overview\nAutomatically turns on your smart lights when your phone connects to your home Wi-Fi network, and turns them off when you leave.\n\n## How It Works\n- Periodically pings your phone's IP address to check network presence\n- Detects when phone connects/disconnects from home network\n- Sends API calls to smart lights (Philips Hue, TP-Link Kasa, etc.)\n- Automates lighting based on your presence\n\n## Files\n- main.py: Main automation script\n- config.py: Network and light configuration\n- requirements.txt: Python dependencies\n- README.md: Setup instructions\n\n## Setup Instructions\n1. Install requirements: pip install -r requirements.txt\n2. Configure your phone's IP and light API in config.py\n3. Set static IP for phone via DHCP reservation\n4. Run main.py as a background service\n\n## Features\n- Presence detection via ping/ARP scanning\n- Multi-brand smart light support\n- Configurable check intervals\n- Manual override options\n\n## Challenges Addressed\n- Dynamic IP changes (solved via DHCP reservation)\n- Ping blocking on phones\n- Different smart light APIs\n- False triggers from brief disconnections" > plan.md && touch main.py config.py README.md && cd ../3_downloads_organizer && echo "# No external dependencies needed - uses os, shutil, pathlib" > requirements.txt && echo "# Automatically Organise Downloads Folder by File Type\n\n## Project Overview\nScans your Downloads folder and automatically organizes files into categorized subfolders based on file extensions.\n\n## How It Works\n- Defines mapping of file extensions to folder categories\n- Monitors Downloads folder for new files\n- Moves files to appropriate subfolders (Images, Documents, Archives, etc.)\n- Handles duplicate filenames and file conflicts\n\n## Files\n- organizer.py: Main organization script\n- config.json: File type mapping configuration\n- requirements.txt: Dependencies (standard library only)\n- README.md: Usage instructions\n\n## Setup Instructions\n1. No external packages needed (uses Python standard library)\n2. Customize config.json with your preferred categories\n3. Run organizer.py manually or set up scheduled execution\n4. Optionally install watchdog for real-time monitoring\n\n## Features\n- Customizable file type categories\n- Duplicate filename handling\n- Logging of all file movements\n- Safe file moving with error handling\n\n## Challenges Addressed\n- Files in use/permission errors\n- Unknown file extensions\n- Partially downloaded files\n- Cross-platform compatibility" > plan.md && touch organizer.py config.json README.md && cd ../4_gym_booking && echo "selenium\nwebdriver-manager\nschedule\npython-dotenv\ndatetime\nrequests" > requirements.txt && echo "# Automate Gym Class Bookings\n\n## Project Overview\nAutomatically logs into your gym's booking system and reserves spots in your preferred classes when they become available.\n\n## How It Works\n- Uses Selenium to automate web browser interactions\n- Logs into gym website with your credentials\n- Navigates to class schedule and finds preferred classes\n- Automatically clicks book button at the right time\n- Handles confirmation dialogs and errors\n\n## Files\n- booking.py: Main booking automation script\n- credentials.py: Login credentials (gitignored)\n- config.py: Class preferences and timing\n- requirements.txt: Python dependencies\n- logs/: Directory for execution logs\n\n## Setup Instructions\n1. Install requirements: pip install -r requirements.txt\n2. Install Chrome/Firefox and WebDriver\n3. Configure gym URL, credentials, and class preferences\n4. Schedule script to run at class release time\n\n## Features\n- Automatic login and navigation\n- Precise timing for class release\n- Multiple class preferences\n- Error handling and retry logic\n- Booking confirmation logging\n\n## Challenges Addressed\n- Dynamic website structure\n- CAPTCHA and 2FA handling\n- Precise timing requirements\n- AJAX-loaded content" > plan.md && mkdir logs && touch booking.py credentials.py config.py && cd ../5_library_renewals && echo "selenium\nwebdriver-manager\nbeautifulsoup4\ndatetime\nschedule\npython-dotenv" > requirements.txt && echo "# Automate Library Book Renewals\n\n## Project Overview\nAutomatically logs into your library account, checks for books due soon, and renews them if possible.\n\n## How It Works\n- Logs into library website using Selenium\n- Navigates to loans/checked out page\n- Scrapes book titles and due dates\n- Automatically renews books within threshold\n- Handles renewal limits and errors\n\n## Files\n- renew.py: Main renewal script\n- credentials.py: Library login credentials\n- config.py: Due date threshold and settings\n- requirements.txt: Python dependencies\n- logs/: Execution logs directory\n\n## Setup Instructions\n1. Install requirements: pip install -r requirements.txt\n2. Configure library URL and credentials\n3. Set due date threshold in config.py\n4. Schedule script to run weekly\n\n## Features\n- Automatic login to library account\n- Due date monitoring with threshold\n- One-click renewal automation\n- Renewal limit checking\n- Email/SMS notifications for failures\n\n## Challenges Addressed\n- Different library website structures\n- CAPTCHA and authentication\n- Due date parsing inconsistencies\n- Renewal failure handling" > plan.md && mkdir logs && touch renew.py credentials.py config.py && cd ../6_job_automation && echo "selenium\npandas\nopenpyxl\nrequests\nbeautifulsoup4\npyautogui\nschedule\npython-dotenv\npyyaml" > requirements.txt && echo "# Automate Your Job Tasks\n\n## Project Overview\nAutomates repetitive work tasks such as data entry, report generation, web form filling, and email processing.\n\n## How It Works\n- Identifies repetitive workflow patterns in your job\n- Uses Selenium for web automation\n- Processes data with pandas for spreadsheets\n- Generates reports and sends emails automatically\n- Handles file operations and data transformations\n\n## Files\n- automate_task.py: Main automation script\n- config.yaml: Configuration settings\n- input_data/: Directory for input files\n- output_reports/: Directory for generated reports\n- requirements.txt: Python dependencies\n- README.md: Setup and usage guide\n\n## Setup Instructions\n1. Install requirements: pip install -r requirements.txt\n2. Configure task parameters in config.yaml\n3. Place input data in input_data folder\n4. Run script manually or schedule with cron\n\n## Features\n- Web form automation with Selenium\n- Excel/CSV data processing\n- Report generation\n- Email automation\n- Error handling and logging\n- Configurable workflows\n\n## Challenges Addressed\n- Company IT policies\n- Anti-bot measures\n- Changing data formats\n- Secure credential storage" > plan.md && mkdir input_data output_reports && touch automate_task.py config.yaml README.md && cd ../7_home_chores_automation && echo "schedule\ntwilio\nplyer\npython-dotenv\nrequests\npyyaml\ndatetime" > requirements.txt && echo "# Automate Home Chores and Reminders\n\n## Project Overview\nAutomates household chore reminders and can control smart home appliances for routine tasks.\n\n## How It Works\n- Reads chore list with frequencies from JSON/YAML\n- Schedules reminders via desktop, email, or SMS\n- Tracks when chores were last completed\n- Optionally controls smart appliances via APIs\n- Sends notifications through multiple channels\n\n## Files\n- chores.py: Main automation script\n- chores_list.json: Chores with frequencies\n- config.py: Notification and smart device config\n- requirements.txt: Python dependencies\n- reminders.log: Log of sent reminders\n\n## Setup Instructions\n1. Install requirements: pip install -r requirements.txt\n2. Define your chores in chores_list.json\n3. Configure notification methods in config.py\n4. Run chores.py as a background service\n\n## Features\n- Multi-channel notifications (desktop, email, SMS)\n- Smart home device integration\n- Chore completion tracking\n- Customizable schedules\n- Logging and history\n\n## Challenges Addressed\n- Completion tracking\n- Notification fatigue\n- Smart device API integration\n- Time zone handling" > plan.md && touch chores.py chores_list.json config.py reminders.log && cd ..
+## How It Works
+- Reads email credentials and recipient address from environment variables
+- Loads an email template with placeholders for personalization
+- Connects to SMTP server (Gmail, Outlook, etc.) to send the email
+- Uses scheduling library to run every 90 days
+
+## Files
+- main.py: Main script that sends the email
+- config.py: Configuration settings and credentials
+- email_template.txt: Template file for email content
+- scheduler.log: Log file for tracking executions
+
+## Setup Instructions
+1. Install required packages: pip install -r requirements.txt
+2. Configure email credentials in config.py or .env file
+3. Customize email_template.txt with your message
+4. Run the script manually or set up as a cron job
+
+## Features
+- Secure credential handling
+- Email templating with personalization
+- Scheduled execution every 3 months
+- Logging for tracking
+
+## Challenges Addressed
+- Secure email authentication
+- SMTP server restrictions
+- Continuous execution management
+- Spam filter avoidance" > plan.md && touch main.py config.py email_template.txt scheduler.log && cd ../smart_lights_automation && echo "ping3
+scapy
+requests
+schedule
+python-dotenv" > requirements.txt && echo "# Automate Your Lights When Phone Is Within Home Radius
+
+## Project Overview
+Automatically turns on your smart lights when your phone connects to your home Wi-Fi network, and turns them off when you leave.
+
+## How It Works
+- Periodically pings your phone's IP address to check network presence
+- Detects when phone connects/disconnects from home network
+- Sends API calls to smart lights (Philips Hue, TP-Link Kasa, etc.)
+- Automates lighting based on your presence
+
+## Files
+- main.py: Main automation script
+- config.py: Network and light configuration
+- requirements.txt: Python dependencies
+- README.md: Setup instructions
+
+## Setup Instructions
+1. Install requirements: pip install -r requirements.txt
+2. Configure your phone's IP and light API in config.py
+3. Set static IP for phone via DHCP reservation
+4. Run main.py as a background service
+
+## Features
+- Presence detection via ping/ARP scanning
+- Multi-brand smart light support
+- Configurable check intervals
+- Manual override options
+
+## Challenges Addressed
+- Dynamic IP changes (solved via DHCP reservation)
+- Ping blocking on phones
+- Different smart light APIs
+- False triggers from brief disconnections" > plan.md && touch main.py config.py README.md && cd ../downloads_organizer && echo "# No external dependencies needed - uses os, shutil, pathlib" > requirements.txt && echo "# Automatically Organise Downloads Folder by File Type
+
+## Project Overview
+Scans your Downloads folder and automatically organizes files into categorized subfolders based on file extensions.
+
+## How It Works
+- Defines mapping of file extensions to folder categories
+- Monitors Downloads folder for new files
+- Moves files to appropriate subfolders (Images, Documents, Archives, etc.)
+- Handles duplicate filenames and file conflicts
+
+## Files
+- organizer.py: Main organization script
+- config.json: File type mapping configuration
+- requirements.txt: Dependencies (standard library only)
+- README.md: Usage instructions
+
+## Setup Instructions
+1. No external packages needed (uses Python standard library)
+2. Customize config.json with your preferred categories
+3. Run organizer.py manually or set up scheduled execution
+4. Optionally install watchdog for real-time monitoring
+
+## Features
+- Customizable file type categories
+- Duplicate filename handling
+- Logging of all file movements
+- Safe file moving with error handling
+
+## Challenges Addressed
+- Files in use/permission errors
+- Unknown file extensions
+- Partially downloaded files
+- Cross-platform compatibility" > plan.md && touch organizer.py config.json README.md && cd ../gym_booking && echo "selenium
+webdriver-manager
+schedule
+python-dotenv
+datetime
+requests" > requirements.txt && echo "# Automate Gym Class Bookings
+
+## Project Overview
+Automatically logs into your gym's booking system and reserves spots in your preferred classes when they become available.
+
+## How It Works
+- Uses Selenium to automate web browser interactions
+- Logs into gym website with your credentials
+- Navigates to class schedule and finds preferred classes
+- Automatically clicks book button at the right time
+- Handles confirmation dialogs and errors
+
+## Files
+- booking.py: Main booking automation script
+- credentials.py: Login credentials (gitignored)
+- config.py: Class preferences and timing
+- requirements.txt: Python dependencies
+- logs/: Directory for execution logs
+
+## Setup Instructions
+1. Install requirements: pip install -r requirements.txt
+2. Install Chrome/Firefox and WebDriver
+3. Configure gym URL, credentials, and class preferences
+4. Schedule script to run at class release time
+
+## Features
+- Automatic login and navigation
+- Precise timing for class release
+- Multiple class preferences
+- Error handling and retry logic
+- Booking confirmation logging
+
+## Challenges Addressed
+- Dynamic website structure
+- CAPTCHA and 2FA handling
+- Precise timing requirements
+- AJAX-loaded content" > plan.md && mkdir logs && touch booking.py credentials.py config.py && cd ../library_renewals && echo "selenium
+webdriver-manager
+beautifulsoup4
+datetime
+schedule
+python-dotenv" > requirements.txt && echo "# Automate Library Book Renewals
+
+## Project Overview
+Automatically logs into your library account, checks for books due soon, and renews them if possible.
+
+## How It Works
+- Logs into library website using Selenium
+- Navigates to loans/checked out page
+- Scrapes book titles and due dates
+- Automatically renews books within threshold
+- Handles renewal limits and errors
+
+## Files
+- renew.py: Main renewal script
+- credentials.py: Library login credentials
+- config.py: Due date threshold and settings
+- requirements.txt: Python dependencies
+- logs/: Execution logs directory
+
+## Setup Instructions
+1. Install requirements: pip install -r requirements.txt
+2. Configure library URL and credentials
+3. Set due date threshold in config.py
+4. Schedule script to run weekly
+
+## Features
+- Automatic login to library account
+- Due date monitoring with threshold
+- One-click renewal automation
+- Renewal limit checking
+- Email/SMS notifications for failures
+
+## Challenges Addressed
+- Different library website structures
+- CAPTCHA and authentication
+- Due date parsing inconsistencies
+- Renewal failure handling" > plan.md && mkdir logs && touch renew.py credentials.py config.py && cd ../job_automation && echo "selenium
+pandas
+openpyxl
+requests
+beautifulsoup4
+pyautogui
+schedule
+python-dotenv
+pyyaml" > requirements.txt && echo "# Automate Your Job Tasks
+
+## Project Overview
+Automates repetitive work tasks such as data entry, report generation, web form filling, and email processing.
+
+## How It Works
+- Identifies repetitive workflow patterns in your job
+- Uses Selenium for web automation
+- Processes data with pandas for spreadsheets
+- Generates reports and sends emails automatically
+- Handles file operations and data transformations
+
+## Files
+- automate_task.py: Main automation script
+- config.yaml: Configuration settings
+- input_data/: Directory for input files
+- output_reports/: Directory for generated reports
+- requirements.txt: Python dependencies
+- README.md: Setup and usage guide
+
+## Setup Instructions
+1. Install requirements: pip install -r requirements.txt
+2. Configure task parameters in config.yaml
+3. Place input data in input_data folder
+4. Run script manually or schedule with cron
+
+## Features
+- Web form automation with Selenium
+- Excel/CSV data processing
+- Report generation
+- Email automation
+- Error handling and logging
+- Configurable workflows
+
+## Challenges Addressed
+- Company IT policies
+- Anti-bot measures
+- Changing data formats
+- Secure credential storage" > plan.md && mkdir input_data output_reports && touch automate_task.py config.yaml README.md && cd ../home_chores_automation && echo "schedule
+twilio
+plyer
+python-dotenv
+requests
+pyyaml
+datetime" > requirements.txt && echo "# Automate Home Chores and Reminders
+
+## Project Overview
+Automates household chore reminders and can control smart home appliances for routine tasks.
+
+## How It Works
+- Reads chore list with frequencies from JSON/YAML
+- Schedules reminders via desktop, email, or SMS
+- Tracks when chores were last completed
+- Optionally controls smart appliances via APIs
+- Sends notifications through multiple channels
+
+## Files
+- chores.py: Main automation script
+- chores_list.json: Chores with frequencies
+- config.py: Notification and smart device config
+- requirements.txt: Python dependencies
+- reminders.log: Log of sent reminders
+
+## Setup Instructions
+1. Install requirements: pip install -r requirements.txt
+2. Define your chores in chores_list.json
+3. Configure notification methods in config.py
+4. Run chores.py as a background service
+
+## Features
+- Multi-channel notifications (desktop, email, SMS)
+- Smart home device integration
+- Chore completion tracking
+- Customizable schedules
+- Logging and history
+
+## Challenges Addressed
+- Completion tracking
+- Notification fatigue
+- Smart device API integration
+- Time zone handling" > plan.md && touch chores.py chores_list.json config.py reminders.log && cd ..

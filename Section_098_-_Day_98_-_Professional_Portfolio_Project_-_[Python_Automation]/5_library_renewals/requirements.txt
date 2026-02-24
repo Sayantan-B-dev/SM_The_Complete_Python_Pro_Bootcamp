@@ -1,1 +1,6 @@
-selenium\nwebdriver-manager\nbeautifulsoup4\ndatetime\nschedule\npython-dotenv
+selenium
+webdriver-manager
+beautifulsoup4
+datetime
+schedule
+python-dotenv

@@ -1,1 +1,37 @@
-# Automate Library Book Renewals\n\n## Project Overview\nAutomatically logs into your library account, checks for books due soon, and renews them if possible.\n\n## How It Works\n- Logs into library website using Selenium\n- Navigates to loans/checked out page\n- Scrapes book titles and due dates\n- Automatically renews books within threshold\n- Handles renewal limits and errors\n\n## Files\n- renew.py: Main renewal script\n- credentials.py: Library login credentials\n- config.py: Due date threshold and settings\n- requirements.txt: Python dependencies\n- logs/: Execution logs directory\n\n## Setup Instructions\n1. Install requirements: pip install -r requirements.txt\n2. Configure library URL and credentials\n3. Set due date threshold in config.py\n4. Schedule script to run weekly\n\n## Features\n- Automatic login to library account\n- Due date monitoring with threshold\n- One-click renewal automation\n- Renewal limit checking\n- Email/SMS notifications for failures\n\n## Challenges Addressed\n- Different library website structures\n- CAPTCHA and authentication\n- Due date parsing inconsistencies\n- Renewal failure handling
+# Automate Library Book Renewals
+
+## Project Overview
+Automatically logs into your library account, checks for books due soon, and renews them if possible.
+
+## How It Works
+- Logs into library website using Selenium
+- Navigates to loans/checked out page
+- Scrapes book titles and due dates
+- Automatically renews books within threshold
+- Handles renewal limits and errors
+
+## Files
+- renew.py: Main renewal script
+- credentials.py: Library login credentials
+- config.py: Due date threshold and settings
+- requirements.txt: Python dependencies
+- logs/: Execution logs directory
+
+## Setup Instructions
+1. Install requirements: pip install -r requirements.txt
+2. Configure library URL and credentials
+3. Set due date threshold in config.py
+4. Schedule script to run weekly
+
+## Features
+- Automatic login to library account
+- Due date monitoring with threshold
+- One-click renewal automation
+- Renewal limit checking
+- Email/SMS notifications for failures
+
+## Challenges Addressed
+- Different library website structures
+- CAPTCHA and authentication
+- Due date parsing inconsistencies
+- Renewal failure handling

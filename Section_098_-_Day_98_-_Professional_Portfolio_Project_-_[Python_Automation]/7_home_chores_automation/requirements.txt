@@ -1,1 +1,7 @@
-schedule\ntwilio\nplyer\npython-dotenv\nrequests\npyyaml\ndatetime
+schedule
+twilio
+plyer
+python-dotenv
+requests
+pyyaml
+datetime

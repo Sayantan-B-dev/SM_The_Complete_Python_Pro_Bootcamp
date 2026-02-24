@@ -1,1 +1,34 @@
-# Automate Your Lights When Phone Is Within Home Radius\n\n## Project Overview\nAutomatically turns on your smart lights when your phone connects to your home Wi-Fi network, and turns them off when you leave.\n\n## How It Works\n- Periodically pings your phone's IP address to check network presence\n- Detects when phone connects/disconnects from home network\n- Sends API calls to smart lights (Philips Hue, TP-Link Kasa, etc.)\n- Automates lighting based on your presence\n\n## Files\n- main.py: Main automation script\n- config.py: Network and light configuration\n- requirements.txt: Python dependencies\n- README.md: Setup instructions\n\n## Setup Instructions\n1. Install requirements: pip install -r requirements.txt\n2. Configure your phone's IP and light API in config.py\n3. Set static IP for phone via DHCP reservation\n4. Run main.py as a background service\n\n## Features\n- Presence detection via ping/ARP scanning\n- Multi-brand smart light support\n- Configurable check intervals\n- Manual override options\n\n## Challenges Addressed\n- Dynamic IP changes (solved via DHCP reservation)\n- Ping blocking on phones\n- Different smart light APIs\n- False triggers from brief disconnections
+# Automate Your Lights When Phone Is Within Home Radius
+
+## Project Overview
+Automatically turns on your smart lights when your phone connects to your home Wi-Fi network, and turns them off when you leave.
+
+## How It Works
+- Periodically pings your phone's IP address to check network presence
+- Detects when phone connects/disconnects from home network
+- Sends API calls to smart lights (Philips Hue, TP-Link Kasa, etc.)
+- Automates lighting based on your presence
+
+## Files
+- main.py: Main automation script
+- config.py: Network and light configuration
+- requirements.txt: Python dependencies
+- README.md: Setup instructions
+
+## Setup Instructions
+1. Install requirements: pip install -r requirements.txt
+2. Configure your phone's IP and light API in config.py
+3. Set static IP for phone via DHCP reservation
+4. Run main.py as a background service
+
+## Features
+- Presence detection via ping/ARP scanning
+- Multi-brand smart light support
+- Configurable check intervals
+- Manual override options
+
+## Challenges Addressed
+- Dynamic IP changes (solved via DHCP reservation)
+- Ping blocking on phones
+- Different smart light APIs
+- False triggers from brief disconnections

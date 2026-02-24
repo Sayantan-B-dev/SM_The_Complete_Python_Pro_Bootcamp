@@ -1,1 +1,37 @@
-# Automate Home Chores and Reminders\n\n## Project Overview\nAutomates household chore reminders and can control smart home appliances for routine tasks.\n\n## How It Works\n- Reads chore list with frequencies from JSON/YAML\n- Schedules reminders via desktop, email, or SMS\n- Tracks when chores were last completed\n- Optionally controls smart appliances via APIs\n- Sends notifications through multiple channels\n\n## Files\n- chores.py: Main automation script\n- chores_list.json: Chores with frequencies\n- config.py: Notification and smart device config\n- requirements.txt: Python dependencies\n- reminders.log: Log of sent reminders\n\n## Setup Instructions\n1. Install requirements: pip install -r requirements.txt\n2. Define your chores in chores_list.json\n3. Configure notification methods in config.py\n4. Run chores.py as a background service\n\n## Features\n- Multi-channel notifications (desktop, email, SMS)\n- Smart home device integration\n- Chore completion tracking\n- Customizable schedules\n- Logging and history\n\n## Challenges Addressed\n- Completion tracking\n- Notification fatigue\n- Smart device API integration\n- Time zone handling
+# Automate Home Chores and Reminders
+
+## Project Overview
+Automates household chore reminders and can control smart home appliances for routine tasks.
+
+## How It Works
+- Reads chore list with frequencies from JSON/YAML
+- Schedules reminders via desktop, email, or SMS
+- Tracks when chores were last completed
+- Optionally controls smart appliances via APIs
+- Sends notifications through multiple channels
+
+## Files
+- chores.py: Main automation script
+- chores_list.json: Chores with frequencies
+- config.py: Notification and smart device config
+- requirements.txt: Python dependencies
+- reminders.log: Log of sent reminders
+
+## Setup Instructions
+1. Install requirements: pip install -r requirements.txt
+2. Define your chores in chores_list.json
+3. Configure notification methods in config.py
+4. Run chores.py as a background service
+
+## Features
+- Multi-channel notifications (desktop, email, SMS)
+- Smart home device integration
+- Chore completion tracking
+- Customizable schedules
+- Logging and history
+
+## Challenges Addressed
+- Completion tracking
+- Notification fatigue
+- Smart device API integration
+- Time zone handling
