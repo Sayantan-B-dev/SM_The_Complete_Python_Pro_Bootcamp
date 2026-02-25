@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Edit Scheduled Message</h2>
+    <form method="POST" action="{{ url_for('main.edit_message', msg_id=msg.id) }}">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.to_number.label }}<br>
+            {{ form.to_number(placeholder="+1234567890") }}
+            {% for error in form.to_number.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            {{ form.message.label }}<br>
+            <div class="message-toolbar">
+                <button type="button" onclick="formatText('bold')"><strong>B</strong></button>
+                <button type="button" onclick="formatText('italic')"><em>I</em></button>
+                <button type="button" onclick="formatText('strike')"><del>S</del></button>
+                <button type="button" onclick="formatText('code')">{ }</button>
+            </div>
+            {{ form.message(rows=5, id="messageBox") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.schedule_type.label }}<br>
+            {% for subfield in form.schedule_type %}
+                <label class="radio-inline">
+                    {{ subfield }} {{ subfield.label.text }}
+                </label>
+            {% endfor %}
+        </div>
+
+        <div id="once-daily-fields" style="display: {{ 'block' if msg.schedule_type in ['once', 'daily'] else 'none' }};">
+            <div class="form-group">
+                {{ form.time.label }}<br>
+                {{ form.time(placeholder="14:30") }}
+            </div>
+        </div>
+
+        <div id="interval-fields" style="display: {{ 'block' if msg.schedule_type == 'interval' else 'none' }};">
+            <div class="form-group">
+                {{ form.interval_seconds.label }}<br>
+                {{ form.interval_seconds(min=2, max=7200, step=1, placeholder="e.g., 60") }}
+                <small>Between 2 and 7200 seconds.</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn">Update Message</button>
+            <a href="{{ url_for('main.index') }}" class="btn" style="background-color: #444;">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<script>
+// Same toggle logic as in index
+document.addEventListener('DOMContentLoaded', function() {
+    const scheduleRadios = document.querySelectorAll('input[name="schedule_type"]');
+    const onceDailyDiv = document.getElementById('once-daily-fields');
+    const intervalDiv = document.getElementById('interval-fields');
+
+    function toggleFields() {
+        const selected = document.querySelector('input[name="schedule_type"]:checked').value;
+        onceDailyDiv.style.display = (selected === 'once' || selected === 'daily') ? 'block' : 'none';
+        intervalDiv.style.display = (selected === 'interval') ? 'block' : 'none';
+    }
+
+    scheduleRadios.forEach(radio => {
+        radio.addEventListener('change', toggleFields);
+    });
+});
+</script>
+{% endblock %}

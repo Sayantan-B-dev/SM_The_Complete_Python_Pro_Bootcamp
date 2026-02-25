@@ -1,7 +1,0 @@
-schedule
-twilio
-plyer
-python-dotenv
-requests
-pyyaml
-datetime

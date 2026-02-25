@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Schedule a Message</h2>
+    <form method="POST" action="{{ url_for('main.index') }}" id="scheduleForm">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.to_number.label }}<br>
+            {{ form.to_number(placeholder="+1234567890") }}
+            {% for error in form.to_number.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            {{ form.message.label }}<br>
+            <div class="message-toolbar">
+                <button type="button" onclick="formatText('bold')"><strong>B</strong></button>
+                <button type="button" onclick="formatText('italic')"><em>I</em></button>
+                <button type="button" onclick="formatText('strike')"><del>S</del></button>
+                <button type="button" onclick="formatText('code')">{ }</button>
+            </div>
+            {{ form.message(rows=5, id="messageBox") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.schedule_type.label }}<br>
+            {% for subfield in form.schedule_type %}
+                <label class="radio-inline">
+                    {{ subfield }} {{ subfield.label.text }}
+                </label>
+            {% endfor %}
+        </div>
+
+        <div id="once-daily-fields" style="display: none;">
+            <div class="form-group">
+                {{ form.time.label }}<br>
+                {{ form.time(placeholder="14:30") }}
+            </div>
+        </div>
+
+        <div id="interval-fields" style="display: none;">
+            <div class="form-group">
+                {{ form.interval_seconds.label }}<br>
+                {{ form.interval_seconds(min=2, max=7200, step=1, placeholder="e.g., 60") }}
+                <small>Between 2 and 7200 seconds.</small>
+            </div>
+        </div>
+        
+
+        <div class="form-group" style="display: flex; gap: 10px;">
+            <button type="submit" class="btn" formaction="{{ url_for('main.index') }}">Schedule</button>
+            <button type="submit" class="btn" formaction="{{ url_for('main.send_now') }}">Send Now</button>
+        </div>
+    </form>
+</div>
+
+<div class="card">
+    <h2>Scheduled Messages</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>To</th>
+                <th>Message</th>
+                <th>Type</th>
+                <th>Time Remaining</th>  <!-- changed -->
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for msg in messages %}
+            <tr>
+                <td>{{ msg.to_number }}</td>
+                <td class="message-preview">{{ msg.message[:50] }}{% if msg.message|length > 50 %}...{% endif %}</td>
+                <td>
+                    {% if msg.schedule_type == 'once' %}One-time
+                    {% elif msg.schedule_type == 'daily' %}Daily
+                    {% else %}Every {{ msg.interval_seconds }} seconds
+                    {% endif %}
+                </td>
+                <td>
+                    {% if msg.active %}
+                        <span class="countdown" data-next-run="{{ msg.next_run.isoformat() }}Z"></span>
+                    {% else %}
+                        Inactive
+                    {% endif %}
+                </td>
+                <td>{{ 'Active' if msg.active else 'Inactive' }}</td>
+                <td>
+                    <a href="{{ url_for('main.edit_message', msg_id=msg.id) }}" class="btn-small">Edit</a>
+                    <a href="{{ url_for('main.deactivate_message', msg_id=msg.id) }}" class="btn-small">
+                        {{ 'Deactivate' if msg.active else 'Activate' }}
+                    </a>
+                    <a href="{{ url_for('main.delete_message', msg_id=msg.id) }}" class="btn-small delete" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="6" style="text-align: center;">No scheduled messages.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+// Countdown updater
+function formatCountdown(ms) {
+    if (ms < 0) return "0s";
+
+    const totalSeconds = Math.floor(ms / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    let parts = [];
+    if (days > 0) parts.push(days + "d");
+    if (hours > 0) parts.push(hours + "h");
+    if (minutes > 0) parts.push(minutes + "m");
+    if (seconds > 0 || parts.length === 0) parts.push(seconds + "s");
+    return parts.join(" ");
+}
+
+function updateCountdowns() {
+    const now = new Date();
+    document.querySelectorAll('.countdown').forEach(el => {
+        const nextRunStr = el.getAttribute('data-next-run');
+        if (!nextRunStr) return;
+        const nextRun = new Date(nextRunStr);
+        const diffMs = nextRun - now;
+        el.textContent = formatCountdown(diffMs);
+    });
+}
+
+// Update every second
+setInterval(updateCountdowns, 1000);
+updateCountdowns(); // initial run
+</script>
+
+<!-- Include your existing main.js for formatting -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

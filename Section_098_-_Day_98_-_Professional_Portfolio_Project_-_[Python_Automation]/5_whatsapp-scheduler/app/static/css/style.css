@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid #00ff80;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+h1, h2 {
+    color: #00ff80;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: 1px solid #00ff80;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #00ff80;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border: 1px solid #00ff80;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #00b359;
+}
+
+small {
+    display: block;
+    color: #aaa;
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 0.9em;
+}
+
+.message-toolbar {
+    margin-bottom: 5px;
+}
+
+.message-toolbar button {
+    background-color: #2a2a2a;
+    border: 1px solid #00ff80;
+    color: #00ff80;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.message-toolbar button:hover {
+    background-color: #00ff80;
+    color: #121212;
+}
+
+.radio-inline {
+    display: inline-block;
+    margin-right: 15px;
+    color: white;
+}
+
+.inline {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.inline input {
+    width: auto;
+    flex: 1;
+}
+
+.inline select {
+    width: auto;
+}
+
+.btn {
+    background-color: #00ff80;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #00b359;
+}
+
+.btn-small {
+    background-color: #2a2a2a;
+    color: #00ff80;
+    border: 1px solid #00ff80;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.btn-small.delete {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+}
+
+.btn-small.delete:hover {
+    background-color: #ff6b6b;
+    color: #121212;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #00ff80;
+}
+
+th {
+    color: #00ff80;
+}
+
+.message-preview {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.flash {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.flash.success {
+    background-color: #1e4a2a;
+    border: 1px solid #00ff80;
+}
+
+.flash.danger {
+    background-color: #4a1e1e;
+    border: 1px solid #ff6b6b;
+}
