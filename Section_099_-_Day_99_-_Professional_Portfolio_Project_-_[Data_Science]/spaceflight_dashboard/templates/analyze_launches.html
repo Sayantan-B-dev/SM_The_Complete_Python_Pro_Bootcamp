@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Launch Analysis</h2>
+<div class="grid">
+    <div class="card">
+        <h3>Total Launches: {{ stats.total }}</h3>
+        <canvas id="agencyChart"></canvas>
+    </div>
+    <div class="card">
+        <h3>By Status</h3>
+        <canvas id="statusChart"></canvas>
+    </div>
+    <div class="card" style="grid-column: span 2;">
+        <h3>Launches by Month</h3>
+        <canvas id="monthChart"></canvas>
+    </div>
+</div>
+
+<script>
+    const agencyData = {{ stats.by_agency | tojson }};
+    const statusData = {{ stats.by_status | tojson }};
+    const monthData = {{ stats.by_month | tojson }};
+
+    new Chart(document.getElementById('agencyChart'), {
+        type: 'pie',
+        data: {
+            labels: Object.keys(agencyData),
+            datasets: [{
+                data: Object.values(agencyData),
+                backgroundColor: '#3b82f6',
+                borderColor: '#1e3a8a'
+            }]
+        },
+        options: {
+            plugins: {
+                legend: { labels: { color: '#e0f2fe' } }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('statusChart'), {
+        type: 'bar',
+        data: {
+            labels: Object.keys(statusData),
+            datasets: [{
+                data: Object.values(statusData),
+                backgroundColor: '#3b82f6'
+            }]
+        },
+        options: {
+            scales: {
+                y: { ticks: { color: '#94a3b8' } },
+                x: { ticks: { color: '#94a3b8' } }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('monthChart'), {
+        type: 'line',
+        data: {
+            labels: Object.keys(monthData),
+            datasets: [{
+                data: Object.values(monthData),
+                borderColor: '#3b82f6',
+                backgroundColor: 'transparent',
+                tension: 0.2
+            }]
+        },
+        options: {
+            scales: {
+                y: { ticks: { color: '#94a3b8' } },
+                x: { ticks: { color: '#94a3b8' } }
+            }
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Rockets</h2>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Agency</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rocket in rockets %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>
+                    <img src="{{ rocket.image_url }}" class="thumbnail" alt="thumbnail"
+                         data-modal-id="modal-{{ loop.index }}">
+                </td>
+                <td>{{ rocket.name }}</td>
+                <td>{{ rocket.agency }}</td>
+            </tr>
+
+            <!-- Modal -->
+            <div class="modal" id="modal-{{ loop.index }}">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <img src="{{ rocket.image_url }}" class="modal-img" alt="">
+                    <h3>{{ rocket.name }}</h3>
+                    <p><strong>Agency:</strong> {{ rocket.agency }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

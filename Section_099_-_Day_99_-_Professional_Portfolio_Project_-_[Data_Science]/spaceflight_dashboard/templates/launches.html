@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<h2> Launches</h2>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Rocket</th>
+                <th>Agency</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Video</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for launch in launches %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>
+                    <img src="{{ launch.image_url }}" class="thumbnail" alt="thumbnail"
+                         data-modal-id="modal-{{ loop.index }}">
+                </td>
+                <td>{{ launch.name }}</td>
+                <td>{{ launch.rocket }}</td>
+                <td>{{ launch.agency }}</td>
+                <td>{{ launch.location }}</td>
+                <td>{{ launch.date }}</td>
+                <td>{{ launch.status }}</td>
+                <td>
+                    {% if launch.video_url %}
+                    <a href="{{ launch.video_url }}" target="_blank" class="btn btn-outline btn-sm">Watch</a>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <!-- Modal -->
+            <div class="modal" id="modal-{{ loop.index }}">
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <img src="{{ launch.image_url }}" class="modal-img" alt="">
+                    <h3>{{ launch.name }}</h3>
+                    <p><strong>Rocket:</strong> {{ launch.rocket }}</p>
+                    <p><strong>Agency:</strong> {{ launch.agency }}</p>
+                    <p><strong>Location:</strong> {{ launch.location }}</p>
+                    <p><strong>Date:</strong> {{ launch.date }}</p>
+                    <p><strong>Status:</strong> {{ launch.status }}</p>
+                    {% if launch.video_url %}
+                    <a href="{{ launch.video_url }}" class="btn btn-gradient" target="_blank">Watch Video</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Rocket Analysis</h2>
+<div class="grid">
+    <div class="card">
+        <h3>Total Rockets: {{ stats.total }}</h3>
+        <canvas id="agencyChart"></canvas>
+    </div>
+</div>
+
+<script>
+    const agencyData = {{ stats.by_agency | tojson }};
+    new Chart(document.getElementById('agencyChart'), {
+        type: 'pie',
+        data: {
+            labels: Object.keys(agencyData),
+            datasets: [{
+                data: Object.values(agencyData),
+                backgroundColor: '#3b82f6',
+                borderColor: '#1e3a8a'
+            }]
+        },
+        options: {
+            plugins: {
+                legend: { labels: { color: '#e0f2fe' } }
+            }
+        }
+    });
+</script>
+{% endblock %}

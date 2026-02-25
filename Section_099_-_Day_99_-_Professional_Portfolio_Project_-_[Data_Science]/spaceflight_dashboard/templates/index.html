@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center p-4">
+    <h1>Spaceflight Dashboard</h1>
+    <p class="text-secondary">Explore launches and rockets from nextspaceflight.com</p>
+    <div class="flex justify-center gap-4 mt-4">
+        <a href="/launches" class="btn btn-gradient">Launches</a>
+        <a href="/rockets" class="btn btn-gradient">Rockets</a>
+        <a href="/analyze/launches" class="btn btn-outline">Analyze Launches</a>
+        <a href="/analyze/rockets" class="btn btn-outline">Analyze Rockets</a>
+    </div>
+</div>
+{% endblock %}

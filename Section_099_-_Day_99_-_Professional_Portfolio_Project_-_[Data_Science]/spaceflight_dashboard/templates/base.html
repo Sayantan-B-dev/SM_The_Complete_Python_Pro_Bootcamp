@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceflight Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="navbar-brand"> Spaceflight Dashboard</a>
+            <div class="navbar-nav">
+                <a href="/launches" class="nav-link">Launches</a>
+                <a href="/rockets" class="nav-link">Rockets</a>
+                <a href="/analyze/launches" class="nav-link">Analyze Launches</a>
+                <a href="/analyze/rockets" class="nav-link">Analyze Rockets</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    <img class="home-image" src="https://storage.googleapis.com/nextspaceflight/media/rockets/Falcon_9_Block_5.webp" alt="Rocket">
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Spaceflight Dashboard © 2025</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
