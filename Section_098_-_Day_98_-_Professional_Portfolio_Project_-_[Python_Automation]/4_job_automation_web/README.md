@@ -1,4 +1,5 @@
 ![](./sample.gif)
+![](./sample.gif)
 
 # Complete Documentation for Job Automation Dashboard
 
