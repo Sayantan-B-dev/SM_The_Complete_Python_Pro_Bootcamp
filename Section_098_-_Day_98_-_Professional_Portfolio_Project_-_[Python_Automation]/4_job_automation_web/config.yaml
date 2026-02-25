@@ -1,0 +1,22 @@
+web:
+  enabled: false   # set to true to enable browser automation
+  login_url: "https://example.com/login"
+  username_field: "username"
+  password_field: "password"
+  login_button: "login-btn"
+  submit_button: "submit"
+  form_mapping:
+    Name: "field1"
+    Email: "field2"
+    Department: "field3"
+    Score: "field4"
+
+files:
+  input_csv: "data.csv"
+  output_report: "report.csv"
+
+email:
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  subject: "Automation Report"
+  body: "Please find attached the latest report."

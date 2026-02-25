@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex justify-between items-center mb-4">
+    <h1 style="font-size: 2rem; font-weight: bold;">Input Data</h1>
+    <div class="flex gap-2">
+        <a href="{{ url_for('data.add') }}" class="btn btn-primary">Add New Row</a>
+        <a href="{{ url_for('data.upload') }}" class="btn btn-success">Upload CSV</a>
+        <a href="{{ url_for('data.clear_all') }}" class="btn btn-danger" onclick="return confirm('Delete ALL data? This cannot be undone.')">Clear All</a>
+    </div>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                {% for col in columns %}
+                <th>{{ col }}</th>
+                {% endfor %}
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                {% for col in columns %}
+                <td>{{ record[col] }}</td>
+                {% endfor %}
+                <td>
+                    <div class="flex gap-2">
+                        <a href="{{ url_for('data.edit', index=loop.index0) }}" class="btn btn-warning" style="padding: 0.25rem 0.75rem;">Edit</a>
+                        <a href="{{ url_for('data.delete', index=loop.index0) }}" class="btn btn-danger" style="padding: 0.25rem 0.75rem;" onclick="return confirm('Delete this row?')">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

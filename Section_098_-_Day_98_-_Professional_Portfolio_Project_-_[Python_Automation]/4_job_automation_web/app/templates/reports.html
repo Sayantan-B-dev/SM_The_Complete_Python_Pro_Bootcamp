@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem;">Generated Report</h1>
+
+{% if records %}
+<div class="card mb-4">
+    <div class="card-header">What do these numbers mean?</div>
+    <div class="card-body">
+        <p>This table shows summary statistics for each numeric column in your input data:</p>
+        <ul style="columns: 2; list-style-position: inside;">
+            <li><strong>count</strong> – Number of non-empty values.</li>
+            <li><strong>mean</strong> – Average value.</li>
+            <li><strong>std</strong> – Standard deviation.</li>
+            <li><strong>min</strong> – Smallest value.</li>
+            <li><strong>25%</strong> – First quartile.</li>
+            <li><strong>50%</strong> – Median.</li>
+            <li><strong>75%</strong> – Third quartile.</li>
+            <li><strong>max</strong> – Largest value.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                {% for col in columns %}
+                <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                {% for col in columns %}
+                <td>{{ record[col] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Email sending form -->
+<div class="card mt-4">
+    <div class="card-header">Email this report</div>
+    <div class="card-body">
+        <form action="{{ url_for('reports.send_report') }}" method="POST">
+            <div class="form-group">
+                <label for="recipient">Recipient email address</label>
+                <input type="email" name="recipient" id="recipient" class="form-control" required
+                       placeholder="name@example.com">
+            </div>
+            <button type="submit" class="btn btn-primary">Send Report</button>
+        </form>
+    </div>
+</div>
+
+{% else %}
+<div class="alert alert-warning">
+    No report yet. Run the automation to generate a summary of your input data.
+</div>
+{% endif %}
+{% endblock %}

@@ -1,9 +1,0 @@
-selenium
-pandas
-openpyxl
-requests
-beautifulsoup4
-pyautogui
-schedule
-python-dotenv
-pyyaml

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card mb-6">
+    <div class="card-header">Welcome to Your Job Automation Dashboard</div>
+    <div class="card-body">
+        <p class="text-muted">This project is a <strong>template</strong> for automating repetitive work tasks – like filling web forms, generating reports, or sending emails.</p>
+        <p>The data you see (names, emails, departments, scores) is just <strong>example data</strong> to show how everything fits together. In your real job, you would replace it with your own data and customize the automation script to perform the task you need.</p>
+        <hr style="border-color: var(--border-color); margin: 1rem 0;">
+        <h4>What does the automation actually do?</h4>
+        <p>Right now, the automation engine does:</p>
+        <ul>
+            <li>Reads each row from your input CSV.</li>
+            <li><strong>If web automation is enabled</strong> in <code>config.yaml</code>, it logs into a website and fills a form with the data from each row.</li>
+            <li>After processing all rows, it generates a summary report (statistics of numeric columns like "Score") and saves it to <code>data/output_reports/report.csv</code>.</li>
+            <li>If email is enabled, it sends that report to a recipient.</li>
+        </ul>
+        <p class="text-muted">The "Score" column is just a numeric field to demonstrate statistics – in your real data it could be anything (e.g., revenue, quantity, rating).</p>
+    </div>
+</div>
+
+<div class="grid">
+    <a href="{{ url_for('data.list_data') }}" style="text-decoration: none;">
+        <div class="card">
+            <div class="card-header">Input Data</div>
+            <div class="card-body">
+                <p style="font-size: 2.5rem; font-weight: bold;">{{ input_rows }}</p>
+                <p class="text-muted">rows, {{ input_cols }} columns</p>
+                <p>This is the data that will be used by the automation.</p>
+            </div>
+        </div>
+    </a>
+    <a href="{{ url_for('reports.view_report') }}" style="text-decoration: none;">
+        <div class="card">
+            <div class="card-header">Latest Report</div>
+            <div class="card-body">
+                <p style="font-size: 2.5rem; font-weight: bold;">{{ report_rows }}</p>
+                <p class="text-muted">rows, {{ report_cols }} columns</p>
+                <p>Summary statistics generated after each automation run.</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">Quick Start – Make It Your Own</div>
+    <div class="card-body">
+        <ol style="padding-left: 1.5rem;">
+            <li><strong>Replace the example data</strong> in <code>data/input_data/data.csv</code> with your own data.</li>
+            <li><strong>Configure the automation</strong> in <code>config.yaml</code>:
+                <ul>
+                    <li>Set <code>web.enabled</code> to <code>true</code> if you need web forms.</li>
+                    <li>Update login URL, form field IDs, and mapping.</li>
+                    <li>Enable email if desired.</li>
+                </ul>
+            </li>
+            <li><strong>Customize the automation logic</strong> in <code>app/services/automation_engine.py</code>:
+                <ul>
+                    <li>Modify <code>fill_form()</code> to interact with your actual web form.</li>
+                </ul>
+            </li>
+            <li><strong>Start the automation</strong> from the <a href="{{ url_for('automation.status') }}">Automation page</a>.</li>
+        </ol>
+    </div>
+</div>
+{% endblock %}
