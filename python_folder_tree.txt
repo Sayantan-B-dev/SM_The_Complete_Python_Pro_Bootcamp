@@ -1,0 +1,1004 @@
+.
+├── .env
+├── .gitattributes
+├── .gitignore
+├── Section_001...
+│   ├── 006_Print.py
+│   ├── 008_input.py
+│   └── 011_band_name.py
+├── Section_003...
+│   └── 028_treasure.py
+├── Section_004...
+│   └── 035_rock_paper_scissors.py
+├── Section_005...
+│   └── 041_passgen.py
+├── Section_007...
+│   └── 059_hangman.py
+├── Section_008...
+│   ├── 062_age.py
+│   ├── 063_love_calc.py
+│   └── 065_encrypt_decrypt.py
+├── Section_009...
+│   └── 070_bidder.py
+├── Section_010...
+│   └── 076_calculator.py
+├── Section_011...
+│   └── 084_blackjack.py
+├── Section_012...
+│   └── 092_numberguess.py
+├── Section_013...
+├── Section_014...
+│   ├── 103_higherlower.py
+│   └── dataset.py
+├── Section_015...
+│   └── 106_coffeemachine.py
+├── Section_016...
+│   ├── 110_turtle.py
+│   ├── 112_preetytable.py
+│   └── 113_coffee
+│       ├── coffee_maker.py
+│       ├── main.py
+│       ├── menu.py
+│       ├── menu_item.py
+│       └── money_machine.py
+├── Section_017...
+│   └── 125_Quiz
+│       ├── game.py
+│       ├── main.py
+│       ├── player.py
+│       ├── question.py
+│       ├── quiz.py
+│       └── trivia_api.py
+├── Section_018...
+│   ├── 129_example.py
+│   ├── 131_example.py
+│   ├── 132_example.py
+│   ├── 133_example.py
+│   ├── 135_example.py
+│   ├── 136_extractcolor.py
+│   ├── 136_image.jpg
+│   ├── 137_example.py
+│   └── palette.py
+├── Section_019...
+│   ├── 141_sketch.py
+│   └── 143_racingturtle.py
+├── Section_020...
+│   ├── snake.py
+│   └── snake_game.py
+├── Section_021...
+│   ├── food.py
+│   ├── scoreboard.py
+│   ├── snake.py
+│   └── snake_game.py
+├── Section_022...
+│   └── pong_game
+│       ├── ball.py
+│       ├── input_handler.py
+│       ├── main.py
+│       ├── paddle.py
+│       └── scoreboard.py
+├── Section_023...
+│   └── turtle-cros...
+│       ├── car_manager.py
+│       ├── input_handler.py
+│       ├── main.py
+│       ├── player.py
+│       └── scoreboard.py
+├── Section_024...
+│   ├── Mail_Merge_...
+│   │   ├── .DS_Store
+│   │   ├── Input
+│   │   │   ├── .DS_Store
+│   │   │   ├── Letters
+│   │   │   │   └── starting_letter.txt
+│   │   │   └── Names
+│   │   │       └── invited_names.txt
+│   │   ├── Output
+│   │   │   ├── .DS_Store
+│   │   │   └── ReadyToSend
+│   │   │       ├── letter_for_Aang.txt
+│   │   │       ├── letter_for_Appa.txt
+│   │   │       ├── letter_for_Katara.txt
+│   │   │       ├── letter_for_Momo.txt
+│   │   │       ├── letter_for_Sokka.txt
+│   │   │       ├── letter_for_Toph.txt
+│   │   │       ├── letter_for_Uncle_Iroh.txt
+│   │   │       └── letter_for_Zuko.txt
+│   │   └── main.py
+│   ├── snake
+│   │   ├── data.txt
+│   │   ├── food.py
+│   │   ├── main.py
+│   │   ├── scoreboard.py
+│   │   └── snake.py
+│   ├── test.py
+│   └── test.txt
+├── Section_025...
+│   ├── squirrel
+│   │   ├── 2018_Squirrel_Data.csv
+│   │   ├── main.py
+│   │   └── squirrel_count.csv
+│   ├── us-states-g...
+│   │   ├── 50_states.csv
+│   │   ├── blank_states_img.gif
+│   │   ├── data_manager.py
+│   │   ├── main.py
+│   │   ├── map_manager.py
+│   │   └── states_to_learn.csv
+│   └── weather_dat...
+│       ├── dummy_data.csv
+│       ├── test.py
+│       └── weather_data.csv
+├── Section_026...
+│   ├── NATO-alphab...
+│   │   ├── main.py
+│   │   └── nato_phonetic_alphabet.csv
+│   ├── dictionary.py
+│   └── list.py
+├── Section_027...
+│   ├── Other_Tkinter_Widgets.py
+│   ├── converter
+│   │   ├── converters.py
+│   │   ├── main.py
+│   │   ├── styles.py
+│   │   ├── ui_sections.py
+│   │   └── utils.py
+│   └── first_tkinter.py
+├── Section_028...
+│   └── pomodoro
+│       ├── constants.py
+│       ├── main.py
+│       ├── state.py
+│       ├── timer_logic.py
+│       ├── tomato.png
+│       └── ui.py
+├── Section_029...
+│   └── password-ma...
+│       ├── assets
+│       │   └── logo.png
+│       ├── data
+│       │   └── passwords.json
+│       ├── dialogs.py
+│       ├── main.py
+│       ├── password_generator.py
+│       ├── storage.py
+│       ├── ui.py
+│       └── utils.py
+├── Section_031...
+│   └── flashcard.py
+├── Section_032...
+│   ├── .env
+│   ├── age_counter
+│   │   ├── age_logic.py
+│   │   ├── dob_history.csv
+│   │   ├── main.py
+│   │   ├── storage.py
+│   │   ├── ui.py
+│   │   └── validators.py
+│   ├── birthday_wi...
+│   │   ├── .env
+│   │   ├── data
+│   │   │   └── birthdays.csv
+│   │   ├── logic
+│   │   │   └── birthday_selector.py
+│   │   ├── mail
+│   │   │   ├── builder.py
+│   │   │   └── sender.py
+│   │   ├── main.py
+│   │   ├── requirements.txt
+│   │   └── templates
+│   │       ├── birthday.html
+│   │       └── birthday.txt
+│   ├── quotes
+│   │   ├── .env
+│   │   ├── SundayQuotes.py
+│   │   └── quotes.csv
+│   └── smtp.py
+├── Section_033...
+│   ├── iss_notifie...
+│   │   ├── .env
+│   │   ├── allcode.txt
+│   │   ├── astronomy.py
+│   │   ├── config.py
+│   │   ├── email_service.py
+│   │   ├── location.py
+│   │   ├── main.py
+│   │   ├── network.py
+│   │   └── output.py
+│   ├── kanye_api.py
+│   ├── mylocation_isslocation.py
+│   ├── solar_report.txt
+│   └── sunrise_sunset.py
+├── Section_034...
+│   └── open_trevia
+│       ├── all_python_code.txt
+│       ├── main.py
+│       ├── questions.py
+│       ├── quiz_constants.py
+│       ├── quiz_ui.py
+│       └── quizlogic.py
+├── Section_035...
+│   └── weather_app
+│       ├── .env
+│       ├── app
+│       │   ├── __init__.py
+│       │   ├── core
+│       │   │   ├── weather_analysis.py
+│       │   │   └── weather_ui_adapter.py
+│       │   ├── entrypoints
+│       │   │   ├── cli.py
+│       │   │   ├── gui.py
+│       │   │   └── sms.py
+│       │   ├── infrastruct...
+│       │   │   └── weather_cache.py
+│       │   ├── presentatio...
+│       │   │   ├── weather_cli.py
+│       │   │   └── weather_gui.py
+│       │   └── services
+│       │       ├── reminder.py
+│       │       └── weather_api.py
+│       ├── data
+│       │   ├── json
+│       │   │   └── weather.json
+│       │   └── txt
+│       │       └── last_sms.txt
+│       ├── main.py
+│       └── requirements.txt
+├── Section_036...
+│   └── stock_updat...
+│       ├── .env
+│       ├── article.py
+│       ├── assets.py
+│       ├── config.py
+│       ├── main.py
+│       ├── news.py
+│       ├── stocks.py
+│       ├── ui.py
+│       └── whatsapp.py
+├── Section_037...
+│   └── pixela-habi...
+│       ├── .env
+│       ├── app
+│       │   ├── core
+│       │   │   └── habit_manager.py
+│       │   ├── services
+│       │   │   └── pixela_client.py
+│       │   ├── ui
+│       │   │   ├── app_window.py
+│       │   │   ├── graph_view.py
+│       │   │   └── habit_form.py
+│       │   └── utils
+│       │       ├── config.py
+│       │       └── exceptions.py
+│       ├── main.py
+│       └── requirements.txt
+├── Section_038...
+│   └── workout
+│       ├── .env
+│       ├── all_python_files.txt
+│       ├── engine.py
+│       ├── main.py
+│       ├── sheet.py
+│       └── ui.py
+├── Section_039...
+│   └── flight-deal...
+│       ├── .env
+│       ├── all_python_files.txt
+│       ├── data_manager.py
+│       ├── flight_data.py
+│       ├── flight_search.py
+│       ├── main.py
+│       └── notification_manager.py
+├── Section_040...
+│   └── flight
+│       ├── .env
+│       ├── aviation_client.py
+│       ├── config.py
+│       ├── fun_facts.py
+│       ├── main.py
+│       ├── notification.py
+│       ├── requirements.txt
+│       └── sheet_writer.py
+├── Section_041...
+│   └── htmltagexample.html
+├── Section_045...
+│   └── scraping
+│       ├── all_products.json
+│       ├── all_products_by_category.json
+│       ├── main.py
+│       └── website.html
+├── Section_047...
+│   └── amazon_mann...
+│       ├── all_python_files.txt
+│       ├── amazon_rendered.html
+│       ├── data
+│       │   ├── input
+│       │   │   └── productpage.html
+│       │   └── output
+│       │       ├── products.csv
+│       │       └── products.html
+│       ├── html_view.py
+│       ├── main.py
+│       ├── scraper.py
+│       └── storage.py
+├── Section_048...
+│   ├── amazon-scra...
+│   │   ├── app.py
+│   │   ├── browser_fetcher.py
+│   │   ├── data
+│   │   │   └── output
+│   │   │       ├── products.csv
+│   │   │       └── products.html
+│   │   ├── requirements.txt
+│   │   ├── scraper.py
+│   │   └── storage.py
+│   └── test.py
+├── Section_049...
+│   ├── anime_data_paginated_fetched.json
+│   ├── index.html
+│   └── main.py
+├── Section_054...
+│   ├── decorater.py
+│   └── flasky
+│       ├── app.py
+│       ├── static
+│       │   ├── script.js
+│       │   └── style.css
+│       └── templates
+│           ├── about.html
+│           └── index.html
+├── Section_055...
+│   └── flasky
+│       ├── .env
+│       ├── .env.example
+│       ├── app.py
+│       ├── static
+│       │   ├── script.js
+│       │   └── style.css
+│       └── templates
+│           ├── about.html
+│           ├── guess_number.html
+│           ├── index.html
+│           └── login.html
+├── Section_056...
+│   └── new_python
+│       ├── .env
+│       ├── server.py
+│       ├── static
+│       │   ├── assets
+│       │   │   ├── css
+│       │   │   │   ├── fontawesome-all.min.css
+│       │   │   │   ├── images
+│       │   │   │   │   ├── loader.gif
+│       │   │   │   │   └── overlay.png
+│       │   │   │   ├── main.css
+│       │   │   │   ├── noscript.css
+│       │   │   │   └── profile_style.css
+│       │   │   ├── js
+│       │   │   │   ├── breakpoints.min.js
+│       │   │   │   ├── browser.min.js
+│       │   │   │   ├── jquery.min.js
+│       │   │   │   ├── jquery.poptrox.min.js
+│       │   │   │   ├── main.js
+│       │   │   │   └── util.js
+│       │   │   ├── sass
+│       │   │   │   ├── libs
+│       │   │   │   │   ├── _breakpoints.scss
+│       │   │   │   │   ├── _functions.scss
+│       │   │   │   │   ├── _mixins.scss
+│       │   │   │   │   ├── _vars.scss
+│       │   │   │   │   └── _vendor.scss
+│       │   │   │   ├── main.scss
+│       │   │   │   └── noscript.scss
+│       │   │   └── webfonts
+│       │   │       ├── fa-brands-400.eot
+│       │   │       ├── fa-brands-400.svg
+│       │   │       ├── fa-brands-400.ttf
+│       │   │       ├── fa-brands-400.woff
+│       │   │       ├── fa-brands-400.woff2
+│       │   │       ├── fa-regular-400.eot
+│       │   │       ├── fa-regular-400.svg
+│       │   │       ├── fa-regular-400.ttf
+│       │   │       ├── fa-regular-400.woff
+│       │   │       ├── fa-regular-400.woff2
+│       │   │       ├── fa-solid-900.eot
+│       │   │       ├── fa-solid-900.svg
+│       │   │       ├── fa-solid-900.ttf
+│       │   │       ├── fa-solid-900.woff
+│       │   │       └── fa-solid-900.woff2
+│       │   └── images
+│       │       ├── bg.jpg
+│       │       ├── fulls
+│       │       │   ├── 01.jpg
+│       │       │   ├── 02.jpg
+│       │       │   ├── 03.jpg
+│       │       │   ├── 04.jpg
+│       │       │   ├── 05.jpg
+│       │       │   ├── 06.jpg
+│       │       │   ├── 07.jpg
+│       │       │   └── 08.jpg
+│       │       ├── profile.png
+│       │       └── thumbs
+│       │           ├── 01.jpg
+│       │           ├── 02.jpg
+│       │           ├── 03.jpg
+│       │           ├── 04.jpg
+│       │           ├── 05.jpg
+│       │           ├── 06.jpg
+│       │           ├── 07.jpg
+│       │           └── 08.jpg
+│       └── templates
+│           ├── index.html
+│           └── profile.html
+├── Section_057...
+│   └── my_app
+│       ├── .env
+│       ├── app.py
+│       └── templates
+│           ├── blogs.html
+│           └── index.html
+├── Section_058...
+│   └── index.html
+├── Section_059...
+│   └── flask-blog-...
+│       ├── all_source_files.txt
+│       ├── app.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── css
+│       │   │   └── style.css
+│       │   ├── images
+│       │   └── js
+│       │       └── main.js
+│       └── templates
+│           ├── 404.html
+│           ├── 500.html
+│           ├── about.html
+│           ├── base.html
+│           ├── blog_detail.html
+│           ├── blogs.html
+│           ├── contact.html
+│           ├── index.html
+│           └── search_results.html
+├── Section_060...
+│   └── flask-conta...
+│       ├── .env
+│       ├── .env.example
+│       ├── app.py
+│       ├── email_service.py
+│       ├── requirements.txt
+│       ├── static
+│       └── templates
+│           └── index.html
+├── Section_061...
+│   └── secrets_pro...
+│       ├── .env
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── style.css
+│       └── templates
+│           ├── base.html
+│           ├── denied.html
+│           ├── index.html
+│           ├── login.html
+│           └── success.html
+├── Section_062...
+│   └── coffee-and-...
+│       ├── cafe-data.csv
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── css
+│       │       └── styles.css
+│       └── templates
+│           ├── add.html
+│           ├── base.html
+│           ├── cafes.html
+│           └── index.html
+├── Section_063...
+│   └── virtual_boo...
+│       ├── .gitignore
+│       ├── instance
+│       │   └── books.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── style.css
+│       └── templates
+│           ├── add.html
+│           ├── edit_rating.html
+│           └── index.html
+├── Section_064...
+│   └── top10movies
+│       ├── .env
+│       ├── .env.example
+│       ├── all_source_files.txt
+│       ├── forms.py
+│       ├── instance
+│       │   └── movies.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── css
+│       │       └── styles.css
+│       └── templates
+│           ├── add.html
+│           ├── base.html
+│           ├── edit.html
+│           ├── index.html
+│           └── select.html
+├── Section_065...
+├── Section_066...
+│   └── cafe-api
+│       ├── .env
+│       ├── .env.example
+│       ├── instance
+│       │   └── cafes.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── style.css
+│       └── templates
+│           └── index.html
+├── Section_067...
+│   └── upgraded-bl...
+│       ├── .env
+│       ├── all_source_files.txt
+│       ├── instance
+│       │   └── posts.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── assets
+│       │   │   ├── favicon.ico
+│       │   │   └── img
+│       │   │       ├── about-bg.jpg
+│       │   │       ├── contact-bg.jpg
+│       │   │       ├── edit-bg.jpg
+│       │   │       ├── home-bg.jpg
+│       │   │       └── post-bg.jpg
+│       │   ├── css
+│       │   │   └── styles.css
+│       │   └── js
+│       │       └── scripts.js
+│       └── templates
+│           ├── about.html
+│           ├── contact.html
+│           ├── footer.html
+│           ├── header.html
+│           ├── index.html
+│           ├── make-post.html
+│           └── post.html
+├── Section_068...
+│   └── flask-auth-...
+│       ├── instance
+│       │   └── users.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── css
+│       │   │   └── styles.css
+│       │   └── files
+│       │       └── cheat_sheet.txt
+│       └── templates
+│           ├── base.html
+│           ├── index.html
+│           ├── login.html
+│           ├── register.html
+│           └── secrets.html
+├── Section_069...
+│   └── blog-with-u...
+│       ├── all_source_files.txt
+│       ├── forms.py
+│       ├── instance
+│       │   └── posts.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── assets
+│       │   │   ├── favicon.ico
+│       │   │   └── img
+│       │   │       ├── about-bg.jpg
+│       │   │       ├── angela-profile.jpg
+│       │   │       ├── contact-bg.jpg
+│       │   │       ├── default-profile.jpg
+│       │   │       ├── edit-bg.jpg
+│       │   │       ├── home-bg.jpg
+│       │   │       ├── login-bg.jpg
+│       │   │       ├── post-bg.jpg
+│       │   │       └── register-bg.jpg
+│       │   ├── css
+│       │   │   └── styles.css
+│       │   └── js
+│       │       └── scripts.js
+│       └── templates
+│           ├── about.html
+│           ├── contact.html
+│           ├── footer.html
+│           ├── header.html
+│           ├── index.html
+│           ├── login.html
+│           ├── make-post.html
+│           ├── post.html
+│           └── register.html
+├── Section_072...
+│   └── Data_Explor...
+│       ├── Data_Exploration_Pandas_College_Major_(complete).ipynb
+│       └── salaries_by_college_major.csv
+├── Section_073...
+│   ├── Programming_Languages_(complete).ipynb
+│   └── QueryResults.csv
+├── Section_074...
+│   └── LEGO Notebo...
+│       ├── .ipynb_chec...
+│       │   ├── .DS_Store
+│       │   └── Lego_Analysis_for_Course_(completed)-checkpoint.ipynb
+│       ├── Lego_Analysis_for_Course_(completed).ipynb
+│       ├── assets
+│       │   ├── .DS_Store
+│       │   ├── bricks.jpg
+│       │   ├── lego_sets.png
+│       │   ├── lego_themes.png
+│       │   └── rebrickable_schema.png
+│       └── data
+│           ├── .DS_Store
+│           ├── colors.csv
+│           ├── sets.csv
+│           └── themes.csv
+├── Section_075...
+│   └── Google Tren...
+│       ├── Bitcoin Search Trend.csv
+│       ├── Daily Bitcoin Price.csv
+│       ├── Google_Trends_and_Data_Visualisation_(complete).ipynb
+│       ├── TESLA Search Trend vs Price.csv
+│       ├── UE Benefits Search vs UE Rate 2004-19.csv
+│       └── UE Benefits Search vs UE Rate 2004-20.csv
+├── Section_076...
+│   └── Google+Play...
+│       ├── Google_Play_Store_App_Analytics_(complete).ipynb
+│       └── apps.csv
+├── Section_077...
+│   └── Computation...
+│       ├── Computation_with_NumPy_and_N_Dimensional_Arrays_(complete).ipynb
+│       └── yummy_macarons.jpg
+├── Section_078...
+│   └── Seaborn+Lin...
+│       ├── Seaborn_and_Linear_Regression_(complete).ipynb
+│       └── cost_revenue_dirty.csv
+├── Section_079...
+│   └── Nobel+Prize...
+│       ├── Nobel_Prize_Analysis_(complete).ipynb
+│       └── nobel_prize_data.csv
+├── Section_080...
+│   └── Dr+Semmelwe...
+│       ├── Dr_Semmelweis_Handwashing_Discovery_(complete).ipynb
+│       ├── annual_deaths_by_clinic.csv
+│       └── monthly_deaths.csv
+├── Section_081...
+│   └── Multivariab...
+│       ├── Multivariable_Regression_and_Valuation_Model_(complete).ipynb
+│       └── boston.csv
+├── Section_082...
+│   └── main.py
+├── Section_083...
+│   └── portfolio
+│       ├── assets
+│       ├── certifications.html
+│       ├── css
+│       │   └── style.css
+│       ├── data
+│       │   └── data.json
+│       ├── education.html
+│       ├── experience.html
+│       ├── index.html
+│       ├── js
+│       │   └── main.js
+│       ├── languages.html
+│       ├── projects.html
+│       └── skills.html
+├── Section_085...
+│   └── main.py
+├── Section_086...
+│   └── main.py
+├── Section_087...
+│   └── main.py
+├── Section_088...
+│   ├── cafe_projec...
+│   │   ├── app
+│   │   │   ├── __init__.py
+│   │   │   ├── forms.py
+│   │   │   ├── models.py
+│   │   │   ├── routes.py
+│   │   │   ├── static
+│   │   │   │   └── css
+│   │   │   └── templates
+│   │   │       ├── add.html
+│   │   │       ├── base.html
+│   │   │       └── index.html
+│   │   ├── instance
+│   │   │   └── cafes.db
+│   │   └── run.py
+│   └── ss.png
+├── Section_089...
+│   └── todo_app
+│       ├── .env
+│       ├── .gitignore
+│       ├── add_dummy_data.py
+│       ├── app.db
+│       ├── app.py
+│       ├── config.py
+│       ├── forms.py
+│       ├── init_db.py
+│       ├── models.py
+│       ├── requirements.txt
+│       ├── s.png
+│       ├── static
+│       │   ├── css
+│       │   │   └── style.css
+│       │   └── js
+│       │       └── script.js
+│       └── templates
+│           ├── base.html
+│           ├── index.html
+│           ├── project.html
+│           ├── project_form.html
+│           ├── task_card.html
+│           └── task_form.html
+├── Section_090...
+│   └── dangerous_w...
+│       ├── app.py
+│       └── templates
+│           └── index.html
+├── Section_091...
+│   └── pdf-to-spee...
+│       ├── .env
+│       ├── app.py
+│       ├── outputs
+│       │   └── resume2_SayantanBharati_20260221_203819.mp3
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── css
+│       │   │   └── style.css
+│       │   └── js
+│       │       └── script.js
+│       ├── templates
+│       │   ├── base.html
+│       │   ├── footer.html
+│       │   ├── index.html
+│       │   ├── nav.html
+│       │   ├── progress.html
+│       │   └── result.html
+│       └── uploads
+├── Section_092...
+│   └── flask_color...
+│       ├── app.py
+│       ├── requirements.txt
+│       └── templates
+│           └── index.html
+├── Section_094...
+│   └── t_rex_game_...
+│       ├── main.py
+│       └── requirement.py
+├── Section_095...
+│   └── space_invad...
+│       ├── app
+│       │   ├── __init__.py
+│       │   ├── game_logic.py
+│       │   ├── routes.py
+│       │   ├── static
+│       │   │   ├── css
+│       │   │   └── js
+│       │   │       └── game.js
+│       │   └── templates
+│       │       ├── base.html
+│       │       └── index.html
+│       ├── requirements.txt
+│       └── run.py
+├── Section_096...
+│   └── art_search
+│       ├── .env
+│       ├── app.py
+│       ├── sample.png
+│       └── templates
+│           ├── _results.html
+│           ├── artwork.html
+│           ├── base.html
+│           ├── error.html
+│           └── index.html
+├── Section_097...
+│   ├── ecommerce-a...
+│   │   ├── .env
+│   │   ├── .gitignore
+│   │   ├── app
+│   │   │   ├── __init__.py
+│   │   │   ├── decorators.py
+│   │   │   ├── extensions.py
+│   │   │   ├── forms.py
+│   │   │   ├── models.py
+│   │   │   ├── routes
+│   │   │   │   ├── admin.py
+│   │   │   │   ├── auth.py
+│   │   │   │   ├── cart.py
+│   │   │   │   ├── main.py
+│   │   │   │   ├── payment.py
+│   │   │   │   └── product.py
+│   │   │   ├── services
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── payment_service.py
+│   │   │   ├── static
+│   │   │   │   ├── css
+│   │   │   │   │   └── style.css
+│   │   │   │   ├── images
+│   │   │   │   └── js
+│   │   │   │       └── main.js
+│   │   │   ├── templates
+│   │   │   │   ├── admin
+│   │   │   │   │   └── dashboard.html
+│   │   │   │   ├── auth
+│   │   │   │   │   ├── login.html
+│   │   │   │   │   ├── profile.html
+│   │   │   │   │   └── register.html
+│   │   │   │   ├── base.html
+│   │   │   │   ├── cart
+│   │   │   │   │   ├── cart.html
+│   │   │   │   │   └── checkout.html
+│   │   │   │   ├── errors
+│   │   │   │   │   ├── 403.html
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   └── 500.html
+│   │   │   │   ├── index.html
+│   │   │   │   └── product
+│   │   │   │       ├── admin_add.html
+│   │   │   │       ├── admin_edit.html
+│   │   │   │       └── detail.html
+│   │   │   └── utils.py
+│   │   ├── config.py
+│   │   ├── requirements.txt
+│   │   └── run.py
+│   └── preview.gif
+├── Section_098...
+│   ├── 1_raise_ema...
+│   │   ├── .env
+│   │   ├── config.py
+│   │   ├── email_template.txt
+│   │   ├── main.py
+│   │   └── requirements.txt
+│   ├── 2_connected...
+│   │   ├── .env
+│   │   ├── all_source_files.txt
+│   │   ├── app.py
+│   │   ├── config.py
+│   │   ├── preview.png
+│   │   ├── requirements.txt
+│   │   ├── scanner.py
+│   │   ├── static
+│   │   │   ├── script.js
+│   │   │   └── style.css
+│   │   └── templates
+│   │       └── index.html
+│   ├── 3_downloads...
+│   │   ├── config.json
+│   │   ├── main.py
+│   │   └── ui.py
+│   ├── 4_job_autom...
+│   │   ├── .env
+│   │   ├── .env.example
+│   │   ├── app
+│   │   │   ├── __init__.py
+│   │   │   ├── config.py
+│   │   │   ├── models
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── data_manager.py
+│   │   │   │   └── report_manager.py
+│   │   │   ├── routes
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── automation.py
+│   │   │   │   ├── data.py
+│   │   │   │   ├── main.py
+│   │   │   │   └── reports.py
+│   │   │   ├── services
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── automation_engine.py
+│   │   │   │   └── scheduler.py
+│   │   │   ├── static
+│   │   │   │   ├── css
+│   │   │   │   │   └── style.css
+│   │   │   │   └── js
+│   │   │   │       └── main.js
+│   │   │   └── templates
+│   │   │       ├── automation.html
+│   │   │       ├── base.html
+│   │   │       ├── data_add.html
+│   │   │       ├── data_edit.html
+│   │   │       ├── data_list.html
+│   │   │       ├── data_upload.html
+│   │   │       ├── index.html
+│   │   │       └── reports.html
+│   │   ├── config.yaml
+│   │   ├── data
+│   │   │   ├── input_data
+│   │   │   │   └── data.csv
+│   │   │   └── output_repo...
+│   │   │       └── report.csv
+│   │   ├── requirements.txt
+│   │   ├── run.py
+│   │   └── sample.gif
+│   ├── 5_whatsapp-...
+│   │   ├── .env
+│   │   ├── PyWhatKit_DB.txt
+│   │   ├── app
+│   │   │   ├── __init__.py
+│   │   │   ├── forms.py
+│   │   │   ├── models.py
+│   │   │   ├── routes.py
+│   │   │   ├── scheduler.py
+│   │   │   ├── static
+│   │   │   │   ├── css
+│   │   │   │   │   └── style.css
+│   │   │   │   ├── images
+│   │   │   │   └── js
+│   │   │   │       └── main.js
+│   │   │   ├── templates
+│   │   │   │   ├── base.html
+│   │   │   │   ├── edit.html
+│   │   │   │   └── index.html
+│   │   │   └── utils.py
+│   │   ├── config.py
+│   │   ├── instance
+│   │   │   └── app.db
+│   │   ├── requirements.txt
+│   │   └── run.py
+│   └── 6_system_mo...
+│       ├── app.py
+│       ├── preview.png
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── script.js
+│       │   └── style.css
+│       └── templates
+│           └── index.html
+├── Section_099...
+│   ├── preview.gif
+│   └── spaceflight...
+│       ├── all_source_files.txt
+│       ├── analyze_launches.py
+│       ├── analyze_rockets.py
+│       ├── app.py
+│       ├── data
+│       │   ├── launches.csv
+│       │   └── rockets.csv
+│       ├── fetch_launches.py
+│       ├── fetch_rockets.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── css
+│       │   │   └── style.css
+│       │   └── js
+│       │       └── main.js
+│       ├── templates
+│       │   ├── analyze_launches.html
+│       │   ├── analyze_rockets.html
+│       │   ├── base.html
+│       │   ├── index.html
+│       │   ├── launches.html
+│       │   └── rockets.html
+│       └── visualize.py
+├── Section_100...
+│   └── fatal_force
+│       ├── Deaths_by_Police_US.csv
+│       ├── Fatal_Force_(start).ipynb
+│       ├── Median_Household_Income_2015.csv
+│       ├── Pct_Over_25_Completed_High_School.csv
+│       ├── Pct_People_Below_Poverty_Level.csv
+│       └── Share_of_Race_By_City.csv
+├── bulk_rename.py
+├── create_course_tree.sh
+├── extract_data.py
+├── filecount.py
+├── full_folder_tree.txt
+├── input.html
+├── output.txt
+├── python_folder_tree
+├── stat.py
+└── tree.py

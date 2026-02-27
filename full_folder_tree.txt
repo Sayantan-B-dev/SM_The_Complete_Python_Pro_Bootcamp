@@ -1,0 +1,1703 @@
+.
+├── .env
+├── .gitattributes
+├── .gitignore
+├── README.md
+├── Section_001_-_Day_1_-_Beginner_-_Working_with_Variables_in_Python_to_Manage_Data
+│   ├── 001_-_What_you're_going_to_get_from_this_course.md
+│   ├── 002_-_START_HERE.md
+│   ├── 003_-_Downloadable_Resources_and_Tips_for_Taking_the_Course.md
+│   ├── 004_-_Day_1_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 005_-_DO_NOT_SKIP_-_Download_and_Setup_PyCharm_for_Learning.md
+│   ├── 006_-_Printing_to_the_Console_in_Python.md
+│   ├── 006_Print.py
+│   ├── 007_-_Coding_Exercise_1_Printing_Practice.md
+│   ├── 007_-_String_Manipulation_and_Code_Intelligence.md
+│   ├── 008_-_Coding_Exercise_2_Debugging_Practice.md
+│   ├── 008_-_The_Python_Input_Function.md
+│   ├── 008_input.py
+│   ├── 009_-_Python_Variables.md
+│   ├── 010_-_Coding_Exercise_3_Variables.md
+│   ├── 010_-_Variable_Naming.md
+│   ├── 011_-_Day_1_Project_Band_Name_Generator.md
+│   ├── 011_-_Quiz_1_Variable_Naming_Quiz.md
+│   ├── 011_band_name.py
+│   └── 012_-_Congratulations!_Well_done!.md
+├── Section_002_-_Day_2_-_Beginner_-_Understanding_Data_Types_and_How_to_Manipulate_Strings
+│   ├── 013_-_Day_2_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 014_-_Python_Primitive_Data_Types.md
+│   ├── 015_-_Quiz_2_Data_Types_Quiz.md
+│   ├── 015_-_Type_Error,_Type_Checking_and_Type_Conversion.md
+│   ├── 016_-_Mathematical_Operations_in_Python.md
+│   ├── 017_-_Coding_Exercise_4_BMI_Calculator.md
+│   ├── 017_-_Number_Manipulation_and_F_Strings_in_Python.md
+│   ├── 018_-_Day_2_Project_Tip_Calculator.md
+│   ├── 018_-_Quiz_3_Mathematical_Operations_Quiz.md
+│   └── 019_-_You_are_already_in_the_top_50%.md
+├── Section_003_-_Day_3_-_Beginner_-_Control_Flow_and_Logical_Operators
+│   ├── 020_-_Day_3_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 021_-_Get_Access_to_the_Monthly_App_Brewery_Newsletter.md
+│   ├── 022_-_Control_Flow_with_if__else_and_Conditional_Operators.md
+│   ├── 023_-_Introducing_the_Modulo.md
+│   ├── 024_-_Nested_if_statements_and_elif_statements.md
+│   ├── 025_-_Coding_Exercise_5_BMI_Calculator_with_Interpretations.md
+│   ├── 025_-_Multiple_If_Statements_in_Succession.md
+│   ├── 026_-_Pizza_Order_Practice.md
+│   ├── 027_-_Logical_Operators.md
+│   ├── 028_-_Day_3_Project_Treasure_Island.md
+│   ├── 028_-_Quiz_4_Logical_Operators_Quiz.md
+│   ├── 028_treasure.py
+│   └── 029_-_Share_and_Show_off_your_Project!.md
+├── Section_004_-_Day_4_-_Beginner_-_Randomisation_and_Python_Lists
+│   ├── 030_-_Day_4_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 031_-_Random_Module.md
+│   ├── 032_-_Understanding_the_Offset_and_Appending_Items_to_Lists.md
+│   ├── 033_-_Who_will_pay_the_bill.md
+│   ├── 034_-_IndexErrors_and_Working_with_Nested_Lists.md
+│   ├── 035_-_Day_4_Project_Rock_Paper_Scissors.md
+│   ├── 035_-_Quiz_5_List_and_IndexError_Quiz.md
+│   ├── 035_rock_paper_scissors.py
+│   └── 036_-_Programming_is_like_going_to_the_Gym.md
+├── Section_005_-_Day_5_-_Beginner_-_Python_Loops
+│   ├── 037_-_Day_5_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 038_-_Using_the_for_loop_with_Python_Lists.md
+│   ├── 039_-_Highest_Score.md
+│   ├── 040_-_for_loops_and_the_range()_function.md
+│   ├── 041_-_Coding_Exercise_6_FizzBuzz.md
+│   ├── 041_-_Day_5_Project_Create_a_Password_Generator.md
+│   ├── 041_passgen.py
+│   └── 042_-_Hard_Work_and_Perseverance_beats_Raw_Talent_Every_Time.md
+├── Section_006_-_Day_6_-_Beginner_-_Python_Functions_&_Karel
+│   ├── 043_-_Day_6_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 044_-_Defining_and_Calling_Python_Functions.md
+│   ├── 045_-_The_Hurdles_Loop_Challenge.md
+│   ├── 046_-_Indentation_in_Python.md
+│   ├── 047_-_Quiz_6_Code_Indentation_Quiz.md
+│   ├── 047_-_While_Loops.md
+│   ├── 048_-_Hurdles_Challenge_using_While_Loops.md
+│   ├── 049_-_Jumping_over_Hurdles_with_Variable_Heights.md
+│   ├── 050_-_Final_Project_Escaping_the_Maze.md
+│   └── 051_-_Why_is_this_so_Hard!_Can_I_really_do_this.md
+├── Section_007_-_Day_7_-_Beginner_-_Hangman
+│   ├── 052_-_Day_7_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 053_-_How_to_break_a_Complex_Problem_down_into_a_Flow_Chart.md
+│   ├── 054_-_Step_1_-_Picking_a_Random_Words_and_Checking_Answers.md
+│   ├── 055_-_Step_2_-_Replacing_Blanks_with_Guesses.md
+│   ├── 056_-_Step_3_-_Checking_if_the_Player_has_Won.md
+│   ├── 057_-_Step_4_-_Keeping_Track_of_the_Player's_Lives.md
+│   ├── 058_-_Step_5_-_Improving_the_User_Experience.md
+│   ├── 059_-_The_Benefits_of_Daily_Practice.md
+│   └── 059_hangman.py
+├── Section_008_-_Day_8_-_Beginner_-_Function_Parameters_&_Caesar_Cipher
+│   ├── 060_-_Day_8_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 061_-_Functions_with_Inputs.md
+│   ├── 062_-_Coding_Exercise_7_Life_in_Weeks.md
+│   ├── 062_-_Positional_vs._Keyword_Arguments.md
+│   ├── 062_age.py
+│   ├── 063_-_Caesar_Cipher_Part_1_-_Encryption.md
+│   ├── 063_-_Coding_Exercise_8_Love_Calculator.md
+│   ├── 063_love_calc.py
+│   ├── 064_-_Caesar_Cipher_Part_2_-_Decryption.md
+│   ├── 065_-_Caesar_Cipher_Part_3_-_Reorganising_our_Code.md
+│   ├── 065_encrypt_decrypt.py
+│   └── 066_-_How_You_Can_Stay_Motivated.md
+├── Section_009_-_Day_9_-_Beginner_-_Dictionaries,_Nesting_and_the_Secret_Auction
+│   ├── 067_-_Day_9_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 068_-_The_Python_Dictionary_Deep_Dive.md
+│   ├── 069_-_Coding_Exercise_9_Grading_Program.md
+│   ├── 069_-_Nesting_Lists_and_Dictionaries.md
+│   ├── 070_-_Quiz_7_Python_Dictionaries_Quiz.md
+│   ├── 070_-_The_Secret_Auction_Program_Instructions_and_Flow_Chart.md
+│   ├── 070_bidder.py
+│   └── 071_-_Motivation_and_the_Accountability_Trick.md
+├── Section_010_-_Day_10_-_Beginner_-_Functions_with_Outputs
+│   ├── 072_-_Day_10_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 073_-_Functions_with_Outputs.md
+│   ├── 074_-_Multiple_return_values.md
+│   ├── 075_-_Coding_Exercise_10_Leap_Year.md
+│   ├── 075_-_Docstrings.md
+│   ├── 076_-_Quiz_8_Functions_Quiz.md
+│   ├── 076_-_The_Calculator_Project.md
+│   ├── 076_calculator.py
+│   └── 077_-_How_to_Get_a_Good_Night's_Sleep.md
+├── Section_011_-_Day_11_-_Beginner_-_The_Blackjack_Capstone_Project
+│   ├── 078_-_Day_11_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 079_-_Blackjack_Program_Requirements_and_Game_Rules.md
+│   ├── 080_-_Hint_4_&_5_Solution_Walkthrough.md
+│   ├── 081_-_Hint_6-8_Solution_Walkthrough.md
+│   ├── 082_-_Hint_9_Solution_Walkthrough_Refactoring_and_calling_calculate_score().md
+│   ├── 083_-_Hint_10-12_Solution_Walkthrough.md
+│   ├── 084_-_Hint_13_Solution_Walkthrough.md
+│   ├── 084_blackjack.py
+│   └── 085_-_A_Solid_Foundation_goes_a_Long_Way.md
+├── Section_012_-_Day_12_-_Beginner_-_Scope_&_Number_Guessing_Game
+│   ├── 086_-_Day_12_Goals_What_we'll_make_by_the_end_of_the_day.md
+│   ├── 087_-_Namespaces_Local_vs._Global_Scope.md
+│   ├── 088_-_Does_Python_Have_Block_Scope.md
+│   ├── 089_-_Coding_Exercise_11_Prime_Number_Checker.md
+│   ├── 089_-_How_to_Modify_a_Global_Variable.md
+│   ├── 090_-_Python_Constants_and_Global_Scope.md
+│   ├── 091_-_Introducing_the_Final_Project_The_Number_Guessing_Game.md
+│   ├── 091_-_Quiz_9_Scope_Quiz.md
+│   ├── 092_-_Solution_&_Walkthrough_to_the_Number_Guessing_Game.md
+│   ├── 092_numberguess.py
+│   └── 093_-_Don't_be_too_hard_on_yourself.md
+├── Section_013_-_Day_13_-_Beginner_-_Debugging_How_to_Find_and_Fix_Errors_in_your_Code
+│   ├── 094_-_Describe_the_Problem.md
+│   ├── 095_-_Reproduce_the_Bug.md
+│   ├── 096_-_Play_Computer_and_Evaluate_Each_Line.md
+│   ├── 097_-_Fixing_Errors_and_Watching_for_Red_Underlines.md
+│   ├── 098_-_Squash_bugs_with_a_print()_Statement.md
+│   ├── 099_-_Bringing_out_the_BIG_Gun_Using_a_Debugger.md
+│   ├── 100_-_Final_Debugging_Tips.md
+│   ├── 101_-_Building_Confidence.md
+│   ├── 101_-_Coding_Exercise_12_Debugging_Odd_or_Even.md
+│   ├── 101_-_Coding_Exercise_13_Debugging_Leap_Year.md
+│   └── 101_-_Coding_Exercise_14_Debugging_FizzBuzz.md
+├── Section_014_-_Day_14_-_Beginner_-_Higher_Lower_Game_Project
+│   ├── 102_-_Introduction_&_Program_Requirements_for_the_Higher_Lower_Game.md
+│   ├── 103_-_Solution_&_Walkthrough_of_the_Higher_Lower_Game.md
+│   ├── 103_higherlower.py
+│   ├── 104_-_Study_Tip_Set_Reminders_in_Your_Calendar_to_Review.md
+│   └── dataset.py
+├── Section_015_-_Day_15_-_Intermediate_-_Local_Development_Environment_Setup_&_the_Coffee_Machine
+│   ├── 105_-_Introduction_&_Requirements_for_the_Coffee_Machine_Project.md
+│   ├── 106_-_Solution_&_Walkthrough_for_the_Coffee_Machine_Code.md
+│   ├── 106_coffeemachine.py
+│   └── 107_-_Location,_Location,_Location_-_Pavlov's_Coding_Corner.md
+├── Section_016_-_Day_16_-_Intermediate_-_Object_Oriented_Programming_(OOP)
+│   ├── 108_-_Why_do_we_need_OOP_and_how_does_it_work.md
+│   ├── 109_-_How_to_use_OOP_Classes_and_Objects.md
+│   ├── 110_-_Constructing_Objects_and_Accessing_their_Attributes_and_Methods.md
+│   ├── 110_turtle.py
+│   ├── 111_-_How_to_Add_Python_Packages_and_use_PyPi.md
+│   ├── 112_-_Practice_Modifying_Object_Attributes_and_Calling_Methods.md
+│   ├── 112_preetytable.py
+│   ├── 113_-_Building_the_Coffee_Machine_in_OOP.md
+│   ├── 113_-_Quiz_10_Python_Objects_Quiz.md
+│   ├── 113_coffee
+│   │   ├── coffee_maker.py
+│   │   ├── main.py
+│   │   ├── menu.py
+│   │   ├── menu_item.py
+│   │   └── money_machine.py
+│   ├── 114_-_Walkthrough_and_Solution_for_the_OOP_Coffee_Machine.md
+│   └── 115_-_Don't_forget_to_review_occasionally.md
+├── Section_017_-_Day_17_-_Intermediate_-_The_Quiz_Project_&_the_Benefits_of_OOP
+│   ├── 116_-_Day_17_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 117_-_How_to_create_your_own_Class_in_Python.md
+│   ├── 118_-_Working_with_Attributes,_Class_Constructors_and_the___init__()_Function.md
+│   ├── 119_-_Adding_Methods_to_a_Class.md
+│   ├── 120_-_Quiz_Project_Part_1_Creating_the_Question_Class.md
+│   ├── 121_-_Quiz_Project_Part_2_Creating_the_List_of_Question_Objects_from_the_Data.md
+│   ├── 122_-_Quiz_Project_Part_3_The_QuizBrain_and_the_next_question()_Method.md
+│   ├── 123_-_Quiz_Project_Part_4_How_to_continue_showing_new_Questions.md
+│   ├── 124_-_Quiz_Project_Part_5_Checking_Answers_and_Keeping_Score.md
+│   ├── 125_-_The_Benefits_of_OOP_Use_Open_Trivia_DB_to_Get_New_Questions.md
+│   ├── 125_Quiz
+│   │   ├── game.py
+│   │   ├── main.py
+│   │   ├── player.py
+│   │   ├── question.py
+│   │   ├── quiz.py
+│   │   └── trivia_api.py
+│   └── 126_-_Run_for_that_Bus!.md
+├── Section_018_-_Day_18_-_Intermediate_-_Turtle_&_the_Graphical_User_Interface_(GUI)
+│   ├── 127_-_Day_18_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 128_-_Understanding_Turtle_Graphics_and_How_to_use_the_Documentation.md
+│   ├── 129_-_Turtle_Challenge_1_-_Draw_a_Square.md
+│   ├── 129_example.py
+│   ├── 130_-_Importing_Modules,_Installing_Packages,_and_Working_with_Aliases.md
+│   ├── 131_-_Turtle_Challenge_2_-_Draw_a_Dashed_Line.md
+│   ├── 131_example.py
+│   ├── 132_-_Turtle_Challenge_3_-_Drawing_Different_Shapes.md
+│   ├── 132_example.py
+│   ├── 133_-_Turtle_Challenge_4_-_Generate_a_Random_Walk.md
+│   ├── 133_example.py
+│   ├── 134_-_Python_Tuples_and_How_to_Generate_Random_RGB_Colours.md
+│   ├── 135_-_Turtle_Challenge_5_-_Draw_a_Spirograph.md
+│   ├── 135_example.py
+│   ├── 136_-_The_Hirst_Painting_Project_Part_1_-_How_to_Extract_RGB_Values_from_Images.md
+│   ├── 136_extractcolor.py
+│   ├── 136_image.jpg
+│   ├── 137_-_The_Hirst_Painting_Project_Part_2_-_Drawing_the_Dots.md
+│   ├── 137_example.py
+│   ├── 138_-_Space_out_your_study_sessions_and_stay_consistent.md
+│   └── palette.py
+├── Section_019_-_Day_19_-_Intermediate_-_Instances,_State_and_Higher_Order_Functions
+│   ├── 139_-_Day_19_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 140_-_Python_Higher_Order_Functions_&_Event_Listeners.md
+│   ├── 141_-_Challenge_Make_an_Etch-A-Sketch_App.md
+│   ├── 141_sketch.py
+│   ├── 142_-_Object_State_and_Instances.md
+│   ├── 143_-_Understanding_the_Turtle_Coordinate_System.md
+│   ├── 143_racingturtle.py
+│   ├── 144_-_Aaaand,_we're_off_to_the_races!.md
+│   ├── 144_-_Quiz_11_Turtle_Coordinate_System_Quiz.md
+│   └── 145_-_Expand_on_the_Solutions.md
+├── Section_020_-_Day_20_-_Intermediate_-_Build_the_Snake_Game_Part_1_Animation_&_Coordinates
+│   ├── 146_-_Day_20_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 147_-_Screen_Setup_and_Creating_a_Snake_Body.md
+│   ├── 148_-_Animating_the_Snake_Segments_on_Screen.md
+│   ├── 149_-_Create_a_Snake_Class_&_Move_to_OOP.md
+│   ├── 150_-_How_to_Control_the_Snake_with_a_Keypress.md
+│   ├── 151_-_Programming_is_not_Memorising.md
+│   ├── snake.py
+│   └── snake_game.py
+├── Section_021_-_Day_21_-_Intermediate_-_Build_the_Snake_Game_Part_2_Inheritance_&_List_Slicing
+│   ├── 152_-_Day_21_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 153_-_Class_Inheritance.md
+│   ├── 154_-_Detect_Collisions_with_Food.md
+│   ├── 154_-_Quiz_12_Inheritance_Quiz.md
+│   ├── 155_-_Create_a_Scoreboard_and_Keep_Score.md
+│   ├── 156_-_Detect_Collisions_with_the_Wall.md
+│   ├── 157_-_Detect_Collisions_with_your_own_Tail.md
+│   ├── 158_-_How_to_Slice_Lists_&_Tuples_in_Python.md
+│   ├── 159_-_Stay_motivated_by_remembering_the_reason_you_signed_up.md
+│   ├── food.py
+│   ├── scoreboard.py
+│   ├── snake.py
+│   └── snake_game.py
+├── Section_022_-_Day_22_-_Intermediate_-_Build_Pong_The_Famous_Arcade_Game
+│   ├── 160_-_Day_22_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 161_-_Set_up_the_Main_Screen.md
+│   ├── 162_-_Create_a_Paddle_that_responds_to_Key_Presses.md
+│   ├── 163_-_Write_the_Paddle_Class_and_Create_the_Second_Paddle.md
+│   ├── 164_-_Write_the_Ball_Class_and_Make_the_Ball_Move.md
+│   ├── 165_-_Add_the_Ball_Bouncing_Logic.md
+│   ├── 166_-_How_to_Detect_Collisions_with_the_Paddle.md
+│   ├── 167_-_How_to_Detect_when_the_Ball_goes_Out_of_Bounds.md
+│   ├── 168_-_Score_Keeping_and_Changing_the_Ball_Speed.md
+│   ├── 169_-_Picturing_fears_even_the_worst-case_scenario_is_not_so_scary.md
+│   └── pong_game
+│       ├── ball.py
+│       ├── input_handler.py
+│       ├── main.py
+│       ├── paddle.py
+│       └── scoreboard.py
+├── Section_023_-_Day_23_-_Intermediate_-_The_Turtle_Crossing_Capstone_Project
+│   ├── 170_-_Day_23_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 171_-_Choose_Your_Difficulty.md
+│   ├── 172_-_How_to_use_the_Starter_Code.md
+│   ├── 173_-_Step_1_-_Check_out_how_the_game_play_works.md
+│   ├── 174_-_Step_2_-_Break_down_the_Problem.md
+│   ├── 175_-_Solution_to_Step_3_-_Create_the_Player_Behaviour.md
+│   ├── 176_-_Solution_to_Step_4_-_Create_the_Car_Behaviour.md
+│   ├── 177_-_Solution_to_Step_5_-_Detect_when_the_Turtle_collides_with_a_Car_squish.md
+│   ├── 178_-_Solution_to_Step_6_-_Detect_when_the_Player_has_reached_the_other_side.md
+│   ├── 179_-_Solution_to_Step_7_-_Add_the_Scoreboard_and_Game_Over_sequence.md
+│   ├── 180_-_This_course_is_not_about_typing_out_code.md
+│   └── turtle-crossing
+│       ├── car_manager.py
+│       ├── input_handler.py
+│       ├── main.py
+│       ├── player.py
+│       └── scoreboard.py
+├── Section_024_-_Day_24_-_Intermediate_-_Files,_Directories_and_Paths
+│   ├── 181_-_Day_24_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 182_-_Add_a_High_Score_to_the_Snake_Game.md
+│   ├── 183_-_How_to_Open,_Read,_and_Write_to_Files_using_the_with_Keyword.md
+│   ├── 184_-_Challenge_Read_and_Write_the_High_Score_to_a_File_in_Snake.md
+│   ├── 185_-_Understand_Relative_and_Absolute_File_Paths.md
+│   ├── 186_-_Introducing_the_Mail_Merge_Challenge.md
+│   ├── 186_-_Quiz_13_File_Paths_Quiz.md
+│   ├── 187_-_Solution_&_Walkthrough_for_the_Mail_Merge_Project.md
+│   ├── 188_-_What's_the_correct_solution_What's_the_best_answer_What's_the_right_way.md
+│   ├── Mail_Merge_Project_Start
+│   │   ├── .DS_Store
+│   │   ├── Input
+│   │   │   ├── .DS_Store
+│   │   │   ├── Letters
+│   │   │   │   └── starting_letter.txt
+│   │   │   └── Names
+│   │   │       └── invited_names.txt
+│   │   ├── Output
+│   │   │   ├── .DS_Store
+│   │   │   └── ReadyToSend
+│   │   │       ├── letter_for_Aang.txt
+│   │   │       ├── letter_for_Appa.txt
+│   │   │       ├── letter_for_Katara.txt
+│   │   │       ├── letter_for_Momo.txt
+│   │   │       ├── letter_for_Sokka.txt
+│   │   │       ├── letter_for_Toph.txt
+│   │   │       ├── letter_for_Uncle_Iroh.txt
+│   │   │       └── letter_for_Zuko.txt
+│   │   └── main.py
+│   ├── snake
+│   │   ├── data.txt
+│   │   ├── food.py
+│   │   ├── main.py
+│   │   ├── scoreboard.py
+│   │   └── snake.py
+│   ├── test.py
+│   └── test.txt
+├── Section_025_-_Day_25_-_Intermediate_-_Working_with_CSV_Data_and_the_Pandas_Library
+│   ├── 189_-_Day_25_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 190_-_Reading_CSV_Data_in_Python.md
+│   ├── 191_-_DataFrames_&_Series_Working_with_Rows_&_Columns.md
+│   ├── 192_-_The_Great_Squirrel_Census_Data_Analysis_(with_Pandas!).md
+│   ├── 193_-_U.S._States_Game_Part_1_Setup.md
+│   ├── 194_-_U.S._States_Game_Part_2_Challenge_with_.csv.md
+│   ├── 195_-_U.S._States_Game_Part_3_Saving_Data_to_.csv.md
+│   ├── squirrel
+│   │   ├── 2018_Squirrel_Data.csv
+│   │   ├── main.py
+│   │   └── squirrel_count.csv
+│   ├── us-states-game
+│   │   ├── 50_states.csv
+│   │   ├── blank_states_img.gif
+│   │   ├── data_manager.py
+│   │   ├── main.py
+│   │   ├── map_manager.py
+│   │   └── states_to_learn.csv
+│   └── weather_data
+│       ├── dummy_data.csv
+│       ├── test.py
+│       └── weather_data.csv
+├── Section_026_-_Day_26_-_Intermediate_-_List_Comprehension_and_the_NATO_Alphabet
+│   ├── 196_-_Day_26_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 197_-_How_to_Create_Lists_using_List_Comprehension.md
+│   ├── 198_-_Apply_List_Comprehension_to_the_U.S._States_Game.md
+│   ├── 198_-_Coding_Exercise_15_Squaring_Numbers.md
+│   ├── 199_-_Coding_Exercise_16_Filtering_Even_Numbers.md
+│   ├── 199_-_How_to_use_Dictionary_Comprehension.md
+│   ├── 200_-_Coding_Exercise_17_Data_Overlap.md
+│   ├── 200_-_Coding_Exercise_18_Dictionary_Comprehension_1.md
+│   ├── 200_-_How_to_Iterate_over_a_Pandas_DataFrame.md
+│   ├── 201_-_Coding_Exercise_19_Dictionary_Comprehension_2.md
+│   ├── 201_-_Introducing_the_NATO_Alphabet_Project.md
+│   ├── 202_-_Solution_&_Walkthrough_for_the_NATO_Alphabet_Project.md
+│   ├── NATO-alphabet-start
+│   │   ├── main.py
+│   │   └── nato_phonetic_alphabet.csv
+│   ├── dictionary.py
+│   └── list.py
+├── Section_027_-_Day_27_-_Intermediate_-_Tkinter,_args,_kwargs_and_Creating_GUI_Programs
+│   ├── 203_-_Day_27_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 204_-_History_of_GUI_and_Introduction_to_Tkinter.md
+│   ├── 205_-_Creating_Windows_and_Labels_with_Tkinter.md
+│   ├── 206_-_Setting_Default_Values_for_Optional_Arguments_inside_a_Function_Header.md
+│   ├── 207_-_Quiz_14_Default_Values_Quiz.md
+│   ├── 207_-_args_Many_Positional_Arguments.md
+│   ├── 208_-_kwargs_Many_Keyword_Arguments.md
+│   ├── 209_-_Buttons,_Entry,_and_Setting_Component_Options.md
+│   ├── 209_-_Quiz_15_Optional_Arguments,_args_and_kwargs_Quiz.md
+│   ├── 210_-_Other_Tkinter_Widgets_Radiobuttons,_Scales,_Checkbuttons_and_more.md
+│   ├── 211_-_Tkinter_Layout_Managers_pack(),_place()_and_grid().md
+│   ├── 212_-_Mile_to_Kilometers_Converter_Project.md
+│   ├── Other_Tkinter_Widgets.py
+│   ├── converter
+│   │   ├── converters.py
+│   │   ├── main.py
+│   │   ├── styles.py
+│   │   ├── ui_sections.py
+│   │   └── utils.py
+│   └── first_tkinter.py
+├── Section_028_-_Day_28_-_Intermediate_-_Tkinter,_Dynamic_Typing_and_the_Pomodoro_GUI_Application
+│   ├── 213_-_Day_28_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 214_-_How_to_work_with_the_Canvas_Widget_and_Add_Images_to_Tkinter.md
+│   ├── 215_-_Challenge_-_Complete_the_Application's_User_Interface_(UI).md
+│   ├── 216_-_Add_a_Count_Down_Mechanism.md
+│   ├── 217_-_Dynamic_Typing_Explained.md
+│   ├── 218_-_Setting_Different_Timer_Sessions_and_Values.md
+│   ├── 219_-_Adding_Checkmarks_and_Resetting_the_Application.md
+│   └── pomodoro
+│       ├── constants.py
+│       ├── main.py
+│       ├── state.py
+│       ├── timer_logic.py
+│       ├── tomato.png
+│       └── ui.py
+├── Section_029_-_Day_29_-_Intermediate_-_Building_a_Password_Manager_GUI_App_with_Tkinter
+│   ├── 220_-_Day_29_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 221_-_Challenge_1_-_Working_with_Images_and_Setting_up_the_Canvas.md
+│   ├── 222_-_Challenge_2_-_Use_grid()_and_columnspan_to_Complete_the_User_Interface.md
+│   ├── 223_-_Solution_to_the_Creating_the_Grid_Layout.md
+│   ├── 224_-_Challenge_3_-_Saving_Data_to_File.md
+│   ├── 225_-_Dialog_Boxes_and_Pop-Ups_in_Tkinter.md
+│   ├── 226_-_Generate_a_Password_&_Copy_it_to_the_Clipboard.md
+│   └── password-manager
+│       ├── assets
+│       │   └── logo.png
+│       ├── data
+│       │   └── passwords.json
+│       ├── dialogs.py
+│       ├── main.py
+│       ├── password_generator.py
+│       ├── storage.py
+│       ├── ui.py
+│       └── utils.py
+├── Section_030_-_Day_30_-_Intermediate_-_Errors,_Exceptions_and_JSON_Data_Improving_the_Password
+│   ├── 227_-_Day_30_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 228_-_Catching_Exceptions_The_try_catch_except_finally_Pattern.md
+│   ├── 229_-_Raising_your_own_Exceptions.md
+│   ├── 230_-_Code_Exercise_Exception_Handling_in_the_NATO_Phonetic_Alphabet_Project.md
+│   ├── 230_-_Coding_Exercise_20_IndexError_Handling.md
+│   ├── 231_-_Coding_Exercise_21_KeyError_Handling.md
+│   ├── 231_-_Write,_read_and_update_JSON_data_in_the_Password_Manager.md
+│   ├── 232_-_Challenge_1_-_Handling_Exceptions_in_the_Password_Manager.md
+│   └── 233_-_Challenge_2_-_Search_for_a_Website_in_the_Password_Manager.md
+├── Section_031_-_Day_31_-_Intermediate_-_Flash_Card_App_Capstone_Project
+│   ├── 234_-_Day_31_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 235_-_Step_1_-_Create_the_User_Interface_(UI)_with_Tkinter.md
+│   ├── 236_-_Solution_&_Walkthrough_for_Creating_the_UI.md
+│   ├── 237_-_Step_2_-_Create_New_Flash_Cards.md
+│   ├── 238_-_Solution_&_Walkthrough_for_Creating_New_Flash_Cards.md
+│   ├── 239_-_Step_3_-_Flip_the_Cards!.md
+│   ├── 240_-_Solution_&_Walkthrough_for_Flipping_Cards.md
+│   ├── 241_-_Step_4_-_Save_Your_Progress.md
+│   ├── 242_-_Solution_&_Walkthrough_for_Saving_Progress.md
+│   └── flashcard.py
+├── Section_032_-_Day_32_-_Intermediate+_Send_Email_(smtplib)_&_Manage_Dates_(datetime)
+│   ├── .env
+│   ├── 243_-_Day_32_Goals_what_we_will_make_by_the_end_of_the_day.md
+│   ├── 244_-_A_Note_About_the_Next_Lesson_Google_SMTP_Port.md
+│   ├── 245_-_How_to_Send_Emails_with_Python_using_SMTP.md
+│   ├── 246_-_Working_with_the_datetime_Module.md
+│   ├── 247_-_Challenge_1_-_Send_Motivational_Quotes_on_Mondays_via_Email.md
+│   ├── 248_-_Automated_Birthday_Wisher_Project_Challenge.md
+│   ├── 249_-_Solution_&_Walkthrough_for_the_Automated_Birthday_Wisher.md
+│   ├── 250_-_Run_Your_Python_Code_in_the_Cloud!.md
+│   ├── age_counter
+│   │   ├── age_logic.py
+│   │   ├── dob_history.csv
+│   │   ├── main.py
+│   │   ├── storage.py
+│   │   ├── ui.py
+│   │   └── validators.py
+│   ├── birthday_wisher
+│   │   ├── .env
+│   │   ├── data
+│   │   │   └── birthdays.csv
+│   │   ├── logic
+│   │   │   └── birthday_selector.py
+│   │   ├── mail
+│   │   │   ├── builder.py
+│   │   │   └── sender.py
+│   │   ├── main.py
+│   │   ├── readme.md
+│   │   ├── requirements.txt
+│   │   └── templates
+│   │       ├── birthday.html
+│   │       └── birthday.txt
+│   ├── quotes
+│   │   ├── .env
+│   │   ├── SundayQuotes.py
+│   │   └── quotes.csv
+│   └── smtp.py
+├── Section_033_-_Day_33_-_Intermediate+_API_Endpoints_&_API_Parameters_-_ISS_Overhead_Notifier
+│   ├── 251_-_Day_33_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 252_-_What_are_Application_Programming_Interfaces_(APIs).md
+│   ├── 253_-_API_Endpoints_and_Making_API_Calls.md
+│   ├── 254_-_Working_with_Responses_HTTP_Codes,_Exceptions_&_JSON_Data.md
+│   ├── 255_-_Challenge_-_Build_a_Kanye_Quotes_App_using_the_Kanye_Rest_API.md
+│   ├── 256_-_Understand_API_Parameters_Match_Sunset_Times_with_the_Current_Time.md
+│   ├── 257_-_ISS_Overhead_Notifier_Project_-_Challenge_&_Solution.md
+│   ├── iss_notifier
+│   │   ├── .env
+│   │   ├── allcode.txt
+│   │   ├── astronomy.py
+│   │   ├── config.py
+│   │   ├── email_service.py
+│   │   ├── location.py
+│   │   ├── main.py
+│   │   ├── network.py
+│   │   └── output.py
+│   ├── kanye_api.py
+│   ├── mylocation_isslocation.py
+│   ├── solar_report.txt
+│   └── sunrise_sunset.py
+├── Section_034_-_Day_34_-_Intermediate+_API_Practice_-_Creating_a_GUI_Quiz_App
+│   ├── 258_-_Day_34_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 259_-_Trivia_Question_API_Challenge.md
+│   ├── 260_-_Solution_&_Walkthrough_for_getting_Trivia_Questions.md
+│   ├── 261_-_Unescaping_HTML_Entities.md
+│   ├── 262_-_Class_based_Tkinter_UI.md
+│   ├── 263_-_Python_Typing_&_Showing_the_Next_Question_in_the_GUI.md
+│   ├── 264_-_Python_Typing_Type_Hints_and_Arrows_-.md
+│   ├── 265_-_Check_the_Answer.md
+│   ├── 266_-_Give_Feedback_to_the_Player,_Keep_Score_and_Fix_the_Bugs_=).md
+│   └── open_trevia
+│       ├── all_python_code.txt
+│       ├── main.py
+│       ├── questions.py
+│       ├── quiz_constants.py
+│       ├── quiz_ui.py
+│       └── quizlogic.py
+├── Section_035_-_Day_35_-_Intermediate+_Keys,_Authentication_&_Environment_Variables_Send_SMS
+│   ├── 267_-_Day_35_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 268_-_What_is_API_Authentication_and_Why_Do_We_Need_to_Authenticate_Ourselves.md
+│   ├── 269_-_Using_API_Keys_to_Authenticate_and_Get_the_Weather_from_OpenWeatherMap.md
+│   ├── 270_-_Challenge_-_Check_if_it_Will_Rain_in_the_Next_12_Hours.md
+│   ├── 271_-_Sending_SMS_via_the_Twilio_API.md
+│   ├── 272_-_Can't_use_SMS_Try_WhatsApp_instead..md
+│   ├── 273_-_Use_PythonAnywhere_to_Automate_the_Python_Script.md
+│   ├── 274_-_Understanding_Environment_Variables_and_Hiding_API_Keys.md
+│   └── weather_app
+│       ├── .env
+│       ├── README.md
+│       ├── app
+│       │   ├── __init__.py
+│       │   ├── core
+│       │   │   ├── weather_analysis.py
+│       │   │   └── weather_ui_adapter.py
+│       │   ├── entrypoints
+│       │   │   ├── cli.py
+│       │   │   ├── gui.py
+│       │   │   └── sms.py
+│       │   ├── infrastructure
+│       │   │   └── weather_cache.py
+│       │   ├── presentation
+│       │   │   ├── weather_cli.py
+│       │   │   └── weather_gui.py
+│       │   └── services
+│       │       ├── reminder.py
+│       │       └── weather_api.py
+│       ├── data
+│       │   ├── json
+│       │   │   └── weather.json
+│       │   └── txt
+│       │       └── last_sms.txt
+│       ├── main.py
+│       └── requirements.txt
+├── Section_036_-_Day_36_-_Intermediate+_Stock_Trading_News_Alert_Project
+│   ├── 275_-_Day_36_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 276_-_Choose_Your_Destiny!.md
+│   ├── 277_-_Solution_&_Walkthrough_for_Step_1_-_Check_for_Stock_Price_Movements.md
+│   ├── 278_-_Solution_&_Walkthrough_for_Step_2_-_Get_the_News_Articles.md
+│   ├── 279_-_Solution_&_Walkthrough_for_Step_3_-_Send_the_SMS_Messages.md
+│   └── stock_update
+│       ├── .env
+│       ├── article.py
+│       ├── assets.py
+│       ├── config.py
+│       ├── main.py
+│       ├── news.py
+│       ├── readme.md
+│       ├── stocks.py
+│       ├── ui.py
+│       └── whatsapp.py
+├── Section_037_-_Day_37_-_Intermediate+_Habit_Tracking_Project_API_Post_Requests_&_Headers
+│   ├── 280_-_Day_37_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 281_-_HTTP_Post_Requests.md
+│   ├── 282_-_Advanced_Authentication_using_an_HTTP_Header.md
+│   ├── 283_-_Challenge_Add_a_Pixel_to_the_Habit_Tracker_using_a_Post_Request.md
+│   ├── 284_-_Autofilling_today's_date_using_strftime.md
+│   ├── 285_-_How_to_use_HTTP_Put_and_Delete_Requests.md
+│   └── pixela-habit-tracker
+│       ├── .env
+│       ├── app
+│       │   ├── core
+│       │   │   └── habit_manager.py
+│       │   ├── services
+│       │   │   └── pixela_client.py
+│       │   ├── ui
+│       │   │   ├── app_window.py
+│       │   │   ├── graph_view.py
+│       │   │   └── habit_form.py
+│       │   └── utils
+│       │       ├── config.py
+│       │       └── exceptions.py
+│       ├── main.py
+│       ├── readme.md
+│       └── requirements.txt
+├── Section_038_-_Day_38_-_Intermediate+_Workout_Tracking_Using_Google_Sheets
+│   ├── 286_-_Day_38_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 287_-_Step_1_-_Setup_API_Credentials_and_Google_Spreadsheet.md
+│   ├── 288_-_Step_2_-_Get_Exercise_Stats_with_Natural_Language_Queries.md
+│   ├── 289_-_Step_3_-_Setup_Your_Google_Sheet_with_Sheety.md
+│   ├── 290_-_Step_4_-_Saving_Data_into_Google_Sheets.md
+│   ├── 291_-_Step_5_-_Authenticate_Your_Sheety_API.md
+│   ├── 292_-_Step_6_-_Environment_Variables.md
+│   └── workout
+│       ├── .env
+│       ├── all_python_files.txt
+│       ├── engine.py
+│       ├── main.py
+│       ├── sheet.py
+│       └── ui.py
+├── Section_039_-_Day_39_-_Intermediate+_Capstone_Part_1_Flight_Deal_Finder
+│   ├── 293_-_Day_39_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 294_-_Step_1_-_Choose_Your_Path_and_Download_the_Starting_Project.md
+│   ├── 295_-_Step_2_-_Use_Sheety_to_Read_and_Write_Data_to_the_Google_Sheet.md
+│   ├── 296_-_Step_3_-_(AMADEUS DOWN! using Aviationstack)Get_the_IATA_Codes_using_Amadeus.md
+│   ├── 297_-_Step_4_-_Search_for_Cheap_Flights.md
+│   ├── 298_-_Step_5_-_If_the_price_is_lower_than_in_the_Sheet,_send_a_message.md
+│   └── flight-deals
+│       ├── .env
+│       ├── all_python_files.txt
+│       ├── data_manager.py
+│       ├── flight_data.py
+│       ├── flight_search.py
+│       ├── main.py
+│       └── notification_manager.py
+├── Section_040_-_Day_40_-_Intermediate+_Capstone_Part_2_Flight_Club
+│   ├── 299_-_Day_40_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 300_-_Step_1_-_Create_a_Sharable_Form_linked_to_your_Sheet.md
+│   ├── 301_-_Step_2_-_Download_the_Starting_Project.md
+│   ├── 302_-_Step_3_-_Destinations_without_Direct_Flights.md
+│   ├── 303_-_Step_4_-_Retrieve_your_customer_emails.md
+│   ├── 304_-_Step_5_-_Email_all_our_customers.md
+│   └── flight
+│       ├── .env
+│       ├── aviation_client.py
+│       ├── config.py
+│       ├── fun_facts.py
+│       ├── main.py
+│       ├── notification.py
+│       ├── requirements.txt
+│       └── sheet_writer.py
+├── Section_041_-_Day_41_-_Web_Foundation_-_Introduction_to_HTML
+│   ├── 305_-_How_Does_the_Internet_Actually_Work.md
+│   ├── 306_-_How_Do_Websites_Actually_Work.md
+│   ├── 307_-_Download_the_Required_Software.md
+│   ├── 308_-_What_is_HTML.md
+│   ├── 309_-_HTML_Heading_Elements.md
+│   ├── 310_-_HTML_Paragraph_Elements.md
+│   ├── 311_-_Self_Closing_Tags.md
+│   ├── 312_-_Day_41_Project_-_Movie_Ranking.md
+│   └── htmltagexample.html
+├── Section_042_-_Day_42_-_Web_Foundation_-_Intermediate_HTML
+│   ├── 313_-_HTML_Boilerplate.md
+│   ├── 314_-_The_List_Element.md
+│   ├── 315_-_Nesting_and_Indentation.md
+│   ├── 316_-_Anchor_Elements.md
+│   ├── 317_-_Image_Elements.md
+│   └── 318_-_Day_42_Project_-_Birthday_Invite_Website.md
+├── Section_043_-_Day_43_-_Web_Foundation_-_Introduction_to_CSS
+│   ├── 319_-_Why_do_we_need_CSS.md
+│   ├── 320_-_How_to_add_CSS.md
+│   ├── 321_-_CSS_Selectors.md
+│   ├── 321_-_Quiz_16_CSS_Quiz.md
+│   └── 322_-_Day_43_Project_-_Colour_Vocab_Website.md
+├── Section_044_-_Day_44_-_Web_Foundation_-_Intermediate_CSS
+│   ├── 323_-_CSS_Colours.md
+│   ├── 324_-_Font_Properties.md
+│   ├── 325_-_Inspecting_CSS.md
+│   ├── 326_-_The_CSS_Box_Model_-_Margin,_Padding_and_Border.md
+│   └── 327_-_Day_44_Project_-_Motivational_Poster_Website.md
+├── Section_045_-_Day_45_-_Intermediate+_Web_Scraping_with_Beautiful_Soup
+│   ├── 328_-_Day_45_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 329_-_Parsing_HTML_and_Making_Soup.md
+│   ├── 330_-_Finding_and_Selecting_Particular_Elements_with_BeautifulSoup.md
+│   ├── 331_-_Quiz_17_Beautiful_Soup_Exercises.md
+│   ├── 331_-_Scraping_a_Live_Website.md
+│   ├── 332_-_Is_Web_Scraping_Legal.md
+│   ├── 333_-_100_Movies_that_You_Must_Watch.md
+│   └── scraping
+│       ├── all_products.json
+│       ├── all_products_by_category.json
+│       ├── main.py
+│       └── website.html
+├── Section_046_-_Day_46_-_Intermediate+_Create_a_Spotify_Playlist_using_the_Musical_Time_Machine
+│   ├── 334_-_Day_46_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 335_-_Step_1_-_Scraping_the_Billboard_Hot_100.md
+│   ├── 336_-_Step_2_-_Authentication_with_Spotify.md
+│   ├── 337_-_Step_3_-_Search_Spotify_for_the_Songs_from_Step_1.md
+│   └── 338_-_Step_4_-_Creating_and_Adding_to_Spotify_Playlist.md
+├── Section_047_-_Day_47_-_Intermediate+_Create_an_Automated_Amazon_Price_Tracker
+│   ├── 339_-_Day_47_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 340_-_Step_1_-_Updated_Use_BeautifulSoup_to_scrape_the_product_price.md
+│   ├── 341_-_Step_2_-_Email_alert_when_the_price_is_below_preset_value.md
+│   ├── 342_-_Step_3_-_Add_headers_to_your_request.md
+│   ├── 343_-_Step_4_-_Scrape_the_live_Amazon_site.md
+│   └── amazon_mannual_scrapper
+│       ├── all_python_files.txt
+│       ├── amazon_rendered.html
+│       ├── data
+│       │   ├── input
+│       │   │   └── productpage.html
+│       │   └── output
+│       │       ├── products.csv
+│       │       └── products.html
+│       ├── html_view.py
+│       ├── main.py
+│       ├── scraper.py
+│       └── storage.py
+├── Section_048_-_Day_48_-_Intermediate+_Selenium_Webdriver_Browser_and_Game_Playing_Bot
+│   ├── 344_-_Day_48_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 345_-_How_to_Install_&_Set_Up_Selenium.md
+│   ├── 346_-_How_to_Find_and_Select_Elements_on_a_Website_with_Selenium.md
+│   ├── 347_-_Challenge_Use_Selenium_to_Scrape_Website_Data.md
+│   ├── 348_-_Challenge_Use_Selenium_in_a_Blank_Project_&_Scrape_a_Different_Piece_of_Data.md
+│   ├── 349_-_How_to_Automate_Filling_Out_Forms_and_Clicking_Buttons_with_Selenium.md
+│   ├── 350_-_The_Cookie_Clicker_Project.md
+│   ├── 351_-_Challenge_Create_an_Automated_Game_Playing_Bot.md
+│   ├── amazon-scraper2.0
+│   │   ├── app.py
+│   │   ├── browser_fetcher.py
+│   │   ├── data
+│   │   │   └── output
+│   │   │       ├── products.csv
+│   │   │       └── products.html
+│   │   ├── requirements.txt
+│   │   ├── scraper.py
+│   │   └── storage.py
+│   └── test.py
+├── Section_049_-_Day_49_-_Intermediate+_Scraping_from_9anime[not_in_course]
+│   ├── 352_-_Day_49_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 353_-_Step_1_Controlled_Browser_Initialization_and_Anti-Detection_Strategy.md
+│   ├── 354_-_Step_2_Deterministic_Navigation_Control_and_Explicit_Wait_Architecture.md
+│   ├── 355_-_Step_3_Human_Interaction_Simulation_and_Behavioral_Anti-Detection_Layer.md
+│   ├── 356_-_Step_4_Structured_Data_Architecture_and_Stateful_Deduplication_Engine.md
+│   ├── 357_-_Step_5_Defensive_Element_Extraction_and_Selector_Stability_Strategy.md
+│   ├── 358_-_Step_6_Deterministic_Pagination_Traversal_Engine.md
+│   ├── 359_-_Step_7_Persistent_Data_Serialization_and_Atomic_JSON_Storage_Strategy.md
+│   ├── 360_-_Step_8_Performance_Optimization_and_Fault-Tolerance_Engineering.md
+│   ├── 361_-_Step_9_Clean_Modular_Architecture_and_Production-Grade_Composition.md
+│   ├── anime_data_paginated_fetched.json
+│   ├── index.html
+│   └── main.py
+├── Section_050_[PENDING]_-_Day_50_-_Intermediate+_Auto_Tinder_Swiping_Bot
+│   ├── 362_-_Day_50_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 363_-_Step_1_-_Setup_your_account_on_Tinder.md
+│   ├── 364_-_Step_2_-_Navigate_to_Login_Page.md
+│   ├── 365_-_Step_3_-_Login_with_Facebook.md
+│   ├── 366_-_Step_4_-_Dismiss_all_requests.md
+│   └── 367_-_Step_5_-_Hit_Like!.md
+├── Section_051_[PENDING]_-_Day_51_-_Intermediate+_Internet_Speed_Twitter_Complaint_Bot
+│   ├── 368_-_Day_51_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 369_-_Step_1_-_Setup_Your_Twitter_Account.md
+│   ├── 370_-_Step_2_-_Create_a_Class.md
+│   ├── 371_-_Step_3_-_Get_Internet_Speeds.md
+│   └── 372_-_Step_4_-_Building_a_Twitter_Bot_to_Tweet_at_your_Internet_Provider.md
+├── Section_052_[PENDING]_-_Day_52_-_Intermediate+_Instagram_Follower_Bot
+│   ├── 373_-_Day_52_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 374_-_Step_1_-_Get_Your_Instagram_Credentials.md
+│   ├── 375_-_Step_2_-_Create_a_Class.md
+│   ├── 376_-_Step_3_-_Login_to_Instagram.md
+│   ├── 377_-_Step_4_-_Find_the_followers_of_the_target_account.md
+│   └── 378_-_Step_5_-_Follow_all_the_followers.md
+├── Section_053_[PENDING]_-_Day_53_-_Intermediate+_Web_Scraping_Capstone_-_Data_Entry_Job_Automation
+│   ├── 379_-_Day_53_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 380_-_Web_Scraping_and_Data_Entry_Capstone_Project_Requirements.md
+│   └── 381_-_Hints_&_Solution.md
+├── Section_054_-_Day_54_-_Intermediate+_Introduction_to_Web_Development_with_Flask
+│   ├── 382_-_Understanding_Backend_Web_Development_with_Python.md
+│   ├── 383_-_Create_your_First_Web_Server_with_Flask.md
+│   ├── 384_-_Understand_the_Command_Line_on_Windows_and_Mac.md
+│   ├── 385_-___name___and___main____Special_Attributes_built_into_Python.md
+│   ├── 386_-_Python_Functions_as_First_Class_Objects_Passing_&_Nesting_Functions.md
+│   ├── 387_-_Understanding_Python_Decorator_Functions_and_the_@_Syntax.md
+│   ├── 388_-_Coding_Exercise_22_Create_Your_Own_Python_Decorator.md
+│   ├── decorater.py
+│   └── flasky
+│       ├── app.py
+│       ├── static
+│       │   ├── script.js
+│       │   └── style.css
+│       └── templates
+│           ├── about.html
+│           └── index.html
+├── Section_055_-_Day_55_-_Intermediate+_HTML_&_URL_Parsing_in_Flask_and_the_Higher_Lower_Game
+│   ├── 388_-_Day_55_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 389_-_Working_Flask_URL_Paths_and_the_Flask_Debugger.md
+│   ├── 390_-_Rendering_HTML_Elements_with_Flask.md
+│   ├── 391_-_Challenge_Use_Python_Decorators_to_Style_HTML_Tags.md
+│   ├── 392_-_Advanced_Decorators_with_args_and_kwargs.md
+│   ├── 393_-_Coding_Exercise_23_Advanced_Decorators.md
+│   ├── 393_-_Final_Project_-_Higher_or_Lower_URLs.md
+│   └── flasky
+│       ├── .env
+│       ├── .env.example
+│       ├── app.py
+│       ├── static
+│       │   ├── script.js
+│       │   └── style.css
+│       └── templates
+│           ├── about.html
+│           ├── guess_number.html
+│           ├── index.html
+│           └── login.html
+├── Section_056_-_Day_56_-_Intermediate+_Rendering_HTMLStatic_files_and_Using_Website_Templates
+│   ├── 394_-_Day_56_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 395_-_Rendering_HTML_Files_with_Flask.md
+│   ├── 396_-_Serving_Static_Files_using_Flask.md
+│   ├── 397_-_How_to_Use_Website_Templates_to_Speed_Up_Web_Development.md
+│   ├── 398_-_Professional_Flask_Portfolio_Architecture .md
+│   ├── 399_-_Enterprise_Strategy.md
+│   └── new_python
+│       ├── .env
+│       ├── server.py
+│       ├── static
+│       │   ├── assets
+│       │   │   ├── css
+│       │   │   │   ├── fontawesome-all.min.css
+│       │   │   │   ├── images
+│       │   │   │   │   ├── loader.gif
+│       │   │   │   │   └── overlay.png
+│       │   │   │   ├── main.css
+│       │   │   │   ├── noscript.css
+│       │   │   │   └── profile_style.css
+│       │   │   ├── js
+│       │   │   │   ├── breakpoints.min.js
+│       │   │   │   ├── browser.min.js
+│       │   │   │   ├── jquery.min.js
+│       │   │   │   ├── jquery.poptrox.min.js
+│       │   │   │   ├── main.js
+│       │   │   │   └── util.js
+│       │   │   ├── sass
+│       │   │   │   ├── libs
+│       │   │   │   │   ├── _breakpoints.scss
+│       │   │   │   │   ├── _functions.scss
+│       │   │   │   │   ├── _mixins.scss
+│       │   │   │   │   ├── _vars.scss
+│       │   │   │   │   └── _vendor.scss
+│       │   │   │   ├── main.scss
+│       │   │   │   └── noscript.scss
+│       │   │   └── webfonts
+│       │   │       ├── fa-brands-400.eot
+│       │   │       ├── fa-brands-400.svg
+│       │   │       ├── fa-brands-400.ttf
+│       │   │       ├── fa-brands-400.woff
+│       │   │       ├── fa-brands-400.woff2
+│       │   │       ├── fa-regular-400.eot
+│       │   │       ├── fa-regular-400.svg
+│       │   │       ├── fa-regular-400.ttf
+│       │   │       ├── fa-regular-400.woff
+│       │   │       ├── fa-regular-400.woff2
+│       │   │       ├── fa-solid-900.eot
+│       │   │       ├── fa-solid-900.svg
+│       │   │       ├── fa-solid-900.ttf
+│       │   │       ├── fa-solid-900.woff
+│       │   │       └── fa-solid-900.woff2
+│       │   └── images
+│       │       ├── bg.jpg
+│       │       ├── fulls
+│       │       │   ├── 01.jpg
+│       │       │   ├── 02.jpg
+│       │       │   ├── 03.jpg
+│       │       │   ├── 04.jpg
+│       │       │   ├── 05.jpg
+│       │       │   ├── 06.jpg
+│       │       │   ├── 07.jpg
+│       │       │   └── 08.jpg
+│       │       ├── profile.png
+│       │       └── thumbs
+│       │           ├── 01.jpg
+│       │           ├── 02.jpg
+│       │           ├── 03.jpg
+│       │           ├── 04.jpg
+│       │           ├── 05.jpg
+│       │           ├── 06.jpg
+│       │           ├── 07.jpg
+│       │           └── 08.jpg
+│       └── templates
+│           ├── index.html
+│           └── profile.html
+├── Section_057_-_Day_57_-_Intermediate+_Templating_with_Jinja_in_Flask_Applications
+│   ├── 400_-_Day_57_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 401_-_Using_Jinja_to_Produce_Dynamic_HTML_Pages.md
+│   ├── 402_-_Challenge_Combining_Jinja_Templating_with_APIs.md
+│   ├── 403_-_Multiline_Statements_with_Jinja.md
+│   ├── 404_-_URL_Building_with_Flask.md
+│   ├── 405_-_Blog_Capstone_Project_Part_1_-_Templating.md
+│   └── my_app
+│       ├── .env
+│       ├── app.py
+│       └── templates
+│           ├── blogs.html
+│           └── index.html
+├── Section_058_-_Day_58_-_Web_Foundation_Bootstrap
+│   ├── 406_-_Day_58_Goals_What_You'll_Learn_By_the_End_of_Today.md
+│   ├── 407_-_What_is_Bootstrap.md
+│   ├── 408_-_Bootstrap_Layout.md
+│   ├── 409_-_Bootstrap_Components.md
+│   ├── 410_-_Day_58_Project_-_A_Startup_Website_for_TinDog.md
+│   └── index.html
+├── Section_059_-_Day_59_-_Advanced_-_Blog_Capstone_Project_Part_2_-_Adding_Styling
+│   ├── 411_-_Day_59_Goals_What_you'll_make_by_the_end_of_today.md
+│   ├── 412_-_Step_1_-_Python_Flask_Application_Setup_and_Configuration.md
+│   ├── 413_-_Step_2_-_Routing_and_View_Functions.md
+│   ├── 414_-_Step_3_-_Data_Management_API_Integration_and_Caching_Strategy.md
+│   ├── 415_-_Step_4_-_Templating_with_Jinja2_and_Frontend_Integration.md
+│   ├── 416_-_Step_5_-_Client_Side_Interactivity_and_Theme_Management.md
+│   ├── 417_-_Step_6_-_Session_Management_Flash_Messaging_and_Error_Handling.md
+│   ├── 418_-_Step_7_-_End_to_End_Workflow_and_Developer_Mental_Model.md
+│   └── flask-blog-website
+│       ├── README.md
+│       ├── all_source_files.txt
+│       ├── app.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── css
+│       │   │   └── style.css
+│       │   ├── images
+│       │   └── js
+│       │       └── main.js
+│       └── templates
+│           ├── 404.html
+│           ├── 500.html
+│           ├── about.html
+│           ├── base.html
+│           ├── blog_detail.html
+│           ├── blogs.html
+│           ├── contact.html
+│           ├── index.html
+│           └── search_results.html
+├── Section_060_-_Day_60_-_Advanced_-_Make_POST_Requests_with_Flask_and_HTML_Forms
+│   ├── 419_-_Day_60_goals_-_Project_Overview_and_Purpose.md
+│   ├── 420_-_Project_Structure_and_File_Descriptions.md
+│   ├── 421_-_Backend_Implementation(Flask_App).md
+│   ├── 422_-_Email_Service_Implementation.md
+│   ├── 423_-_Frontend_Design_and_Functionality.md
+│   ├── 424_-_Integration_Workflow_and_Deployment_Considerations.md
+│   └── flask-contact-form
+│       ├── .env
+│       ├── .env.example
+│       ├── app.py
+│       ├── email_service.py
+│       ├── requirements.txt
+│       ├── static
+│       └── templates
+│           └── index.html
+├── Section_061_-_Day_61_-_Advanced_-_Building_Advanced_Forms_with_Flask-WTForms
+│   ├── 425_-_Day_61_Goals_Building_Advanced_Forms.md
+│   ├── 426_-_Installing_Flask-WTF.md
+│   ├── 427_-_Creating_Forms_with_Flask-WTF.md
+│   ├── 428_-_Code_Improvements_for_Our_WTForms.md
+│   ├── 429_-_Adding_Validation_to_Forms_with_Flask-WTF.md
+│   ├── 430_-_Receiving_Form_Data_with_WTForms.md
+│   ├── 431_-_Inheriting_Templates_Using_Jinja2.md
+│   ├── 432_-_Using_Bootstrap-Flask_as_an_Inherited_Template.md
+│   ├── 433_-_Bootstrap-Flask_Supports_WTForms.md
+│   └── secrets_project
+│       ├── .env
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── style.css
+│       └── templates
+│           ├── base.html
+│           ├── denied.html
+│           ├── index.html
+│           ├── login.html
+│           └── success.html
+├── Section_062_-_Day_62_-_Advanced_-_Flask,_WTForms,_Bootstrap_and_CSV_-_Coffee_&_Wifi_Project
+│   ├── 434_-_Project_Architecture_and_Data_Layer.md
+│   ├── 435_-_Form_Handling_and_Validation.md
+│   ├── 436_-_Display_and_Interaction_(UI Layer).md
+│   └── coffee-and-wifi
+│       ├── cafe-data.csv
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── css
+│       │       └── styles.css
+│       └── templates
+│           ├── add.html
+│           ├── base.html
+│           ├── cafes.html
+│           └── index.html
+├── Section_063_-_Day_63_-_Advanced_-_Databases_with_SQLite_and_SQLAlchemy
+│   ├── 437_-_Day_63_Goals_Creating_a_Virtual_Bookshelf.md
+│   ├── 438_-_Download_the_Starting_Project.md
+│   ├── 439_-_Make_the_Website_Work.md
+│   ├── 440_-_What_Happens_When_You_Refresh_the_Server.md
+│   ├── 441_-_SQLite_Databases.md
+│   ├── 442_-_SQLAlchemy.md
+│   ├── 443_-_CRUD_Operations_with_SQLAlchemy.md
+│   ├── 444_-_Build_a_SQLite_Database_into_the_Flask_Website.md
+│   └── virtual_bookshelf
+│       ├── .gitignore
+│       ├── README.md
+│       ├── instance
+│       │   └── books.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── style.css
+│       └── templates
+│           ├── add.html
+│           ├── edit_rating.html
+│           └── index.html
+├── Section_064_-_Day_64_-_Advanced_-_My_Top_10_Movies_Website
+│   ├── 445_-_Day_64_Goals_What_We'll_Build.md
+│   ├── 446_-_Download_the_Starting_Project.md
+│   ├── 447_-_Requirement_1_-_Be_Able_to_View_Movie_List_Items.md
+│   ├── 448_-_Requirement_2_-_Be_Able_to_Edit_a_Movie's_Rating_and_Review.md
+│   ├── 449_-_Requirement_3_-_Be_Able_to_Delete_Movies_from_the_Database.md
+│   ├── 450_-_Requirement_4_-_Be_Able_to_Add_New_Movies_Via_the_Add_Page.md
+│   ├── 451_-_Requirement_5_-_Be_Able_to_Sort_and_Rank_the_Movies_By_Rating.md
+│   └── top10movies
+│       ├── .env
+│       ├── .env.example
+│       ├── README.md
+│       ├── all_source_files.txt
+│       ├── forms.py
+│       ├── instance
+│       │   └── movies.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── css
+│       │       └── styles.css
+│       └── templates
+│           ├── add.html
+│           ├── base.html
+│           ├── edit.html
+│           ├── index.html
+│           └── select.html
+├── Section_065_-_Day_65_-_Web_Design_School_-_How_to_Create_a_Website_that_People_will_Love
+│   ├── 452_-_Introduction_to_Web_Design.md
+│   ├── 453_-_Understanding_Color_Theory.md
+│   ├── 454_-_Understanding_Typography_and_How_to_Choose_Fonts.md
+│   ├── 455_-_Manage_ATTENTION_with_effective_User_Interface_(UI)_Design.md
+│   ├── 456_-_User_Experience_(UX)_Design.md
+│   └── 457_-_Web_Design_in_Practice_-_Let's_apply_what_we've_learnt!.md
+├── Section_066_-_Day_66_-_Advanced_-_Building_Your_Own_API_with_RESTful_Routing
+│   ├── 458_-_Day_66_Goals_Build_Your_Own_REST_API_Service.md
+│   ├── 459_-_What_is_REST.md
+│   ├── 460_-_Download_the_Starting_Project.md
+│   ├── 461_-_HTTP_GET_-_a_Random_Cafe.md
+│   ├── 462_-_HTTP_GET_-_All_the_Cafes.md
+│   ├── 463_-_HTTP_GET_-_Find_a_Cafe.md
+│   ├── 464_-_Postman_-_The_all_in_one_API_Testing_Tool.md
+│   ├── 465_-_HTTP_POST_-_A_New_Cafe.md
+│   ├── 466_-_HTTP_PUT_vs._PATCH.md
+│   ├── 467_-_HTTP_PATCH_-_A_Cafe's_Coffee_Price.md
+│   ├── 468_-_HTTP_DELETE_-_A_Cafe_that's_Closed.md
+│   ├── 469_-_Build_Documentation_for_Your_API.md
+│   └── cafe-api
+│       ├── .env
+│       ├── .env.example
+│       ├── README.md
+│       ├── instance
+│       │   └── cafes.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   └── style.css
+│       └── templates
+│           └── index.html
+├── Section_067_-_Day_67_-_Advanced_-_Blog_Capstone_Project_Part_3_-_RESTful_Routing
+│   ├── 470_-_Day_67_Goals_Building_a_RESTful_Blog_with_Editing!.md
+│   ├── 471_-_Download_the_Starting_Project.md
+│   ├── 472_-_Requirement_1_-_Be_Able_to_GET_Blog_Post_Items.md
+│   ├── 473_-_Requirement_2_-_Be_Able_to_POST_a_New_Blog_Post.md
+│   ├── 474_-_Requirement_3_-_Be_Able_to_Edit_Existing_Blog_Posts.md
+│   ├── 475_-_Requirement_4-_Be_Able_DELETE_Blog_Posts.md
+│   └── upgraded-blog
+│       ├── .env
+│       ├── README.md
+│       ├── all_source_files.txt
+│       ├── instance
+│       │   └── posts.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── assets
+│       │   │   ├── favicon.ico
+│       │   │   └── img
+│       │   │       ├── about-bg.jpg
+│       │   │       ├── contact-bg.jpg
+│       │   │       ├── edit-bg.jpg
+│       │   │       ├── home-bg.jpg
+│       │   │       └── post-bg.jpg
+│       │   ├── css
+│       │   │   └── styles.css
+│       │   └── js
+│       │       └── scripts.js
+│       └── templates
+│           ├── about.html
+│           ├── contact.html
+│           ├── footer.html
+│           ├── header.html
+│           ├── index.html
+│           ├── make-post.html
+│           └── post.html
+├── Section_068_-_Day_68_-_Advanced_-_Authentication_with_Flask
+│   ├── 476_-_Day_68_Goals_-_Login_and_Registering_Users_with_Authentication.md
+│   ├── 477_-_What_is_Authentication.md
+│   ├── 478_-_Download_the_Starting_Project.md
+│   ├── 479_-_Register_New_Users.md
+│   ├── 480_-_Downloading_Files.md
+│   ├── 481_-_Encryption_and_Hashing.md
+│   ├── 482_-_How_to_Hack_Passwords_101.md
+│   ├── 483_-_Salting_Passwords.md
+│   ├── 484_-_Hashing_and_Salting_Passwords_using_Werkzeug.md
+│   ├── 485_-_Authenticating_Users_with_Flask-Login.md
+│   ├── 486_-_Flask_Flash_Messages.md
+│   ├── 487_-_Passing_Authentication_Status_to_Templates.md
+│   └── flask-auth-project
+│       ├── README.md
+│       ├── instance
+│       │   └── users.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── css
+│       │   │   └── styles.css
+│       │   └── files
+│       │       └── cheat_sheet.txt
+│       └── templates
+│           ├── base.html
+│           ├── index.html
+│           ├── login.html
+│           ├── register.html
+│           └── secrets.html
+├── Section_069_-_Day_69_-_Advanced_-_Blog_Capstone_Project_Part_4_-_Adding_Users
+│   ├── 488_-_Day_69_Goals_-_Adding_Users_to_Our_Blog_Project.md
+│   ├── 489_-_Download_the_Starting_Project.md
+│   ├── 490_-_Requirement_1_-_Register_New_Users.md
+│   ├── 491_-_Requirement_2_-_Login_Registered_Users.md
+│   ├── 492_-_Requirement_3_-_Protect_Routes.md
+│   ├── 493_-_Creating_Relational_Databases.md
+│   ├── 494_-_Requirement_4_-_Allow_Any_User_to_Add_Comments_to_BlogPosts.md
+│   └── blog-with-users-end
+│       ├── README.md
+│       ├── all_source_files.txt
+│       ├── forms.py
+│       ├── instance
+│       │   └── posts.db
+│       ├── main.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── assets
+│       │   │   ├── favicon.ico
+│       │   │   └── img
+│       │   │       ├── about-bg.jpg
+│       │   │       ├── angela-profile.jpg
+│       │   │       ├── contact-bg.jpg
+│       │   │       ├── default-profile.jpg
+│       │   │       ├── edit-bg.jpg
+│       │   │       ├── home-bg.jpg
+│       │   │       ├── login-bg.jpg
+│       │   │       ├── post-bg.jpg
+│       │   │       └── register-bg.jpg
+│       │   ├── css
+│       │   │   └── styles.css
+│       │   └── js
+│       │       └── scripts.js
+│       └── templates
+│           ├── about.html
+│           ├── contact.html
+│           ├── footer.html
+│           ├── header.html
+│           ├── index.html
+│           ├── login.html
+│           ├── make-post.html
+│           ├── post.html
+│           └── register.html
+├── Section_070_-_Day_70_-_Advanced_-_Git,_Github_and_Version_Control
+│   ├── 495_-_The_Terminal_-_use_either_VS_Code_or_PyCharm.md
+│   ├── 496_-_Install_Git_Bash_on_Windows.md
+│   ├── 497_-_Introduction_to_Version_Control_and_Git.md
+│   ├── 498_-_Version_Control_using_Git_and_the_Command_Line.md
+│   ├── 499_-_Github_and_Remote_Repositories.md
+│   ├── 500_-_Gitignore.md
+│   ├── 501_-_Cloning.md
+│   ├── 502_-_Branching_and_Merging.md
+│   ├── 503_-_Optional_Git_Challenge.md
+│   └── 504_-_Forking_and_Pull_Requests.md
+├── Section_071_-_Day_71_-_Advanced_-_Deploying_Your_Web_Application
+│   ├── 505_-_Day_71_Goals_-_Learn_to_Deploy_Your_Website.md
+│   ├── 506_-_Add_a_.gitignore_file_(or_download_the_starting_files).md
+│   ├── 507_-_Use_git_to_add_version_control_to_your_project.md
+│   ├── 508_-_Use_environment_variables_to_store_sensitive_information.md
+│   ├── 509_-_Setup_a_WSGI_server_with_gunicorn.md
+│   ├── 510_-_Push_to_your_remote_on_Github.md
+│   ├── 511_-_Sign_up_to_a_hosting_provider_and_create_your_web_service.md
+│   └── 512_-_Upgrade_SQLite_Database_to_PostgreSQL.md
+├── Section_072_-_Day_72_-_Advanced_-_Data_Exploration_with_Pandas_College_Major_v.s._Your_Salary
+│   ├── 513_-_Day_72_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 514_-_Getting_Set_Up_for_Data_Science.md
+│   ├── 515_-_Upload_the_Data_and_Read_the_.csv_File.md
+│   ├── 516_-_Preliminary_Data_Exploration_and_Data_Cleaning_with_Pandas.md
+│   ├── 517_-_Accessing_Columns_and_Individual_Cells_in_a_Dataframe.md
+│   ├── 518_-_Solution_Highest_and_Lowest_Earning_Degrees.md
+│   ├── 519_-_Sorting_Values_&_Adding_Columns_Majors_with_the_Most_Potential_vs_Lowest_Risk.md
+│   ├── 520_-_Solution_Degrees_with_the_Highest_Potential.md
+│   ├── 521_-_Grouping_and_Pivoting_Data_with_Pandas.md
+│   ├── 522_-_Learning_Points_&_Summary.md
+│   └── Data_Exploration_Pandas_College_Major+(complete)
+│       ├── Data_Exploration_Pandas_College_Major_(complete).ipynb
+│       └── salaries_by_college_major.csv
+├── Section_073_-_Day_73_-_Advanced_-_Data_Visualisation_with_Matplotlib_Programming_Languages
+│   ├── 523_-_Day_73_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 524_-_Download_and_Open_the_Starter_Notebook.md
+│   ├── 525_-_Solution_Preliminary_Data_Exploration.md
+│   ├── 526_-_Solution_Analysis_by_Programming_Language.md
+│   ├── 527_-_Data_Cleaning_Working_with_Time_Stamps.md
+│   ├── 528_-_Data_Manipulation_Pivoting_DataFrames.md
+│   ├── 529_-_Data_Visualisation_with_Matplotlib.md
+│   ├── 530_-_Multi-Line_Charts_with_Matplotib.md
+│   ├── 531_-_Smoothing_out_Time-Series_Data.md
+│   ├── 532_-_Learning_Points_&_Summary.md
+│   ├── 532_-_Quiz_18_Programming_Language_Data_Analysis.md
+│   ├── Programming_Languages_(complete).ipynb
+│   └── QueryResults.csv
+├── Section_074_-_Day_74_-_Advanced_-_Aggregate_&_Merge_Data_with_Pandas_Analyse_the_LEGO_Dataset
+│   ├── 533_-_Day_74_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 534_-_Use_HTML_Markdown_to_Make_Your_Notebook_Look_Pretty.md
+│   ├── 535_-_Solution_Exploring_the_LEGO_Brick_Colours.md
+│   ├── 536_-_Find_the_Oldest_and_Largest_LEGO_Sets.md
+│   ├── 537_-_Visualise_the_Number_of_Sets_Published_over_Time.md
+│   ├── 538_-_How_to_use_the_Pandas_.agg()_function.md
+│   ├── 539_-_Superimposing_Line_Charts_with_Separate_Axes.md
+│   ├── 540_-_Scatter_Plots_Average_Number_of_Parts_per_LEGO_Set.md
+│   ├── 541_-_Relational_Database_Schemas_Primary_and_Foreign_Keys.md
+│   ├── 542_-_How_to_Merge_DataFrames_and_Create_Bar_Charts.md
+│   ├── 543_-_Learning_Points_&_Summary.md
+│   └── LEGO Notebook and Data (completed)
+│       ├── .ipynb_checkpoints
+│       │   ├── .DS_Store
+│       │   └── Lego_Analysis_for_Course_(completed)-checkpoint.ipynb
+│       ├── Lego_Analysis_for_Course_(completed).ipynb
+│       ├── assets
+│       │   ├── .DS_Store
+│       │   ├── bricks.jpg
+│       │   ├── lego_sets.png
+│       │   ├── lego_themes.png
+│       │   └── rebrickable_schema.png
+│       └── data
+│           ├── .DS_Store
+│           ├── colors.csv
+│           ├── sets.csv
+│           └── themes.csv
+├── Section_075_-_Day_75_-_Advanced_-_Google_Trends_Data_Resampling_and_Visualising_Time_Series
+│   ├── 544_-_Day_75_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 545_-_Data_Exploration_-_Making_Sense_of_Google_Search_Data.md
+│   ├── 546_-_Data_Cleaning_-_Resampling_Time_Series_Data.md
+│   ├── 547_-_Data_Visualisation_-_Tesla_Line_Charts_in_Matplotlib.md
+│   ├── 548_-_Using_Locators_and_DateFormatters_to_generate_Tick_Marks_on_a_Time_Line.md
+│   ├── 549_-_Data_Visualisation_-_Bitcoin_Line_Style_and_Markers.md
+│   ├── 550_-_Data_Visualisation_-_Unemployment_How_to_use_Grids.md
+│   ├── 551_-_Data_Visualisation_-_Unemployment_The_Effect_of_New_Data.md
+│   ├── 552_-_Learning_Points_&_Summary.md
+│   └── Google Trends Data Viz (complete)
+│       ├── Bitcoin Search Trend.csv
+│       ├── Daily Bitcoin Price.csv
+│       ├── Google_Trends_and_Data_Visualisation_(complete).ipynb
+│       ├── TESLA Search Trend vs Price.csv
+│       ├── UE Benefits Search vs UE Rate 2004-19.csv
+│       └── UE Benefits Search vs UE Rate 2004-20.csv
+├── Section_076_-_Day_76_-_Advanced_-_Beautiful_Plotly_Charts_&_Analysing_the_Android_App_Store
+│   ├── 553_-_Day_76_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 554_-_Data_Cleaning_Removing_NaN_Values_and_Duplicates.md
+│   ├── 555_-_Preliminary_Exploration_The_Highest_Ratings,_Most_Reviews,_and_Largest_Size.md
+│   ├── 556_-_Data_Visualisation_with_Plotly_Create_Pie_and_Donut_Charts.md
+│   ├── 557_-_Numeric_Type_Conversions_for_the_Installations_&_Price_Data.md
+│   ├── 558_-_Plotly_Bar_Charts_&_Scatter_Plots_The_Most_Competitive_&_Popular_App_Categories.md
+│   ├── 559_-_Extracting_Nested_Column_Data_using_.stack().md
+│   ├── 560_-_Grouped_Bar_Charts_and_Box_Plots_with_Plotly.md
+│   ├── 561_-_Learning_Points_&_Summary.md
+│   └── Google+Play+Store+Analysis+Complete
+│       ├── Google_Play_Store_App_Analytics_(complete).ipynb
+│       └── apps.csv
+├── Section_077_-_Day_77_-_Advanced_-_Computation_with_NumPy_and_N-Dimensional_Arrays
+│   ├── 562_-_Day_77_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 563_-_NumPy's_ndarray_-_Incredible_Power_at_Your_Fingertips!.md
+│   ├── 564_-_Generating_and_Manipulating_ndarrays.md
+│   ├── 565_-_Broadcasting,_Scalars_and_Matrix_Multiplication.md
+│   ├── 566_-_Manipulating_Images_as_ndarrays.md
+│   ├── 567_-_Learning_Points_&_Summary.md
+│   └── Computation with NumPy (complete)
+│       ├── Computation_with_NumPy_and_N_Dimensional_Arrays_(complete).ipynb
+│       └── yummy_macarons.jpg
+├── Section_078_-_Day_78_-_Advanced_-_Linear_Regression_and_Data_Visualisation_with_Seaborn
+│   ├── 568_-_Day_78_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 569_-_Explore_and_Clean_the_Data.md
+│   ├── 570_-_Investigate_the_Films_that_had_Zero_Revenue.md
+│   ├── 571_-_Filter_on_Multiple_Conditions_International_Films.md
+│   ├── 572_-_Seaborn_Data_Visualisation_Bubble_Charts.md
+│   ├── 573_-_Floor_Division_A_Trick_to_Convert_Years_to_Decades.md
+│   ├── 574_-_Plotting_Linear_Regressions_with_Seaborn.md
+│   ├── 575_-_Use_scikit-learn_to_Run_Your_Own_Regression.md
+│   ├── 576_-_Learning_Points_&_Summary.md
+│   └── Seaborn+Linear+Regression+(complete)
+│       ├── Seaborn_and_Linear_Regression_(complete).ipynb
+│       └── cost_revenue_dirty.csv
+├── Section_079_-_Day_79_-_Advanced_-_Analysing_the_Nobel_Prize_with_Plotly,_Matplotlib_&_Seaborn
+│   ├── 577_-_Day_79_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 578_-_Update_Packages_in_Google_Colab_&_Explore_and_Clean_the_Dataset.md
+│   ├── 579_-_plotly_Bar_&_Donut_Charts_Analyse_Prize_Categories_&_Women_Winning_Prizes.md
+│   ├── 580_-_Using_Matplotlib_to_Visualise_Trends_over_Time.md
+│   ├── 581_-_A_Choropleth_Map_and_the_Countries_with_the_Most_Prizes.md
+│   ├── 582_-_Create_Sunburst_Charts_for_a_Detailed_Regional_Breakdown_of_Research_Locations.md
+│   ├── 583_-_Unearthing_Patterns_in_the_Laureate_Age_at_the_Time_of_the_Award.md
+│   ├── 584_-_Learning_Points_&_Summary.md
+│   └── Nobel+Prize+Analysis+Complete
+│       ├── Nobel_Prize_Analysis_(complete).ipynb
+│       └── nobel_prize_data.csv
+├── Section_080_-_Day_80_-_Advanced_-_The_Tragic_Discovery_of_Handwashing_t-Tests_&_Distributions
+│   ├── 585_-_Day_80_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 586_-_Preliminary_Data_Exploration_and_Visualising_Births_&_Deaths_at_Vienna_Hospital.md
+│   ├── 587_-_Analysing_the_Yearly_Data_Split_By_Clinic.md
+│   ├── 588_-_The_Effect_of_Handwashing.md
+│   ├── 589_-_Visualising_Distributions_and_Testing_for_Statistical_Significance.md
+│   ├── 590_-_Learning_Points_&_Summary.md
+│   └── Dr+Semmelweis+Analysis+(complete)
+│       ├── Dr_Semmelweis_Handwashing_Discovery_(complete).ipynb
+│       ├── annual_deaths_by_clinic.csv
+│       └── monthly_deaths.csv
+├── Section_081_-_Day_81_-_Advanced_-_Capstone_Project_-_Predict_House_Prices
+│   ├── 591_-_Day_81_Goals_what_you_will_make_by_the_end_of_the_day.md
+│   ├── 592_-_Solution_&_Learning_Points.md
+│   └── Multivariable+Regression+(Complete)
+│       ├── Multivariable_Regression_and_Valuation_Model_(complete).ipynb
+│       └── boston.csv
+├── Section_082_-_Day_82_-_Professional_Portfolio_Project_-_[Python_Scripting]
+│   ├── 593_-_The_Road_to_Becoming_a_Professional_Developer.md
+│   ├── 594_-_Assignment_1_Text_to_Morse_Code_Converter.md
+│   └── main.py
+├── Section_083_-_Day_83_-_Professional_Portfolio_Project_-_[Python_Web_Development]
+│   ├── 594_-_How_to_dev.md
+│   ├── 595_-_Assignment_2_Portfolio_Website.md
+│   └── portfolio
+│       ├── assets
+│       ├── certifications.html
+│       ├── css
+│       │   └── style.css
+│       ├── data
+│       │   └── data.json
+│       ├── education.html
+│       ├── experience.html
+│       ├── index.html
+│       ├── js
+│       │   └── main.js
+│       ├── languages.html
+│       ├── projects.html
+│       └── skills.html
+├── Section_084_-_Day_84_-_Professional_Portfolio_Project_-_[Python_Scripting]
+│   └── 001_-_Assignment_3_Tic_Tac_Toe.md
+├── Section_085_-_Day_85_-_Professional_Portfolio_Project_-_[GUI]
+│   ├── 001_-_Assignment_4_Image_Watermarking_Desktop_App.md
+│   └── main.py
+├── Section_086_-_Day_86_-_Professional_Portfolio_Project_-_[GUI]
+│   ├── 001_-_Assignment_5_Typing_Speed_Test.md
+│   └── main.py
+├── Section_087_-_Day_87_-_Professional_Portfolio_Project_-_[Game]
+│   ├── 001_-_Assignment_6_Breakout_Game.md
+│   └── main.py
+├── Section_088_-_Day_88_-_Professional_Portfolio_Project_-_[Web_Development]
+│   ├── 001_-_Assignment_7_Cafe_and_Wifi_Website.md
+│   ├── cafe_project
+│   │   ├── app
+│   │   │   ├── __init__.py
+│   │   │   ├── forms.py
+│   │   │   ├── models.py
+│   │   │   ├── routes.py
+│   │   │   ├── static
+│   │   │   │   └── css
+│   │   │   └── templates
+│   │   │       ├── add.html
+│   │   │       ├── base.html
+│   │   │       └── index.html
+│   │   ├── instance
+│   │   │   └── cafes.db
+│   │   ├── readme.md
+│   │   └── run.py
+│   └── ss.png
+├── Section_089_-_Day_89_-_Professional_Portfolio_Project_-_[Web_Development]
+│   ├── 001_-_Assignment_8_Todo_List.md
+│   └── todo_app
+│       ├── .env
+│       ├── .gitignore
+│       ├── README.md
+│       ├── add_dummy_data.py
+│       ├── app.db
+│       ├── app.py
+│       ├── config.py
+│       ├── forms.py
+│       ├── init_db.py
+│       ├── models.py
+│       ├── requirements.txt
+│       ├── s.png
+│       ├── static
+│       │   ├── css
+│       │   │   └── style.css
+│       │   └── js
+│       │       └── script.js
+│       └── templates
+│           ├── base.html
+│           ├── index.html
+│           ├── project.html
+│           ├── project_form.html
+│           ├── task_card.html
+│           └── task_form.html
+├── Section_090_-_Day_90_-_Professional_Portfolio_Project_-_[GUI_Desktop_App]
+│   ├── 001_-_Assignment_9_Disappearing_Text_Writing_App.md
+│   └── dangerous_writer
+│       ├── app.py
+│       └── templates
+│           └── index.html
+├── Section_091_-_Day_91_-_Professional_Portfolio_Project_-_[HTTP_Requests_&_APIs]
+│   ├── 001_-_Assignment_10_Convert_PDF_to_Audiobook.md
+│   └── pdf-to-speech
+│       ├── .env
+│       ├── README.md
+│       ├── app.py
+│       ├── outputs
+│       │   └── resume2_SayantanBharati_20260221_203819.mp3
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── css
+│       │   │   └── style.css
+│       │   └── js
+│       │       └── script.js
+│       ├── templates
+│       │   ├── base.html
+│       │   ├── footer.html
+│       │   ├── index.html
+│       │   ├── nav.html
+│       │   ├── progress.html
+│       │   └── result.html
+│       └── uploads
+├── Section_092_-_Day_92_-_Professional_Portfolio_Project_-_[Image_Processing_&_Data_Science]
+│   ├── 001_-_Assignment_11_Image_Colour_Palette_Generator.md
+│   └── flask_color_extractor
+│       ├── README.md
+│       ├── app.py
+│       ├── requirements.txt
+│       └── templates
+│           └── index.html
+├── Section_093_[PENDING]__-_Day_93_-_Professional_Portfolio_Project_-_[Web_Scraping]
+│   └── 001_-_Assignment_12_Custom_Web_Scraper.md
+├── Section_094_-_Day_94_-_Professional_Portfolio_Project_-_[GUI_Automation]
+│   ├── 001_-_Assignment_13_Automate_the_Google_Dinosaur_Game.md
+│   └── t_rex_game_automator
+│       ├── main.py
+│       └── requirement.py
+├── Section_095_-_Day_95_-_Professional_Portfolio_Project_-_[Game]
+│   ├── 001_-_Assignment_14_Space_Invaders.md
+│   └── space_invaders_web
+│       ├── app
+│       │   ├── __init__.py
+│       │   ├── game_logic.py
+│       │   ├── routes.py
+│       │   ├── static
+│       │   │   ├── css
+│       │   │   └── js
+│       │   │       └── game.js
+│       │   └── templates
+│       │       ├── base.html
+│       │       └── index.html
+│       ├── requirements.txt
+│       └── run.py
+├── Section_096_-_Day_96_-_Professional_Portfolio_Project_-_[HTTP_Requests_&_APIs]
+│   ├── 001_-_Assignment_15_Custom_API_Based_Website.md
+│   └── art_search
+│       ├── .env
+│       ├── app.py
+│       ├── sample.png
+│       └── templates
+│           ├── _results.html
+│           ├── artwork.html
+│           ├── base.html
+│           ├── error.html
+│           └── index.html
+├── Section_097_-_Day_97_-_Professional_Portfolio_Project_-_[Web_Development]
+│   ├── 001_-_Assignment_16_An_Online_Shop.md
+│   ├── ecommerce-app
+│   │   ├── .env
+│   │   ├── .gitignore
+│   │   ├── app
+│   │   │   ├── __init__.py
+│   │   │   ├── decorators.py
+│   │   │   ├── extensions.py
+│   │   │   ├── forms.py
+│   │   │   ├── models.py
+│   │   │   ├── routes
+│   │   │   │   ├── admin.py
+│   │   │   │   ├── auth.py
+│   │   │   │   ├── cart.py
+│   │   │   │   ├── main.py
+│   │   │   │   ├── payment.py
+│   │   │   │   └── product.py
+│   │   │   ├── services
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── payment_service.py
+│   │   │   ├── static
+│   │   │   │   ├── css
+│   │   │   │   │   └── style.css
+│   │   │   │   ├── images
+│   │   │   │   └── js
+│   │   │   │       └── main.js
+│   │   │   ├── templates
+│   │   │   │   ├── admin
+│   │   │   │   │   └── dashboard.html
+│   │   │   │   ├── auth
+│   │   │   │   │   ├── login.html
+│   │   │   │   │   ├── profile.html
+│   │   │   │   │   └── register.html
+│   │   │   │   ├── base.html
+│   │   │   │   ├── cart
+│   │   │   │   │   ├── cart.html
+│   │   │   │   │   └── checkout.html
+│   │   │   │   ├── errors
+│   │   │   │   │   ├── 403.html
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   └── 500.html
+│   │   │   │   ├── index.html
+│   │   │   │   └── product
+│   │   │   │       ├── admin_add.html
+│   │   │   │       ├── admin_edit.html
+│   │   │   │       └── detail.html
+│   │   │   └── utils.py
+│   │   ├── config.py
+│   │   ├── requirements.txt
+│   │   └── run.py
+│   └── preview.gif
+├── Section_098_-_Day_98_-_Professional_Portfolio_Project_-_[Python_Automation]
+│   ├── 001_-_Assignment_17_Custom_Automation.md
+│   ├── 1_raise_email_automation
+│   │   ├── .env
+│   │   ├── README.md
+│   │   ├── config.py
+│   │   ├── email_template.txt
+│   │   ├── main.py
+│   │   └── requirements.txt
+│   ├── 2_connected_device_automation
+│   │   ├── .env
+│   │   ├── README.md
+│   │   ├── all_source_files.txt
+│   │   ├── app.py
+│   │   ├── config.py
+│   │   ├── preview.png
+│   │   ├── requirements.txt
+│   │   ├── scanner.py
+│   │   ├── static
+│   │   │   ├── script.js
+│   │   │   └── style.css
+│   │   └── templates
+│   │       └── index.html
+│   ├── 3_downloads_organizer
+│   │   ├── README.md
+│   │   ├── config.json
+│   │   ├── main.py
+│   │   └── ui.py
+│   ├── 4_job_automation_web
+│   │   ├── .env
+│   │   ├── .env.example
+│   │   ├── README.md
+│   │   ├── app
+│   │   │   ├── __init__.py
+│   │   │   ├── config.py
+│   │   │   ├── models
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── data_manager.py
+│   │   │   │   └── report_manager.py
+│   │   │   ├── routes
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── automation.py
+│   │   │   │   ├── data.py
+│   │   │   │   ├── main.py
+│   │   │   │   └── reports.py
+│   │   │   ├── services
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── automation_engine.py
+│   │   │   │   └── scheduler.py
+│   │   │   ├── static
+│   │   │   │   ├── css
+│   │   │   │   │   └── style.css
+│   │   │   │   └── js
+│   │   │   │       └── main.js
+│   │   │   └── templates
+│   │   │       ├── automation.html
+│   │   │       ├── base.html
+│   │   │       ├── data_add.html
+│   │   │       ├── data_edit.html
+│   │   │       ├── data_list.html
+│   │   │       ├── data_upload.html
+│   │   │       ├── index.html
+│   │   │       └── reports.html
+│   │   ├── config.yaml
+│   │   ├── data
+│   │   │   ├── input_data
+│   │   │   │   └── data.csv
+│   │   │   └── output_reports
+│   │   │       └── report.csv
+│   │   ├── requirements.txt
+│   │   ├── run.py
+│   │   └── sample.gif
+│   ├── 5_whatsapp-scheduler
+│   │   ├── .env
+│   │   ├── PyWhatKit_DB.txt
+│   │   ├── README.md
+│   │   ├── app
+│   │   │   ├── __init__.py
+│   │   │   ├── forms.py
+│   │   │   ├── models.py
+│   │   │   ├── routes.py
+│   │   │   ├── scheduler.py
+│   │   │   ├── static
+│   │   │   │   ├── css
+│   │   │   │   │   └── style.css
+│   │   │   │   ├── images
+│   │   │   │   └── js
+│   │   │   │       └── main.js
+│   │   │   ├── templates
+│   │   │   │   ├── base.html
+│   │   │   │   ├── edit.html
+│   │   │   │   └── index.html
+│   │   │   └── utils.py
+│   │   ├── config.py
+│   │   ├── instance
+│   │   │   └── app.db
+│   │   ├── requirements.txt
+│   │   └── run.py
+│   └── 6_system_monitor
+│       ├── README.md
+│       ├── app.py
+│       ├── preview.png
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── script.js
+│       │   └── style.css
+│       └── templates
+│           └── index.html
+├── Section_099_-_Day_99_-_Professional_Portfolio_Project_-_[Data_Science]
+│   ├── 001_-_Assignment_18_Analyse_and_Visualise_the_Space_Race.md
+│   ├── preview.gif
+│   └── spaceflight_dashboard
+│       ├── all_source_files.txt
+│       ├── analyze_launches.py
+│       ├── analyze_rockets.py
+│       ├── app.py
+│       ├── data
+│       │   ├── launches.csv
+│       │   └── rockets.csv
+│       ├── fetch_launches.py
+│       ├── fetch_rockets.py
+│       ├── requirements.txt
+│       ├── static
+│       │   ├── css
+│       │   │   └── style.css
+│       │   └── js
+│       │       └── main.js
+│       ├── templates
+│       │   ├── analyze_launches.html
+│       │   ├── analyze_rockets.html
+│       │   ├── base.html
+│       │   ├── index.html
+│       │   ├── launches.html
+│       │   └── rockets.html
+│       └── visualize.py
+├── Section_100_-_Day_100_-_Professional_Portfolio_Project_-_[Data_Science]
+│   ├── 001_-_Assignment_19_Analyse_Deaths_involving_Police_in_the_United_States.md
+│   └── fatal_force
+│       ├── Deaths_by_Police_US.csv
+│       ├── Fatal_Force_(start).ipynb
+│       ├── Median_Household_Income_2015.csv
+│       ├── Pct_Over_25_Completed_High_School.csv
+│       ├── Pct_People_Below_Poverty_Level.csv
+│       └── Share_of_Race_By_City.csv
+├── Section_101_-_Final_Stretch
+│   ├── 595_-_Important_Questions.md
+│   ├── 596_-_React+Python.md
+│   └── 597_-_Flask_FastAPI_Django.md
+├── Section_102_-_Bonus_Lecture_Succeed_in_the_Age_of_AI
+│   ├── 598_-_Python_for_Data_Analysis_Foundations.md
+│   ├── 599_-_Python_for_Machine_Learning_and_AI.md
+│   └── 600_-_Python_for_Advanced_AI_and_Production_Systems.md
+├── bulk_rename.py
+├── create_course_tree.sh
+├── extract_data.py
+├── filecount.py
+├── full_folder_tree.txt
+├── input.html
+├── output.txt
+├── python_file_tree.txt
+├── stat.py
+└── tree.py
